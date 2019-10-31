@@ -49,11 +49,7 @@ Things you may want to cover:
 |account_type|string||
 |account_number|string||
 |account_name|string||
-|registered_zip|string||
-|registered_prefecture|string||
-|registered_city|string||
-|registered_town|string||
-|registered_apartment|string||
+|registered_address|string||
 
 ### Association
 has_many :items
@@ -61,32 +57,14 @@ has_many :comments
 has_many :offers
 has_many :points
 
-## large_categories table
+## categories table
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 
 ### Association
-has_many :middle_categories
-
-## middle_categories table
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|large_category_id|integer|null: false, foreign_key: true|
-
-### Association
-belongs_to :large_category 
-has_many :small_categories
-
-## small_categories table
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|middle_category_id|integer|null: false, foreign_key: true|
-
-### Association
-belongs_to :middle_category
+has_many :items
+has_ancestry
 
 ## brands table 
 |Column|Type|Options|
@@ -135,8 +113,7 @@ has_many :brands_groups
 
 ### Association
 belongs_to :user
-belongs_to :small_category
-belongs_to: brand
+belongs_to :category
 has_many :images
 has_many :comments
 has_many :offers
@@ -167,7 +144,6 @@ belongs_to: user
 |------|----|-------|
 |price|integer|null: false|
 |payment_style|string|null: false|
-|status|string|null: false|
 |status|string|null: false|
 |payment_date|date||
 |request_date|date||
