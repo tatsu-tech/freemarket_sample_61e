@@ -31,17 +31,9 @@ Things you may want to cover:
 |name_full|string|null: false|
 |name_reading|string|null: false|
 |birthday|date|null: false|
-|mobile_phone|string|null: false|
-|zip|string|null: false|
-|prefecture|string|null: false|
-|city|string|null: false|
-|town|string|null: false|
-|apartment|string||
-|phone|string||
+|mobile_phone_number|string|null: false, unique: true|
 |image|string||
 |profile|text||
-|google|string||
-|facebook|string||
 |card_number|string|null: false|
 |expiring_month|string|null: false|
 |bank|string||
@@ -49,13 +41,24 @@ Things you may want to cover:
 |account_type|string||
 |account_number|string||
 |account_name|string||
-|registered_address|string||
 
 ### Association
 has_many :items
 has_many :comments
+has_many :likes
 has_many :offers
 has_many :points
+
+## user_addresses table
+|Column|Type|Options|
+|------|----|-------|
+|address|string|null: false|
+|phone_number|string||
+|registered_address|string||
+|user_id|integer|null: false, foreign_key: true|
+
+### Association
+belongs_to :user
 
 ## categories table
 |Column|Type|Options|
@@ -130,14 +133,24 @@ belongs_to :item
 ## comments table
 |Column|Type|Options|
 |------|----|-------|
-|good|integer||
-|comment|text||
+|comment|text|null: false|
 |item_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Associtation
 belongs_to: item
 belongs_to: user
+
+## likes table
+|Column|Type|Options|
+|------|----|-------|
+|like|string|null: false|
+|item_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+
+### Association
+belongs_to :item
+belongs_to :user
 
 ## transactions table
 |Column|Type|Options|
