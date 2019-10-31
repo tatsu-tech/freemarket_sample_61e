@@ -88,16 +88,22 @@ li{
   &__mail{
     background-color: #ea352d;
     color: #fff;
+    position: relative;
+    display: block;
   }
   &__fb{
     background-color: #385185;
     color: #fff;
     margin: 16px 0 0;
+    position: relative;
+    display: block;
   }
   &__google{
     margin: 16px 0 0;
     background-color: #fff;
     border: #979797 solid 1px;
     color: #333;
+    position: relative;
+    display: block;
   }
 }

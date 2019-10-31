@@ -127,7 +127,23 @@ h3{
           &__input{
             width: 100%;
             &__birthday{
-              display: flex;
+              display: block;
+              margin-top:8px;
+              &__year{
+                display: inline-block;
+                width:76px;
+                position: relative;
+              }
+              &__month{
+                display: inline-block;
+                width: 76px;
+                position: relative;
+              }
+              &__day{
+                display: inline-block;
+                width:76px;
+                position: relative;
+              }
             }
           }
           &__middle--text{
@@ -213,20 +229,6 @@ h3{
   position: abusolute;
 }
 
-.select-default{
-  padding:  0 10px;
-  width: 100%;
-  position: relative;
-  height:  48px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: 0;
-  font-size: 16px;
-  line-height: 1.5;
-  cursor: pointer;
-  margin-top: 8px;
-}
-
 .right{
   text-align: right;
   color: #0099e8;
@@ -251,3 +253,168 @@ h3{
   }
 }
 
+.select-default{
+  padding-left: 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-size: 10px 30px;
+  background-position: right 10px center;
+  font-size: 8px;
+  height: 48px;
+  width:76px;
+  background-color:white;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc;
+  z-index: -1;
+}
+
+.select-default-long{
+  padding-left: 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-size: 10px 30px;
+  background-position: right 10px center;
+  font-size: 8px;
+  height: 48px;
+  width:100%;
+  background-color:white;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc;
+  z-index: 1;
+  margin-top: 8px;
+  position: relative;
+}
+
+.select-default-log__down{
+  position: absolute;
+  top: 35%;
+  z-index: 5;
+  color:gray;
+  font-size: 8px;
+  right: 3px;
+  height: 16px;
+  width: 16px;
+}
+
+.pull-down{
+  position: absolute;
+  top: 35%;
+  z-index: 2;
+  color:gray;
+  font-size: 8px;
+  right: 3px;
+  height: 16px;
+  width: 16px;
+}
+
+.date-limit{
+  background-color: #ea352d;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align:  top;
+  display: inline-block;
+}
+
+.block{
+  display: block;
+}
+
+.relative{
+  position: relative;
+}
+
+.long{
+  padding-top:15px;
+  bottom:20px;
+}
+
+.vh{
+  height: 65vh;
+}
+
+.footer {
+  &__head {
+    height: 250px;
+    width: auto;
+    background-image: url("https://web-jp-assets.mercdn.net/_next/static/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg");
+
+    &__area {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin: 0px auto;
+      position: relative;
+
+      &--left {
+        padding: 60px 30px;
+
+        &--top {
+          color: white;
+          font-size: 18px;
+          font-weight: 600;
+          text-align: center;
+        }
+        &--middle {
+          color: white;
+          font-size: 35px;
+          margin-bottom: 10px;
+        }
+        &--bottom {
+          display: flex;
+          align-items: center;
+
+          &--mercari-logo {
+
+            .mercari-logo-s {
+              height: 68px;
+              width: 68px;
+              margin-right: 20px;
+            }
+          }
+            
+          &--app-store {
+
+            .app-store-s {
+              height: 40px;
+              width: 144px;
+              margin-right: 8px;
+            }
+          }
+          &--google-play {
+
+            .google-play-s {
+              height: 40px;
+              width: 144px;
+            }
+          }
+        }
+      }
+      &--right {
+        position: absolute;
+        bottom: 1px;
+        right: 0;
+
+        .phone-img-s {
+          height: 200px;
+          width: auto;
+        }
+      }
+      &--page-icon {
+        text-align: center;
+      }     
+    }
+  }
+}
+
+.vh4{
+  height: 65vh;
+}
