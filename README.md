@@ -34,8 +34,6 @@ Things you may want to cover:
 |mobile_phone_number|string|null: false, unique: true|
 |image|string||
 |profile|text||
-|card_number|string|null: false|
-|expiring_month|string|null: false|
 |bank|string||
 |branch|string||
 |account_type|string||
@@ -55,6 +53,16 @@ has_many :points
 |address|string|null: false|
 |phone_number|string||
 |registered_address|string||
+|user_id|integer|null: false, foreign_key: true|
+
+### Association
+belongs_to :user
+
+## credit_card table
+|Column|Type|Options|
+|------|----|-------|
+|card_number|string|null: false|
+|expiring_month|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
