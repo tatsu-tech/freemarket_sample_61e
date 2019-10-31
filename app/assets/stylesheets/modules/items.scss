@@ -1,0 +1,577 @@
+* {
+  box-sizing: border-box;
+}
+
+.background {
+  background-color: rgb(245, 245, 245);
+  font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+  position: relative;
+  
+  .item {
+    height: 250px;
+    width: 18%;
+    margin-bottom: 25px;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));
+    position: relative;
+
+    .item-img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+    .gradient {
+      height: 35px;
+      width: 70px;
+      background: linear-gradient(90deg,hsla(0,0%,100%,0),$white 50%);
+      right: 0;
+      bottom: 0;
+      position: absolute;
+    }
+    .image {
+      background-color: lightgray;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      height: 75%;
+      background-size:cover;
+            
+
+      .price {
+        z-index: 1;
+        color: $white;
+        background: rgba(0,0,0,.4);
+        height: 28px;
+        font-size: 17px;
+        align-items: center;
+        border-radius: 0 14px 14px 0;
+        letter-spacing: .02em;
+        display: inline-flex;
+        padding: 0 12px;
+        left: 0;
+        bottom: 8px;
+        position: absolute;
+      }
+    }
+  }
+  .detail {
+    background-color: $white;
+    color: #222;
+    height: 25%;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 15px;
+
+  }
+  .item:hover {
+    border: solid 1px $blue;
+  }
+
+  a {
+    cursor: pointer;
+    display: block;
+  }
+  
+  .exhibit-btn {
+    z-index: 10;
+    height: 160px;
+    width: 160px;
+    background-color: $red;
+    right: 3%;
+    bottom: 3%;
+    position: fixed;
+    border-radius: 50%;
+
+    &__body {
+      font-size: 22px;
+      color: $white;
+      text-align: center;
+      padding-top: 32px;
+    }
+
+    .camera-img {
+      height: 53.33px;
+      width: 60px;
+      font-size: 60px;
+      color: $white;
+      margin: 5px 50px;
+    }
+  }
+  
+  .header {
+    z-index: 5;
+    height: 100px;
+    background-color: $white;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    font-size: 14px;
+    position: relative;
+
+    &__body {
+      width: 1020px;
+      margin: 0 auto;
+      padding-top: 8px;
+
+      &__head {
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+
+        &--left {
+
+          .mercari-logo-l {
+            height: 36px;
+            width: 134px;
+            margin-top: 2px;
+          }
+        }
+
+        &--right {
+          width: 100%;
+          margin-left: 45px;
+
+          &--form-field {
+            background-color: rgb(245, 245, 245);
+            font-size: 16px;
+            height: 40px;
+            line-height: 1.4em;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(204, 204, 204);
+            border-radius: 4px;
+            padding: 0px 50px 0px 10px;
+            position: relative;
+          
+            &--search-submit {
+              
+              .fa.fa-search {
+                background-color: transparent;
+                right: 0px;
+                padding: 10px 15px 10px 30px;
+                position: absolute;
+              }
+            }
+          }
+        }
+      }
+      &__foot {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+
+        &--left {
+          display: flex;
+
+          &--category {
+            margin-right: 20px;
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 36px;
+            white-space: nowrap;
+
+            .fa.fa-list-ul {
+              color: $red;
+              margin-right: 3px;
+            }
+          }
+
+          &--brand {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 36px;
+            white-space: nowrap;
+
+            .tag-img {
+              height: 12px;
+              width: 23px;
+              color:  $red;
+              margin-right: 1px;
+            }
+          }
+            
+        }
+        &--right {
+          display: flex;
+
+          &--signup {
+            background-color: $red;
+            color: $white;
+            border-style: solid;
+            border-color: $red;
+            border-radius: 4px;
+            padding: 4px 10px;
+          }
+            
+          &--login {
+            color: $blue;
+            line-height: 25px;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 4px;
+            padding: 4px 10px;
+            margin-left: 11px;
+          }
+        }
+      }  
+    }
+  }
+  .area {
+    width: 1020px;
+    margin: 0 auto;
+
+    &__carousel {
+      
+      &__body {
+        height: 390px;
+        margin: 0 calc(50% - 50vw);
+        padding: 0 calc(50vw - 50%);
+        position: relative;
+        background-image: url("//web-jp-assets.mercdn.net/_next/static/images/top-banner-main-892151cc75b1f6a1285bf7943c9b933c.jpg");
+        
+        &--left {
+          float: left;
+          padding: 35px 0px 35px 130px;
+
+          &--top {
+            font-size: 60px;
+            padding-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.4;
+          }  
+          
+          &--middle {
+            font-size: 18px;
+            line-height: 1.77777;
+            padding-bottom: 24px;
+          }
+
+          &--bottom {
+            height: 50px;
+            width: 150px;
+            display: flex;
+
+            &--app-store {
+
+              .app-store-l {
+                height: 50px;
+                width: 170px;
+              }
+            }
+            &--google-play {
+
+              .google-play-l {
+                height: 50px;
+                width: 170px;
+                margin-left: 8px;
+              }
+            }
+          }
+        }
+        &--right {
+          position: absolute;
+          right: 290px;
+          top: 0;
+
+          .phone-img-l {
+            height: 390px;
+            width: 440px;
+          }
+        }
+        &--page-icon {
+          text-align: center;
+        }
+      }
+    }
+      
+    &__popular-category {
+      
+      &__head {
+        @include items-header-head();
+
+        &--title {
+          @include items-header-title();
+        }
+          
+        &--nav {
+          @include items-header-nav();
+
+          &--link-btn {
+            @include items-header-link-btn();
+          }
+        }
+      }
+      &__body {
+        margin-top: 30px;
+        
+        &__list {
+          padding: 10px;
+
+          &--top {
+            @include items-body-top();
+
+            &--left {
+              @include items-body-left();
+            }
+            &--right {
+              @include items-body-right();
+            }
+          }
+          &--bottom {
+            @include items-body-bottom();
+          }
+        }
+      }
+    }
+    &__popular-brand {
+
+      &__head {
+        @include items-header-head();
+
+        &--title{
+          @include items-header-title();
+        }
+        &--nav {
+          @include items-header-nav();
+
+          &--link-btn {
+            @include items-header-link-btn();
+          }
+        }
+      }
+      &__body {
+        margin-top: 30px;
+
+        &__list {
+          padding: 10px;
+
+          &--top {
+            @include items-body-top();
+
+            &--left {
+              @include items-body-left();
+            }
+            &--right {
+              @include items-body-right();
+            }
+          }
+          &--bottom {
+            @include items-body-bottom();
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    &__head {
+      height: 260px;
+      margin: 0 calc(50% - 50vw);
+      background-image: url("https://web-jp-assets.mercdn.net/_next/static/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg");
+
+      &__area {
+        width: 750px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0px auto;
+
+        &--left {
+          padding-top: 40px;
+
+          &--top {
+            color: $white;
+            font-size: 24px;
+            font-weight: 600;
+          }
+          &--middle {
+            color: $white;
+            font-size: 35px;
+            margin-bottom: 10px;
+          }
+          &--bottom {
+            display: flex;
+            align-items: center;
+
+            &--mercari-logo {
+
+              .mercari-logo-s {
+                height: 68px;
+                width: 68px;
+                margin-right: 20px;
+              }
+            }
+              
+            &--app-store {
+
+              .app-store-s {
+                height: 40px;
+                width: 144px;
+                margin-right: 8px;
+              }
+            }
+            &--google-play {
+
+              .google-play-s {
+                height: 40px;
+                width: 144px;
+              }
+            }
+          }
+        }
+        &--right {
+
+          .phone-img-s {
+            height: 260px;
+            width: 300px;
+          }
+        }
+      } 
+    }
+    &__foot {
+      background-color: rgb(34, 34, 34);
+      color: $white;
+      height: 390px;
+      font-size: 12px;
+      padding: 0px 20px 10px;
+      margin: 0 calc(50% - 50vw);
+
+      &__body {
+        width: 1020px;
+        margin: 0 auto;
+
+        &--top {
+          display: flex;
+          justify-content: space-between;
+
+          &--about {
+            width: auto;
+            padding-right: 40px;
+            margin-top: 16px;
+
+            &--name {
+              @include footer-head-name();
+            }
+            &--list {
+              
+              &--s {
+                margin-top: 16px;
+                opacity: 0.7;
+              }
+              &--s:hover {
+                text-decoration: underline solid rgba(255,255,255,0.7);
+              }
+              &--icon {
+                display: flex;
+                margin-top: 30px;
+
+                &--twitter {
+                  margin-right: 20px;
+
+                  .twitter-logo {
+                    color: $white;
+                    height: 32px;
+                    width: 32px;
+                  }
+                }
+                &--facebook {
+
+                  .facebook-logo {
+                    color: $white;
+                    height: 30px;
+                    width: 30px;
+                  }
+                }
+              }
+            }
+          }  
+          &--help {
+            width: auto;
+            padding-right: 40px;
+            margin-top: 16px;
+
+            &--name {
+              @include footer-head-name();
+            }
+            &--list {
+              opacity: 0.7;
+
+              &--s {
+                margin-top: 16px;
+              }
+              &--s:hover {
+                text-decoration: underline solid rgba(255,255,255,0.7);
+              }
+            }
+          }
+          &--privacy {
+            width: 43%;
+            margin-top: 16px;
+
+            &--name {
+              @include footer-head-name();
+            }
+            
+            &--list {
+              display: flex;
+              opacity: 0.7;
+
+              &--left {
+                padding-right: 40px;
+
+                &--s {
+                  margin-top: 16px;
+                }
+                &--s:hover {
+                  text-decoration: underline solid rgba(255,255,255,0.7);
+                }
+              }
+              &--right {
+                padding-right: 40px;
+
+                &--s {
+                  margin-top: 16px;
+                }
+                &--s:hover {
+                  text-decoration: underline solid rgba(255,255,255,0.7);
+                }
+              }
+            }
+          }
+          &--country {
+            width: auto;
+            padding-right: 40px;
+            margin-top: 18px;
+
+            &--name {
+              @include footer-head-name();
+            }
+            &--list {
+              opacity: 0.7;
+
+              &--s {
+                margin-top: 18px;
+              }
+              &--s:hover {
+                text-decoration: underline solid rgba(255,255,255,0.7);
+              }
+            }
+          }
+        }
+        &--bottom {
+          margin: 30px auto 20px;
+
+          &--left {
+
+            .mercari-logo-white {
+              height: 33px;
+              width: 124px;
+              float: left;
+              margin-top: -10px;
+            }
+          }
+          &--right {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
