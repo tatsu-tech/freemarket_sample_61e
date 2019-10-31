@@ -1,0 +1,80 @@
+
+
+.login-zone{
+  width: 456px;
+  margin: 0 auto;
+  background-color: #fff;
+
+  &__tonew{
+    padding: 40px 64px;
+    text-align: center;
+    &--p{
+      font-size: 14px;
+    }
+    &--create{
+      display: block;
+      margin: 8px 0 0;
+      border: 1px solid #0099e8;
+      background-color: #0099e8;
+      color: #fff;
+      line-height: 40px;
+    }
+  }
+  &__sns{
+    padding: 32px 64px;
+    border-top: 1px solid #eee;
+  }
+  &__form{
+    padding: 24px 64px 32px;
+  }
+}
+
+
+.btn__login__fb{
+  background-color: #385185;
+  color: #fff;
+  border-radius: 0;
+  }
+.btn__login__google{
+  margin: 16px 0 0;
+  background-color:  #fff;
+  border: 1px solid #979797;
+  color: #333;
+  border-radius: 0;
+  }
+
+
+.input-default{
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.login-zone__form__box__pass{
+  margin: 24px 0 0 ;
+}
+
+.login-zone__form__box__submit{
+  margin: 126px 0 0;
+  background-color: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+}
+
+.input{
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.login-form{
+  margin-top: 16px; 
+}
+
+.login-footer{
+  box-sizing: content-box;
+}

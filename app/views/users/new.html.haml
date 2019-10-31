@@ -1,0 +1,32 @@
+.single-container
+  = render partial: 'shared/topbar'
+
+  %div.single-container__main
+    %div.login-zone
+      %div.login-zone__tonew
+        %p.login-zone__tonew--p アカウントをお持ちでない方はこちら
+        %a.login-zone__tonew--create 新規会員登録
+      %div.login-zone__sns
+        %btn.btn.btn__login__fb Facebookでログイン
+        %btn.btn.btn__login__google Googleでログイン
+      .login-zone__form
+        .login-zone__form__list
+        %input{type:"email", name: "email", placeholder:"メールアドレス", class: "input-default-1"}
+        .login-zone__form__list.login-form
+        %input{type:"password", name: "password", placeholder:"パスワード", class: "input-default-1"}
+        %button{type:"submit", class:"btn-default1 btn-login"}次へ進む
+
+
+
+        -# = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        -#   .login-zone__form__box
+        -#     .login-zone__form__box__mail.input-default
+        -#       = f.email_field :email, placeholder:"メールアドレス", class:"input"
+        -#     .login-zone__form__box__pass.input-default
+        -#       = f.password_field :password, autocomplete: "off", placeholder:"パスワード", class:"input"
+        -#     .login-zone__form__box__submit
+        -#       = f.submit "ログイン", class: 'login-btn'
+        -#     %a パスワードをお忘れの方
+
+  .single-container__footer.login-footer
+    = render partial:'shared/bottombar'
