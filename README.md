@@ -118,7 +118,7 @@ has_many :brands_groups
 |delivery_origin|string|null: false|
 |delivery_type|string|null: false|
 |schedule|string|null: false|
-|small_category_id|integer|null: false, forein_key: true|
+|category_id|integer|null: false, forein_key: true|
 |brand_id|integer|foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
