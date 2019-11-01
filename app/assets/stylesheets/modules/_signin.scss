@@ -29,6 +29,10 @@
 
 
 .btn__login__fb{
+  line-height: 48px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: center;
   background-color: #385185;
   color: #fff;
   border-radius: 0;
@@ -36,6 +40,10 @@
   display: block;
   }
 .btn__login__google{
+  line-height: 48px;
+  border: 1px solid gray;
+  cursor: pointer;
+  text-align: center;
   margin: 16px 0 0;
   background-color:  #fff;
   border: 1px solid #979797;
@@ -48,9 +56,9 @@
 .sns-icon{
   position: absolute;
   display: inline-block;
-  left:30px;
-  top:18px;
-  font-size:10em;
+  left:35px;
+  top:10px;
+  font-size:2em;
 }
 
 
