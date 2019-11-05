@@ -1,3 +1,4 @@
+
 .mypage-wrapper {
   width: 1020px;
   height: calc(100vh-100px);
@@ -45,10 +46,12 @@
             line-height: 19.6px;
           }
           .mypage-number {
+            display: inline-block;
             margin-top: 8px;
             
             li {
               font-size: 14px;
+              float: left;
               span {
                 font-weight: 600;
               }
@@ -57,7 +60,13 @@
               margin-left: 16px;
             }
           }
+          .mypage-number::after {
+            content: "";
+            display: block;
+            clear: both;
+          }
         }
+
         &-link:hover {
           opacity: 0.7;
 
