@@ -1,0 +1,255 @@
+.background
+  = render "shared/exhibit-btn"
+  = render "shared/header"
+
+.mypage-wrapper
+  .main-content
+    .content
+      .content__user-panel
+        %a.content__user-panel-link{ href: ""}
+          .content__user-panel-link-icon
+            %img{src: "https://static.mercdn.net/images/member_photo_noimage_thumb.png"}
+          .content__user-panel-link-nickname
+            hak
+          %ul.mypage-number
+            %li
+              評価
+              %span
+                0
+            %li.list-left
+              出品数
+              %span
+                0
+      .mypage-tab-clearfix
+        %ul.mypage-tabs
+          %li.news__tab-left
+            %a.news-link1{href: "mypage-tab-notification"} 
+              お知らせ
+
+          %li.todo__tab-right
+            %a{href: "mypage-tab-todo" }
+              やることリスト
+
+      .tab-content                  
+        %ul.tab-content__item-list
+
+          %li.tab-content__item-list-item
+            %a.tab-content__item-list-item__link{href:""}
+              .tab-content__item-list-item__link-wrapper
+                .tab-content__item-list-item__link-wrapper-image
+                  %img{src: "https://static.mercdn.net/images/mercari_profile.png"}
+                .mypage-item-body
+                  .mypage-item-text 事務局から個別メッセージ「お近くで開催予定！「メルカリ教室 出品体験編」のご案内」
+                  %time
+                    = fa_icon "clock-o"
+                    %span.mypage-item__time-before 1 日前
+                .angle
+                  = fa_icon "angle-right"
+          
+          %li.tab-content__item-list-item
+            %a.tab-content__item-list-item__link{href:""}
+              .tab-content__item-list-item__link-wrapper
+                .tab-content__item-list-item__link-wrapper-image
+                  %img{src: "https://static.mercdn.net/images/mercari_profile.png"}
+                .mypage-item-body
+                  .mypage-item-text 【明日が最終日】”1,000円分のポイントが必ずもらえる”キャンペーン詳細はこちら！
+                  %time
+                    = fa_icon "clock-o"
+                    %span 2 日前
+                .angle
+                  = fa_icon "angle-right"
+                    
+          %li.tab-content__item-list-item
+            %a.tab-content__item-list-item__link{href:""}
+              .tab-content__item-list-item__link-wrapper
+                .tab-content__item-list-item__link-wrapper-image
+                  %img{src: "https://static.mercdn.net/images/mercari_profile.png"}
+                .mypage-item-body
+                  .mypage-item-text 【1,000円分のポイントが必ずもらえる】キャンペーン実施中！詳細はこちら！
+                  %time
+                    = fa_icon "clock-o"
+                    %span 4 日前
+                .angle
+                  = fa_icon "angle-right"
+
+          %li.tab-content__item-list-item
+            %a.tab-content__item-list-item__link{href:""}
+              .tab-content__item-list-item__link-wrapper
+                .tab-content__item-list-item__link-wrapper-image
+                  %img{src: "https://static.mercdn.net/images/mercari_profile.png"}
+                .mypage-item-body
+                  .mypage-item-text かゆい所に手が届く！厚めの商品発送にオススメの「ゆうパケットプラス」が新登場！
+                  %time
+                    = fa_icon "clock-o"
+                    %span 5 日前
+                .angle
+                  = fa_icon "angle-right"              
+
+          %li.tab-content__item-list-item.list-go
+            %a.list-go__link{href: ""}
+              一覧を見る
+
+      .mypage-tab__container
+        .mypage-tab__container-head
+          購入した商品
+
+        %ul
+          %li.transaction-going
+            %a{href: ""}
+              取引中
+
+          %li.transaction-past
+            %a{href: ""}
+              過去の取引
+
+
+        .tab-content
+          %ul.mypage-item-list
+            %li.mypage-item-not-found
+              取引中の商品がありません
+
+  .mypage-nav
+    %ul.mypage-nav__list
+      %li
+        %a.mypage-nav__list-item-mypage{href: "mypage" }
+          マイページ
+          .arrow-right-mypage
+            = fa_icon "angle-right"
+
+      %li
+        %a.mypage-nav__list-item{href: "mypage" }
+          お知らせ
+          .arrow-right
+            = fa_icon "angle-right"
+
+      %li
+        %a.mypage-nav__list-item{href: "mypage" }
+          やることリスト
+          .arrow-right
+            = fa_icon "angle-right"
+
+      %li
+        %a.mypage-nav__list-item{href: "mypage" }
+          いいね！一覧
+          .arrow-right
+            = fa_icon "angle-right"
+
+      %li
+        %a.mypage-nav__list-item{href: "mypage" }
+          出品する
+          .arrow-right
+            = fa_icon "angle-right"
+
+      %li
+        %a.mypage-nav__list-item{href: "mypage" }
+          出品した商品-出品中
+          .arrow-right
+            = fa_icon "angle-right"
+
+      %li
+        %a.mypage-nav__list-item{href: "mypage" }
+          出品した商品-取引中
+          .arrow-right
+            = fa_icon "angle-right"
+
+      %li
+        %a.mypage-nav__list-item{href: "mypage" }
+          出品した商品-売却済み
+          .arrow-right
+            = fa_icon "angle-right"
+
+      %li
+        %a.mypage-nav__list-item{href: "mypage" }
+          購入した商品-取引中
+          .arrow-right
+            = fa_icon "angle-right"
+
+      %li
+        %a.mypage-nav__list-item{href: "mypage" }
+          購入した商品-過去の取引
+          .arrow-right
+            = fa_icon "angle-right"
+
+      %li
+        %a.mypage-nav__list-item{href: "mypage" }
+          ニュース一覧
+          .arrow-right
+            = fa_icon "angle-right"
+
+      %li
+        %a.mypage-nav__list-item{href: "mypage" }
+          評価一覧
+          .arrow-right
+            = fa_icon "angle-right"
+            
+      %li
+        %a.mypage-nav__list-item{href: "mypage" }
+          ガイド
+          .arrow-right
+            = fa_icon "angle-right"
+
+      %li
+        %a.mypage-nav__list-item{href: "mypage" }
+          お問い合わせ
+          .arrow-right
+            = fa_icon "angle-right"
+
+
+    .side-menu__merpay
+      .side-menu__merpay-head メルペイ
+      %ul.side-menu__merpay-ul
+
+        %li
+          %a{href: "mypage" }
+            売上・振込申請
+            .arrow-right
+              = fa_icon "angle-right"
+
+        %li
+          %a.mypage-nav__list-item{href: "mypage" }
+            ポイント
+            .arrow-right
+              = fa_icon "angle-right"
+
+    .side-menu__config
+      .side-menu__config-head 設定
+      %ul.side-menu__config-ul
+        %li
+          %a.mypage-nav__list-item{href: "mypage" }
+            プロフィール
+            .arrow-right
+              = fa_icon "angle-right"
+
+        %li
+          %a.mypage-nav__list-item{href: "mypage" }
+            発送元・お届け先住所変更
+            .arrow-right
+              = fa_icon "angle-right"
+        %li
+          %a.mypage-nav__list-item{href: "mypage" }
+            支払い方法
+            .arrow-right
+              = fa_icon "angle-right"
+        %li
+          %a.mypage-nav__list-item{href: "mypage" }
+            メール/パスワード
+            .arrow-right
+              = fa_icon "angle-right"
+        %li
+          %a.mypage-nav__list-item{href: "mypage" }
+            本人情報
+            .arrow-right
+              = fa_icon "angle-right"
+        %li
+          %a.mypage-nav__list-item{href: "mypage" }
+            電話番号の確認
+            .arrow-right
+              = fa_icon "angle-right"
+        %li
+          %a.mypage-nav__list-item{href: "mypage" }
+            ログアウト
+            .arrow-right
+              = fa_icon "angle-right"
+
+.background
+  = render "shared/footer"
