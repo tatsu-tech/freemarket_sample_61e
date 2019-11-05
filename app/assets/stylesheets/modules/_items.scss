@@ -127,28 +127,23 @@
         &--right {
           width: 100%;
           margin-left: 45px;
-
+          position: relative;
           &--form-field {
             background-color: rgb(245, 245, 245);
             font-size: 16px;
             height: 40px;
+            width: 100%;
             line-height: 1.4em;
             border-width: 1px;
             border-style: solid;
             border-color: rgb(204, 204, 204);
             border-radius: 4px;
-            padding: 0px 50px 0px 10px;
-            position: relative;
-          
-            &--search-submit {
-              
-              .fa.fa-search {
-                background-color: transparent;
-                right: 0px;
-                padding: 10px 15px 10px 30px;
-                position: absolute;
-              }
-            }
+            padding: 0px 0px 0px 10px;
+          }
+          .fa.fa-search {
+            position: absolute;
+            right: 12px;
+            top: 12px;
           }
         }
       }
@@ -168,24 +163,118 @@
             line-height: 36px;
             white-space: nowrap;
 
+            padding-bottom: 7px;
+            position: absolute;
+
+
             .fa.fa-list-ul {
               color: $red;
               margin-right: 3px;
             }
+
+            &--l {
+              color: #222;
+              background-color: $white;
+              display: none;
+              position: absolute;
+              height: 616px;
+              width: 224px;
+              font-size: 14px;
+              list-style: none;
+              line-height: 44px;
+              padding: 0px 16px;
+              filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));
+              margin-top: 7px;
+              font-weight: normal;
+
+              li:hover {
+                color: $white;
+                background-color: $red;
+                margin: 0 -16px;
+                padding: 0 16px;
+              }
+            
+              &--m {
+                color: #222;
+                background-color: $white;
+                display: none;
+                position: absolute;
+                height: 616px;
+                width: 224px;
+                top: 0;
+                left: 224px;
+                font-size: 14px;
+                padding: 0px 16px;
+                filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));
+                font-weight: normal;
+                list-style: none;
+                line-height: 30px;
+
+                li:hover {
+                  color: #222;
+                  background-color: rgb(245, 245, 245);
+                  margin: 0 -16px;
+                  padding: 0 16px;
+                }
+              
+                &--s {
+                  color: #222;
+                  background-color: $white;
+                  display: none;
+                  position: absolute;
+                  height: 616px;
+                  width: 270px;
+                  top: 0;
+                  left: 224px;
+                  font-size: 14px;
+                  padding: 0px 16px;
+                  filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));
+                  font-weight: normal;
+                  line-height: 30px;
+                }
+              }
+            }
           }
 
           &--brand {
+            margin-right: 20px;
             display: block;
             font-size: 14px;
             font-weight: 600;
             line-height: 36px;
             white-space: nowrap;
 
+            padding-bottom: 7px;
+            position: absolute;
+            margin-left: 165px;
+
+
             .tag-img {
               height: 12px;
               width: 23px;
               color:  $red;
               margin-right: 1px;
+            }
+
+            .header__body__foot--left--brand--l {
+              color: #222;
+              background-color: $white;
+              display: none;
+              position: absolute;
+              width: 224px;
+              font-size: 14px;
+              list-style: none;
+              line-height: 44px;
+              padding: 0px 16px;
+              filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));
+              margin-top: 7px;
+              font-weight: normal;
+            }
+            li:hover {
+              color: $white;
+              background-color: $red;
+              margin: 0 -16px;
+              padding: 0 16px;
             }
           }
             
@@ -212,7 +301,7 @@
             margin-left: 11px;
           }
         }
-      }  
+      } 
     }
   }
   .area {
@@ -269,7 +358,7 @@
         }
         &--right {
           position: absolute;
-          right: 290px;
+          right: 270px;
           top: 0;
 
           .phone-img-l {
