@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'users#identification'
+  root 'users#profile'
   resources :users do
     member do
       get 'mypage'
