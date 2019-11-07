@@ -1,7 +1,7 @@
 .header
   .header__body
     .header__body__head
-      %a.header__body__head--left
+      = link_to root_path, class: "header__body__head--left" do
         = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", class: 'mercari-logo-l'
       .header__body__head--right
         = form_for root_path, method: :get, html: { class: :search } do |f|
