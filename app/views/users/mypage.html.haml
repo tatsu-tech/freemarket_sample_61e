@@ -1,0 +1,255 @@
+.background
+  -# = render "shared/exhibit-btn"
+  -# = render "shared/header"
+
+  .mypage-wrapper
+    .main-content
+      .content
+        .content__user-panel
+          = link_to  "", class: 'content__user-panel-link' do
+            .content__user-panel-link-icon
+              = image_tag  "https://static.mercdn.net/images/member_photo_noimage_thumb.png"
+            .content__user-panel-link-nickname
+              hak
+            %ul.mypage-number
+              %li
+                評価
+                %span
+                  0
+              %li.list-left
+                出品数
+                %span
+                  0
+        .mypage-tab-clearfix
+          %ul.mypage-tabs
+            %li.news__tab-left
+              = link_to "mypage-tab-notification", class: 'news-link1' do
+                お知らせ
+
+            %li.todo__tab-right
+              = link_to "mypage-tab-todo" do
+                やることリスト
+
+        .tab-content                  
+          %ul.tab-content__item-list
+
+            %li.tab-content__item-list-item
+              = link_to "", class: 'tab-content__item-list-item__link' do
+                .tab-content__item-list-item__link-wrapper
+                  .tab-content__item-list-item__link-wrapper-image
+                    = image_tag "https://static.mercdn.net/images/mercari_profile.png"
+                  .mypage-item-body
+                    .mypage-item-text 事務局から個別メッセージ「お近くで開催予定！「メルカリ教室 出品体験編」のご案内」
+                    %time
+                      = fa_icon "clock-o"
+                      %span.mypage-item__time-before 1 日前
+                  .angle
+                    = fa_icon "angle-right"
+            
+            %li.tab-content__item-list-item
+              = link_to "", class: 'tab-content__item-list-item__link' do
+                .tab-content__item-list-item__link-wrapper
+                  .tab-content__item-list-item__link-wrapper-image
+                    = image_tag "https://static.mercdn.net/images/mercari_profile.png"
+                  .mypage-item-body
+                    .mypage-item-text 【明日が最終日】”1,000円分のポイントが必ずもらえる”キャンペーン詳細はこちら！
+                    %time
+                      = fa_icon "clock-o"
+                      %span 2 日前
+                  .angle
+                    = fa_icon "angle-right"
+                      
+            %li.tab-content__item-list-item
+              = link_to "", class: 'tab-content__item-list-item__link' do
+                .tab-content__item-list-item__link-wrapper
+                  .tab-content__item-list-item__link-wrapper-image
+                    = image_tag "https://static.mercdn.net/images/mercari_profile.png"
+                  .mypage-item-body
+                    .mypage-item-text 【1,000円分のポイントが必ずもらえる】キャンペーン実施中！詳細はこちら！
+                    %time
+                      = fa_icon "clock-o"
+                      %span 4 日前
+                  .angle
+                    = fa_icon "angle-right"
+
+            %li.tab-content__item-list-item
+              = link_to "", class: 'tab-content__item-list-item__link' do
+                .tab-content__item-list-item__link-wrapper
+                  .tab-content__item-list-item__link-wrapper-image
+                    = image_tag "https://static.mercdn.net/images/mercari_profile.png"
+                  .mypage-item-body
+                    .mypage-item-text かゆい所に手が届く！厚めの商品発送にオススメの「ゆうパケットプラス」が新登場！
+                    %time
+                      = fa_icon "clock-o"
+                      %span 5 日前
+                  .angle
+                    = fa_icon "angle-right"              
+
+            %li.tab-content__item-list-item.list-go
+              = link_to "", class: 'list-go__link' do
+                一覧を見る
+
+        .mypage-tab__container
+          .mypage-tab__container-head
+            購入した商品
+
+          %ul
+            %li.transaction-going
+              = link_to "" do
+                取引中
+
+            %li.transaction-past
+              = link_to "" do
+                過去の取引
+
+
+          .tab-content
+            %ul.mypage-item-list
+              %li.mypage-item-not-found
+                取引中の商品がありません
+
+    .mypage-nav
+      %ul.mypage-nav__list
+        %li
+          = link_to "mypage", class: 'mypage-nav__list-item-mypage' do
+            マイページ
+            .arrow-right-mypage
+              = fa_icon "angle-right"
+
+        %li
+          = link_to "mypage", class: "mypage-nav__list-item" do
+            お知らせ
+            .arrow-right
+              = fa_icon "angle-right"
+
+        %li
+          = link_to "mypage", class: 'mypage-nav__list-item' do
+            やることリスト
+            .arrow-right
+              = fa_icon "angle-right"
+
+        %li
+          = link_to "mypage", class: 'mypage-nav__list-item' do
+            いいね！一覧
+            .arrow-right
+              = fa_icon "angle-right"
+
+        %li
+          = link_to "mypage", class: 'mypage-nav__list-item' do
+            出品する
+            .arrow-right
+              = fa_icon "angle-right"
+
+        %li
+          = link_to "mypage", class: 'mypage-nav__list-item' do
+            出品した商品-出品中
+            .arrow-right
+              = fa_icon "angle-right"
+
+        %li
+          = link_to "mypage", class: 'mypage-nav__list-item' do
+            出品した商品-取引中
+            .arrow-right
+              = fa_icon "angle-right"
+
+        %li
+          = link_to "mypage", class: 'mypage-nav__list-item' do
+            出品した商品-売却済み
+            .arrow-right
+              = fa_icon "angle-right"
+
+        %li
+          = link_to "mypage", class: 'mypage-nav__list-item' do
+            購入した商品-取引中
+            .arrow-right
+              = fa_icon "angle-right"
+
+        %li
+          = link_to "mypage", class: 'mypage-nav__list-item' do
+            購入した商品-過去の取引
+            .arrow-right
+              = fa_icon "angle-right"
+
+        %li
+          = link_to "mypage", class: 'mypage-nav__list-item' do
+            ニュース一覧
+            .arrow-right
+              = fa_icon "angle-right"
+
+        %li
+          = link_to "mypage", class: 'mypage-nav__list-item' do
+            評価一覧
+            .arrow-right
+              = fa_icon "angle-right"
+              
+        %li
+          = link_to "mypage", class: 'mypage-nav__list-item' do
+            ガイド
+            .arrow-right
+              = fa_icon "angle-right"
+
+        %li
+          = link_to "mypage", class: 'mypage-nav__list-item' do
+            お問い合わせ
+            .arrow-right
+              = fa_icon "angle-right"
+
+
+      .side-menu__merpay
+        .side-menu__merpay-head メルペイ
+        %ul.side-menu__merpay-ul
+
+          %li
+            = link_to "mypage" do
+              売上・振込申請
+              .arrow-right
+                = fa_icon "angle-right"
+
+          %li
+            = link_to "mypage", class: 'mypage-nav__list-item' do
+              ポイント
+              .arrow-right
+                = fa_icon "angle-right"
+
+      .side-menu__config
+        .side-menu__config-head 設定
+        %ul.side-menu__config-ul
+          %li
+            = link_to "mypage", class: 'mypage-nav__list-item' do
+              プロフィール
+              .arrow-right
+                = fa_icon "angle-right"
+
+          %li
+            = link_to "mypage", class: 'mypage-nav__list-item' do
+              発送元・お届け先住所変更
+              .arrow-right
+                = fa_icon "angle-right"
+          %li
+            = link_to "mypage", class: 'mypage-nav__list-item' do
+              支払い方法
+              .arrow-right
+                = fa_icon "angle-right"
+          %li
+            = link_to "mypage", class: 'mypage-nav__list-item' do
+              メール/パスワード
+              .arrow-right
+                = fa_icon "angle-right"
+          %li
+            = link_to "mypage", class: 'mypage-nav__list-item' do
+              本人情報
+              .arrow-right
+                = fa_icon "angle-right"
+          %li
+            = link_to "mypage", class: 'mypage-nav__list-item' do
+              電話番号の確認
+              .arrow-right
+                = fa_icon "angle-right"
+          %li
+            = link_to "mypage", class: 'mypage-nav__list-item' do
+              ログアウト
+              .arrow-right
+                = fa_icon "angle-right"
+
+.background
+  -# = render "shared/footer"

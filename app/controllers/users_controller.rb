@@ -5,4 +5,10 @@ class UsersController < ApplicationController
 
   def new
   end
+
+  def mypage
+  end
+
+  def identification
+  end
 end
