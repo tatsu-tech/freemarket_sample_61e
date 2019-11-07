@@ -7,9 +7,9 @@
     float: right;
     padding: 64px;
 
-    .mypage-logout__box {
+    &__box {
 
-      .mypage-logout__box--btn {
+      &--btn {
         height: 50px;
         max-width: 320px;
         text-align: center;
@@ -20,12 +20,12 @@
           text-decoration: none;
         }
         
-        .mypage-logout__box--btn--text {
+        &--text {
           background-color: $button_red;
           color: $white;
           font-size: 14px;
         }
-        .mypage-logout__box--btn--text:hover {
+        &--text:hover {
           background-color: red;
         }
       }
