@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'items#new'
-  # root 'users#profile'
+  resources :items, only: [:index, :new, :create, :show]
   resources :users do
     member do
       get 'mypage'
@@ -26,6 +26,4 @@ Rails.application.routes.draw do
       get 'mypage/sms_confirmation'
     end
   end
-  get 'items/index', to: 'items#index'
-  get 'items/show', to: 'items#show'
 end
