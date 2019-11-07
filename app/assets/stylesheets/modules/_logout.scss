@@ -1,0 +1,34 @@
+.mypage-wrapper {
+
+  .mypage-logout {
+    background-color: $white;
+    height: 179px;
+    width: 700px;
+    float: right;
+    padding: 64px;
+
+    &__box {
+
+      &--btn {
+        height: 50px;
+        max-width: 320px;
+        text-align: center;
+        line-height: 50px;
+        margin: 0 auto;
+
+        .logout-btn {
+          text-decoration: none;
+        }
+        
+        &--text {
+          background-color: $button_red;
+          color: $white;
+          font-size: 14px;
+        }
+        &--text:hover {
+          background-color: red;
+        }
+      }
+    }
+  }
+}
