@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'users#logout'
+  root 'items#new'
+  resources :items, only: [:index, :new, :create, :show]
   resources :users do
     member do
       get 'mypage'

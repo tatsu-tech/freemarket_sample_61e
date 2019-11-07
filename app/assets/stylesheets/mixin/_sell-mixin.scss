@@ -1,0 +1,23 @@
+@mixin clearfix() {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+@mixin required-icon() {
+  background: $red;
+  font-size: 12px;
+  vertical-align: top;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 2px;
+  margin: 0 0 0 8px;
+}
+@mixin sell-link-text() {
+  color: $blue;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
