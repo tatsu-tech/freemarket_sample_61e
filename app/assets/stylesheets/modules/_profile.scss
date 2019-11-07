@@ -1,7 +1,7 @@
 .profile {
   float: right;
   width: 700px;
-  background-color: #fff;
+  background-color:$white;
   color: rgb(51, 51, 51);
 
   &-head {
@@ -15,7 +15,7 @@
   &-form {
     &__icon {
       padding: 72px 16px 24px;
-      background: url(https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?12295559);
+      background: image-url("user-bg.jpg");
       background-repeat: no-repeat;
       background-size: cover;
       text-align: center;
@@ -37,9 +37,9 @@
         width: 220px;
         height: 48px;
         padding: 10px 16px 8px;
-        border: 1px solid #ccc;
+        border: 1px solid $border_gray;
         border-radius: 4px;
-        background: #fff;
+        background: $white;
         line-height: 1.5;
         font-size: 16px;
         margin-left: 8px;
@@ -47,7 +47,7 @@
       }
       .profile-textarea:focus {
         outline: 0;
-        border-color: rgb(0, 153, 232);
+        border-color: $border_blue;
       }
     }
     .profile-text {
@@ -59,8 +59,8 @@
         width: 100%;
         max-width: 100%;
         padding: 10px;
-        border: 1px solid #ccc;
-        background: #fff;
+        border: 1px solid $border_gray;
+        background: $white;
         font-size: 16px;
         line-height: 1.5;
         outline: 0;
@@ -68,13 +68,13 @@
       }
       &__textarea:focus {
         outline: 0;
-        border-color: rgb(0, 153, 232);
+        border-color: $border_blue;
       }
       &__submit-btn {
         margin: 16px 0 0;
-        background: #ea352d;
-        border: #ea352d;
-        color: #fff;
+        background: $button_red;
+        border: $button_red;
+        color: $white;
         display: block;
         width: 100%;
         line-height: 48px;
