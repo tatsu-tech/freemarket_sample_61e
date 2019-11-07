@@ -23,7 +23,7 @@
     .link-to-document {
       text-align: right;
       text-decoration: none;
-      color: rgb(0, 153, 232);
+      color: $border_blue;
 
       .arrow-right {
         font-size: 24px;
@@ -91,11 +91,11 @@
       }
       .form-box__body-element-input:focus {
         outline: 0;
-        border-color: rgb(0, 153, 232);
+        border-color: $border_blue;
       }
       .select:focus {
         outline: 0;
-        border-color: rgb(0, 153, 232);
+        border-color: $border_blue;
       }
     }
     .form-box__btn {
