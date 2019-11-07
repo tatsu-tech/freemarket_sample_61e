@@ -1,0 +1,101 @@
+.sell-wrapper
+  = render 'shared/topbar'
+  .sell-wrapper__content
+    = form_with model: @item, class: "sell-content", id: "new_item" do |f|
+      .sell-content__header
+        %h2 商品の情報を入力
+      .sell-content__upload
+        %h3.sell-content__upload__title
+          = f.label "出品画像"
+          %span.must 必須
+        %p.sell-content__upload__lead 最大10枚までアップロードできます。
+        .sell-content__upload__box{onclick: "$('#photo_upload').click()"}
+          %ul#imageUpload.dflex
+          .sell-content__upload__box__inner-text
+            クリックしてファイルをアップロード
+        = f.file_field :images, multiple: true, direct_upload: true, accept: 'image/jpg,image/png', id: 'photo_upload', class:'hidden'
+
+      .sell-content__box
+        %h3.sell-content__box__title
+          = f.label "商品名"
+          %span.must 必須
+        = f.text_field :name, class: 'sell-input-normal', placeholder:'商品名（必須 40文字まで)'
+        %h3.sell-content__box__title.mg-tp-40
+          = f.label '商品の説明'
+          %span.must 必須
+        = f.text_area :explanation, rows:5, wrap:"soft", class: 'sell-textarea-normal', placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+      .sell-content__box.clearfix
+        %h3.sell-content__box__subtitle
+          商品の詳細
+        .form-box
+          .form-box__group
+            = f.label '商品の状態', class: 'sell-form-title' 
+            %span.must 必須
+          .form-box__mask
+            = f.select :status, Item.statuses.keys, {}, class: "form-box__mask__select"
+            = fa_icon "angle-down", class: "form-box__mask__icon"
+      .sell-content__box.clearfix
+        %h3.sell-content__box__subtitle
+          配送について
+        .form-box
+          .form-box__group
+            = f.label '配送料の負担', class: 'sell-form-title'
+            %span.must 必須
+          .form-box__mask
+            = f.select :delivery_fee, Item.delivery_fees.keys, {}, class: "form-box__mask__select"
+            = fa_icon "angle-down", class: "form-box__mask__icon"
+          .form-box__group.mg-tp-40
+            = f.label '配送の方法', class: 'sell-form-title'
+            %span.must 必須
+          .form-box__mask
+            = f.select :delivery_type, Item.delivery_types.keys, {}, class: "form-box__mask__select"
+            = fa_icon "angle-down", class: "form-box__mask__icon"
+          .form-box__group.mg-tp-40
+            = f.label '発送元の地域', class: 'sell-form-title'
+            %span.must 必須
+          .form-box__mask
+            = f.select :delivery_origin, Item.delivery_origins.keys, {}, class: "form-box__mask__select"
+            = fa_icon "angle-down", class: "form-box__mask__icon"
+          .form-box__group.mg-tp-40
+            = f.label '発送までの日数', class: 'sell-form-title'
+            %span.must 必須
+          .form-box__mask
+            = f.select :schedule, Item.schedules.keys, {}, class: "form-box__mask__select"
+            = fa_icon "angle-down", class: "form-box__mask__icon"
+      .sell-content__box.clearfix
+        %h3.sell-content__box__subtitle
+          販売価格(300〜9,999,999)
+        .price-box
+          %ui.price-box__group
+            %li
+              .clearfix.price-box__group__column
+                .price-box__group__left.bold
+                  = f.label '価格'
+                  %span.must 必須
+                .price-box__group__right
+                  ¥
+                  .price-box__group__right__input
+                    = f.text_field :price, class:"price-box__group__right__input__box", placeholder: "例）300"
+            %li.clearfix.price-box__group__list
+              .price-box__group__left 販売手数料 (10%)
+              #salesFee.price-box__group__right -
+            %li.clearfix.price-box__group__list
+              .price-box__group__left.ft16.bold 販売利益
+              #selesPriceFix.price-box__group__right.bold.ft20 -
+      .sell-content__box
+        %p 
+          %a{ href: "/jp/help_center/getting_started/prohibited_items/", target: "_blank", class:"sell-link-text"}> 禁止されている出品
+          、
+          %a{ href: "/jp/help_center/getting_started/prohibited_conduct/", target: "_blank", class:"sell-link-text"}> 行為
+          を必ずご確認ください。
+        %p 
+          またブランド品でシリアルナンバー等がある場合はご記載ください。
+          %a{ href: "/jp/help_center/getting_started/counterfeit_goods/", target: "_blank", class:"sell-link-text"}> 偽ブランドの販売
+          は犯罪であり処罰される可能性があります。
+        %p
+          また、出品をもちまして
+          %a{ href: "/jp/seller_terms/", target: "_blank", class:"sell-link-text"}> 加盟店規約
+          に同意したことになります。
+        = f.submit class: 'sell-submit-btn mg-tp-40',disable_with: "Save", value:"出品する"
+        .sell-back-btn もどる
+  = render 'shared/subfooter'
