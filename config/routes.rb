@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'users#profile'
+  root 'users#logout'
   resources :users do
     member do
       get 'mypage'
