@@ -13,7 +13,7 @@
           %ul#imageUpload.dflex
           .sell-content__upload__box__inner-text
             クリックしてファイルをアップロード
-        = f.file_field :images, multiple: true, direct_upload: true, accept: 'image/jpg,image/png', id: 'photo_upload', class:'hidden'
+        = f.file_field :images, multiple: true, accept: 'image/jpg,image/png', id: 'photo_upload', class:'hidden'
 
       .sell-content__box
         %h3.sell-content__box__title
