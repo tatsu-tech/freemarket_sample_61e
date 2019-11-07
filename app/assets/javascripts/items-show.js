@@ -1,7 +1,5 @@
 $(document).on('turbolinks:load', function() {
 
-  // const imageSwitching = $(function() {
-
     $('.top-box__detail--left--sub-photo--s').on("mouseenter", ".s-imageT", function() {
       $(this).css("opacity", "1");
       $('.top-box__detail--left--main-photo--list').animate({'left': '0px'}, 700);
@@ -62,12 +60,3 @@ $(document).on('turbolinks:load', function() {
       $(".s-imageT , .s-image1 , .s-image2, .s-image3, .s-image4, .s-image5, .s-image6, .s-image7, .s-image8").css("opacity", "0.4");
     }) 
   });
-
-  // const imageNum = /s-image./;
-
-  // $('.top-box__detail--left--sub-photo--s').on("mouseenter",".s-image2", function() {
-  //   hoverTime = setTimeout(imageSwitching, 700);
-  // }).mouseleave(function(){
-  //   clearTimeout(hoverTime);
-  // });
-// });
