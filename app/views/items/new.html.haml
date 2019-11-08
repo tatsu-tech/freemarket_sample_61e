@@ -27,41 +27,41 @@
       .sell-content__box.clearfix
         %h3.sell-content__box__subtitle
           商品の詳細
-        .form-box
-          .form-box__group
+        .sell-form-box
+          .sell-form-box__group
             = f.label '商品の状態', class: 'sell-form-title' 
             %span.must 必須
-          .form-box__mask
-            = f.select :status, Item.statuses.keys, {}, class: "form-box__mask__select"
-            = fa_icon "angle-down", class: "form-box__mask__icon"
+          .sell-form-box__mask
+            = f.select :status, Item.statuses.keys, {}, class: "sell-form-box__mask__select"
+            = fa_icon "angle-down", class: "sell-form-box__mask__icon"
       .sell-content__box.clearfix
         %h3.sell-content__box__subtitle
           配送について
-        .form-box
-          .form-box__group
+        .sell-form-box
+          .sell-form-box__group
             = f.label '配送料の負担', class: 'sell-form-title'
             %span.must 必須
-          .form-box__mask
-            = f.select :delivery_fee, Item.delivery_fees.keys, {}, class: "form-box__mask__select"
-            = fa_icon "angle-down", class: "form-box__mask__icon"
-          .form-box__group.mg-tp-40
+          .sell-form-box__mask
+            = f.select :delivery_fee, Item.delivery_fees.keys, {}, class: "sell-form-box__mask__select"
+            = fa_icon "angle-down", class: "sell-form-box__mask__icon"
+          .sell-form-box__group.mg-tp-40
             = f.label '配送の方法', class: 'sell-form-title'
             %span.must 必須
-          .form-box__mask
-            = f.select :delivery_type, Item.delivery_types.keys, {}, class: "form-box__mask__select"
-            = fa_icon "angle-down", class: "form-box__mask__icon"
-          .form-box__group.mg-tp-40
+          .sell-form-box__mask
+            = f.select :delivery_type, Item.delivery_types.keys, {}, class: "sell-form-box__mask__select"
+            = fa_icon "angle-down", class: "sell-form-box__mask__icon"
+          .sell-form-box__group.mg-tp-40
             = f.label '発送元の地域', class: 'sell-form-title'
             %span.must 必須
-          .form-box__mask
-            = f.select :delivery_origin, Item.delivery_origins.keys, {}, class: "form-box__mask__select"
-            = fa_icon "angle-down", class: "form-box__mask__icon"
-          .form-box__group.mg-tp-40
+          .sell-form-box__mask
+            = f.select :delivery_origin, Item.delivery_origins.keys, {}, class: "sell-form-box__mask__select"
+            = fa_icon "angle-down", class: "sell-form-box__mask__icon"
+          .sell-form-box__group.mg-tp-40
             = f.label '発送までの日数', class: 'sell-form-title'
             %span.must 必須
-          .form-box__mask
-            = f.select :schedule, Item.schedules.keys, {}, class: "form-box__mask__select"
-            = fa_icon "angle-down", class: "form-box__mask__icon"
+          .sell-form-box__mask
+            = f.select :schedule, Item.schedules.keys, {}, class: "sell-form-box__mask__select"
+            = fa_icon "angle-down", class: "sell-form-box__mask__icon"
       .sell-content__box.clearfix
         %h3.sell-content__box__subtitle
           販売価格(300〜9,999,999)
