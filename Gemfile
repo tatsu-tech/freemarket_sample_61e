@@ -77,8 +77,8 @@ gem "font-awesome-rails"
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+gem 'gretel'
 gem 'payjp'
-
 gem 'active_hash'
 gem "aws-sdk-s3", require: false
 
