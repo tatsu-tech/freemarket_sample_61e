@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :views
   devise_for :users
   root 'items#index'
+
   resources :items, only: [:index, :new, :create, :show]
   get 'users/mypage'
   get 'users/identification'
