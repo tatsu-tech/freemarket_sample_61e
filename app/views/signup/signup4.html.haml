@@ -1,4 +1,4 @@
-%body
+.signup-wrapper
   .signup1-container
     %header.signup1-container__header
       %h1
@@ -43,46 +43,44 @@
     %main.signup1-container__main
       %section.signup1-container__main__view
         %h2.signup1-container__main__view__info 支払い方法
-        %form.signup1-container__main__view__form{action: "https://www.mercari.com/jp/signup/sms_confirmation/", method: "POST", novalidate: "novalidate"}
-          %input{name: "__csrf_value", type: "hidden", value: "884276d5e923c555f3e7b899a72f46a1f33f8ac95cd40f136cb3883715831bff14b86c00f0fc0370b4da79c023d1342486e8c572427c6ba3a047416afd42d48a4"}
-
-          .signup1-container__main__view__form__box
+        
+        .signup1-container__main__view__form__box
+          = form_with url: pay_cards_path ,id: :charge_form, method: :post do |f|
             .signup1-container__main__view__form__box__input.form-group.form-nickname
-              %label{for: "name"} カード番号
+              = f.label :カード番号
               %span{class: "form-must"}必須
-              %input{type: "text", placeholder: "半角数字のみ", class: "input-default-1", name: "family_name_kanji"}
+              = f.text_field :card_number, type: 'text', class: "input-default-number", placeholder: "半角数字のみ", maxlength: "16"
+              -# %input{type: "text", placeholder: "半角数字のみ", class: "input-default-1", name: "family_name_kanji"}
               .card-logos
                 -# .card-logos__logo
                 -#   = render partial: 'shared/card-logo'
-
             .signup1-container__main__view__form__box__input__box.form-group
-              %label{for: "birthday"}生年月日
+              = f.label :有効期限
               %span{class: "form-must"}必須
-              .signup1-container__main__view__form__box__input__birthday
-                .signup1-container__main__view__form__box__input__birthday__year
+              .signup1-container__main__view__form__box__input__card
+                .signup1-container__main__view__form__box__input__card__month
                   = fa_icon "angle-down", class: "pull-down"
-                  %select{name:"year", class:"select-default"}
-                    %option
-                    %option
-                    %option    
-                %span{class: "date"} 年
-                .signup1-container__main__view__form__box__input__birthday__month
+                  = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} , type:"text", class:"select-default-month"
+                  %span 月
+                .signup1-container__main__view__form__box__input__card__month
                   = fa_icon "angle-down", class: "pull-down"
-                  %select{name:"month", class:"select-default"}
-                    %option
-                    %option
-                    %option
-                %span 月
+                  = f.select :exp_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} ,type:"text", class:"select-default-year"
+                  %span 年
               
               .signup1-container__main__view__form__box__input.form-group
-                %label{for: "name"} セキュリティコード
+                = f.label :セキュリティコード
                 %span{class: "form-must"}必須
-                %input{type: "text", placeholder: "カード背面4桁もしくは3桁の番号", class: "input-default-1", name: "family_name_kanji"}
+                = f.text_field :cvc, class:"input-default-cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4"
+                -# %input{type: "text", placeholder: "カード背面4桁もしくは3桁の番号", class: "input-default-1", name: "family_name_kanji"}
                 
-              %div.form-group.right.card
+              .form-group.right.card
                 %p カード背面の番号とは？
               
-              %button{type:"submit", class:"btn-default1"}次へ進む
+              .button-submit#card_token
+                = f.submit "登録する", class:"btn-default1"
+              -# %button{type:"submit", class:"btn-default1"}次へ進む
 
     %footer.signup1-footer
       = render partial: 'shared/bottombar'
+      -# %form.signup1-container__main__view__form{action: "https://www.mercari.com/jp/signup/sms_confirmation/", method: "POST", novalidate: "novalidate"}
+      -#     %input{name: "__csrf_value", type: "hidden", value: "884276d5e923c555f3e7b899a72f46a1f33f8ac95cd40f136cb3883715831bff14b86c00f0fc0370b4da79c023d1342486e8c572427c6ba3a047416afd42d48a4"}

@@ -1,4 +1,4 @@
-%body
+.signup-wrapper
   .signup1-container
     %header.signup1-container__header
       %h1
@@ -43,16 +43,16 @@
     %main.signup1-container__main.vh4
       %section.signup1-container__main__view
         %h2.signup1-container__main__view__info 会員登録完了
-        %form.signup1-container__main__view__form{action: "https://www.mercari.com/jp/signup/sms_confirmation/", method: "POST", novalidate: "novalidate"}
-          %input{name: "__csrf_value", type: "hidden", value: "884276d5e923c555f3e7b899a72f46a1f33f8ac95cd40f136cb3883715831bff14b86c00f0fc0370b4da79c023d1342486e8c572427c6ba3a047416afd42d48a4"}
+        
 
-          .signup1-container__main__view__form__box
-            .signup1-container__main__view__form__box__complete
-              ありがとうございます。
-            .signup1-container__main__view__form__box__complete
-              会員登録が完了しました。
+        .signup1-container__main__view__form__box
+          .signup1-container__main__view__form__box__complete
+            ありがとうございます。
+          .signup1-container__main__view__form__box__complete
+            会員登録が完了しました。
+          = link_to "次へすすむ", root_path, class:"btn-default1"
+          -# %button{type:"submit", class:"btn-default1"}次へ進む
 
-            %button{type:"submit", class:"btn-default1"}次へ進む
         .footer__head
           .footer__head__area
             .footer__head__area--left

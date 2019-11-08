@@ -46,6 +46,7 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -77,6 +78,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
 gem 'gretel'
+gem 'payjp'
+gem 'active_hash'
+gem "aws-sdk-s3", require: false
 
 group :production do
   gem 'unicorn', '5.4.1'
