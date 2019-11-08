@@ -1,0 +1,31 @@
+.breadcrumbs-space {
+  width: 100%;
+  // margin: 0 auto;
+  height: 49px;
+  padding: 16px 0;
+  border-top: 1px solid $border_gray;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.16);
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+
+  .breadcrumbs {
+    width: 1020px;
+    margin: 0 auto;
+
+    a{
+      display: inline;
+      text-decoration: none;
+      font-weight: 400;
+      color: $black;
+    }
+    a:hover {
+      text-decoration-line: underline;
+      opacity: 0.7;
+    }
+  }
+}
+
+.breadcrumbs-space::before {
+  box-shadow: none;
+}

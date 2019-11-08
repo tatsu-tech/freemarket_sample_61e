@@ -1,6 +1,8 @@
 .background
-  -# = render "shared/exhibit-btn"
-  -# = render "shared/header"
+  = render "shared/exhibit-btn"
+  = render "shared/header"
+  - breadcrumb :mypage
+  = render "shared/breadcrumbs"
 
   .mypage-wrapper
     .main-content
@@ -252,4 +254,4 @@
                 = fa_icon "angle-right"
 
 .background
-  -# = render "shared/footer"
+  = render "shared/footer"
