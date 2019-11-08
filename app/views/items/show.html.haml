@@ -1,0 +1,236 @@
+.background
+  = render "shared/header"
+
+.detail-background
+  .top-box
+    .top-box__top
+      .top-box__top--bar
+        NIKE AIR MAX THEA
+      .top-box__detail
+        .top-box__detail--left
+          .top-box__detail--left--main-photo
+            .top-box__detail--left--main-photo--list
+              = image_tag "https://static.mercdn.net/item/detail/orig/photos/m16351581231_1.jpg?1556620060", class: "m-imageT"
+              = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m16351581231_2.jpg?1556620060', class: "m-image1"
+              = image_tag "https://static.mercdn.net/item/detail/orig/photos/m16351581231_3.jpg?1556620060", class: "m-image2"
+              = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m16351581231_4.jpg?1556620060', class: "m-image3"
+              = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m16351581231_5.jpg?1556620060', class: "m-image4"
+              = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m16351581231_5.jpg?1556620060', class: "m-image5"
+              = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m16351581231_5.jpg?1556620060', class: "m-image6"
+              = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m16351581231_5.jpg?1556620060', class: "m-image7"
+              = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m16351581231_5.jpg?1556620060', class: "m-image8"
+              = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m16351581231_5.jpg?1556620060', class: "m-image9"
+          .top-box__detail--left--sub-photo
+            .top-box__detail--left--sub-photo--s
+              = image_tag "https://static.mercdn.net/item/detail/orig/photos/m16351581231_1.jpg?1556620060", class: "s-imageT"
+            .top-box__detail--left--sub-photo--s
+              = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m16351581231_2.jpg?1556620060', class: "s-image1"
+            .top-box__detail--left--sub-photo--s
+              = image_tag "https://static.mercdn.net/item/detail/orig/photos/m16351581231_3.jpg?1556620060", class: "s-image2"
+            .top-box__detail--left--sub-photo--s
+              = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m16351581231_4.jpg?1556620060', class: "s-image3"
+            .top-box__detail--left--sub-photo--s
+              = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m16351581231_5.jpg?1556620060', class: "s-image4"
+            .top-box__detail--left--sub-photo--s
+              = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m16351581231_5.jpg?1556620060', class: "s-image5"
+            .top-box__detail--left--sub-photo--s
+              = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m16351581231_5.jpg?1556620060', class: "s-image6"
+            .top-box__detail--left--sub-photo--s
+              = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m16351581231_5.jpg?1556620060', class: "s-image7"
+            .top-box__detail--left--sub-photo--s
+              = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m16351581231_5.jpg?1556620060', class: "s-image8"
+            .top-box__detail--left--sub-photo--s
+              = image_tag 'https://static.mercdn.net/item/detail/orig/photos/m16351581231_5.jpg?1556620060', class: "s-image9"
+        .top-box__detail--right
+          .top-box__detail--right--author
+            .top-box__detail--right--author--menu
+              出品者
+            .top-box__detail--right--author--name
+              .top-box__detail--right--author--name--link
+                = link_to "eri", ""
+                .top-box__detail--right--author--name--evaluation
+                  .top-box__detail--right--author--name--evaluation--mark
+                    %i.fas.fa-grin
+                    .top-box__detail--right--author--name--evaluation--mark--num
+                      2
+                  .top-box__detail--right--author--name--evaluation--mark
+                    %i.fas.fa-meh
+                    .top-box__detail--right--author--name--evaluation--mark--num
+                      1
+                  .top-box__detail--right--author--name--evaluation--mark
+                    %i.fas.fa-frown
+                    .top-box__detail--right--author--name--evaluation--mark--num
+                      10
+          .top-box__detail--right--category
+            .top-box__detail--right--category--menu
+              カテゴリー
+            .top-box__detail--right--category--link
+              .top-box__detail--right--category--link--l
+                = link_to "レディース", ""
+              .top-box__detail--right--category--link--m
+              = link_to "" do
+                %i.fas.fa-angle-right
+                靴
+              .top-box__detail--right--category--link--s
+              = link_to "" do
+                %i.fas.fa-angle-right
+                スニーカー
+          .top-box__detail--right--brand
+            .top-box__detail--right--brand--menu
+              ブランド
+            .top-box__detail--right--brand--link
+              = link_to "ナイキ", ""
+          .top-box__detail--right--size
+            .top-box__detail--right--size--menu
+              商品のサイズ
+            .top-box__detail--right--size--content
+              22.5cm
+          .top-box__detail--right--status
+            .top-box__detail--right--status--menu
+              商品の状態
+            .top-box__detail--right--status--content
+              未使用に近い
+          .top-box__detail--right--delivery-fee
+            .top-box__detail--right--delivery-fee--menu
+              配送料の負担
+            .top-box__detail--right--delivery-fee--content
+              送料込み(出品者負担)
+          .top-box__detail--right--delivery-way
+            .top-box__detail--right--delivery-way--menu
+              配送の方法
+            .top-box__detail--right--delivery-way--content
+              普通郵便(定形、定形外)
+          .top-box__detail--right--address
+            .top-box__detail--right--address--menu
+              配送元地域
+            .top-box__detail--right--address--link
+              = link_to "大阪府", ""
+          .top-box__detail--right--delivery-date
+            .top-box__detail--right--delivery-date--menu
+              発送日の目安
+            .top-box__detail--right--delivery-date--content
+              1~2日で発送
+      .top-box__price
+        .top-box__price--reft
+          ¥3,500
+        .top-box__price--right
+          .top-box__price--right.tax
+            (税込)
+          .top-box__price--right.fee
+            送料込み
+      = link_to "" do
+        .top-box__buy-btn
+          購入画面に進む
+    .top-box__middle
+      .top-box__middle--explanation
+        .top-box__middle--explanation--content
+          NIKE AIR MAX THEA
+          %br/
+          合わせやすい黒色です。
+          %br/
+          箱あり
+          %br/
+          正規の紐を変えて新品の白い紐です。
+          %br/
+          数回しか使用しておらず美品です。
+    .top-box__bottom
+      .top-box__bottom--left
+        %a.top-box__bottom--left--good
+          .top-box__bottom--left--good--icon
+            %i.far.fa-heart
+            いいね!
+          .top-box__bottom--left--good--content
+            12
+        = link_to "" do
+          .top-box__bottom--left--bad
+            %i.far.fa-flag
+            不適切な商品の報告
+      = link_to "" do
+        .top-box__bottom--right
+          %i.fas.fa-lock
+          あんしん・あんぜんへの取り組み
+  
+  .second-box
+    .second-box__head
+      = link_to "" do
+        .second-box__head--left
+          .second-box__head--left--photo
+            = image_tag '//static.mercdn.net/thumb/members/718985185.jpg?1509934805'
+          .second-box__head--left--author
+            出品者
+      .second-box__head--right
+        .second-box__head--right--callout
+          %i.fas.fa-caret-down
+        = link_to "" do
+          .second-box__head--right--name
+            りん
+        .second-box__head--right--coment
+          .second-box__head--right--coment--content
+            コメントありがとうございます
+            %br/
+            普段は23.5cmですがつま先が当たる感じと圧迫感が強く、違うタイプのナイキの24cmを買い直したところちょうど良かったです。
+          .second-box__head--right--coment--detail
+            .second-box__head--right--coment--detail--time
+              %i.far.fa-clock
+              171日前
+            = link_to "" do
+              .second-box__head--right--coment--detail--bad
+                %i.far.fa-flag
+
+    .second-box__foot
+      .second-box__foot--warning
+        相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      = form_for root_path, method: :post, html: { class: :search } do |f|
+        = f.text_area :text, class: "second-box__foot--text-field",name: "keyword", value: ""
+      = link_to "" do
+        .second-box__foot--submit-btn
+          コメントする
+  
+  .link-bar
+    = link_to "" do
+      .link-bar--left-link
+        .link-bar--left-link--icon
+          %i.fas.fa-angle-left
+        .link-bar--left-link--content
+          Loro Piana(ロロ・ピアーナ)生地 ネイビースーツ サイズ44
+    = link_to "" do
+      .link-bar--right-link
+        .link-bar--right-link--content
+          アウディ　サイドマーカーレンズ
+        .link-bar--right-link--icon
+          %i.fas.fa-angle-right
+
+  .third-box
+    .third-box__head
+    .third-box__foot
+      = link_to "" do
+        .third-box__foot--facebook
+          %i.fab.fa-facebook-square
+      .third-box__foot--twitter
+        = link_to "" do
+          .third-box__foot--twitter--box
+            %i.fab.fa-twitter
+      = link_to "" do
+        .third-box__foot--pinterest
+          %i.fab.fa-pinterest
+        
+
+  .forth-box
+    = link_to "" do
+      .forth-box__header
+        りんさんのその他の出品
+    .forth-box__body
+      = render "shared/other-user-items"
+
+  .bottom-box
+    = link_to "" do
+      .bottom-box__header
+        ナイキのスニーカー その他の商品
+    .bottom-box__body
+      = render "shared/same-brand-items"
+
+  .breadcrumb
+    .breadcrumb__body
+
+.background
+  = render "shared/footer"

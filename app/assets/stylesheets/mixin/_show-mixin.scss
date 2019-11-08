@@ -1,0 +1,27 @@
+@mixin top-box__detail--right--content() {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+@mixin top-box__detail--right--content--menu() {
+  width: 39%;
+  font-size: 14px;
+  padding: 8px;
+}
+
+@mixin top-box__detail--right--content--col() {
+  display: flex;
+  width: 61%;
+  background-color: $white;
+  padding: 8px;
+  border-left: 1px solid #f5f5f5;
+}
+
+@mixin third-box__foot--logo() {
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  line-height: 44px;
+  text-align: center;
+}
