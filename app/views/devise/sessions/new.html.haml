@@ -22,26 +22,28 @@
               %circle.cls-4{cx: "36.03", cy: "14.65",r: "9.56"}
               %path.cls-5{d: "M5.87,32.15,4,31.23V25.7c0-1.62.91-3.24,2.79-3.05a4.75,4.75,0,0,1,3.54,2.75,2.4,2.4,0,0,1,2.13-.6c1,.13,4.59,1.48,4.59,6.39V37.7l-2.05-1V30.58a3.25,3.25,0,0,0-2.57-3.44c-.61-.06-1.14.43-1.15,1.48s0,6.21,0,6.21L9.4,33.91V28.12c0-2.55-1.65-3.34-2.37-3.42-.41,0-1.16.21-1.16,1.52Z"}
 
-    %div.single-container__main.in
-      %div.login-zone
-        %div.login-zone__tonew
-          %p.login-zone__tonew--p アカウントをお持ちでない方はこちら
-          %a.login-zone__tonew--create 新規会員登録
-        %div.login-zone__sns
-          %btn.btn__login__fb 
-            = "Facebookでログイン"
-            = fa_icon "facebook-square", class: "sns-icon"
-          %btn.btn__login__google.rese
-            = "Googleでログイン"
-            = fa_icon "google", class: "sns-icon"
-        .login-zone__form
-          .login-zone__form__list
-          %input{type:"email", name: "email", placeholder:"メールアドレス", class: "input-default-1"}
-          .login-zone__form__list.login-form
-          %input{type:"password", name: "password", placeholder:"パスワード", class: "input-default-1"}
-          %button{type:"submit", class:"btn-default1 btn-login"}次へ進む
-          .login-zone__form__list.login-forget
-            %a パスワードをお忘れの方
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .single-container__main.in
+        %div.login-zone
+          %div.login-zone__tonew
+            %p.login-zone__tonew--p アカウントをお持ちでない方はこちら
+            = link_to "新規会員登録", signup_signup_index_path
+          %div.login-zone__sns
+            %btn.btn__login__fb 
+              = "Facebookでログイン"
+              = fa_icon "facebook-square", class: "sns-icon"
+            %btn.btn__login__google.rese
+              = "Googleでログイン"
+              = fa_icon "google", class: "sns-icon"
+          .login-zone__form
+            .login-zone__form__list
+            = f.text_field :email, class: "input-default-1", placeholder:"メールアドレス"
+            .login-zone__form__list.login-form
+            = f.password_field :password, class: "input-default-1", placeholder:"パスワード"
+            = f.submit "次へ進む",  class:"btn-default1 btn-login"
+              
+            .login-zone__form__list.login-forget
+              %a パスワードをお忘れの方
 
 
           -# = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|

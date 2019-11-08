@@ -3,11 +3,7 @@
   box-sizing: border-box;
 }
 
-li{
-  font-size: 12px;
-  list-style: none;
-  display: inline-block;
-}
+
 
 .mercari-logo{
   padding-top: 40px;
@@ -67,11 +63,23 @@ li{
 
 .rules{
   padding: 0;
+  &__1{
+    margin: 0 0 0 16px;
+    font-size: 12px;
+    list-style: none;
+    display: inline-block;
+  }
   &__2{
     margin: 0 0 0 16px;
+    font-size: 12px;
+    list-style: none;
+    display: inline-block;
   }
   &__3{
     margin: 0 0 0 16px;
+    font-size: 12px;
+    list-style: none;
+    display: inline-block;
   }
 }
 
