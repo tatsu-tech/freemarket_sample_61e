@@ -19,12 +19,43 @@ ActiveRecord::Schema.define(version: 2019_11_04_080321) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_cards_on_user_id"
+ActiveRecord::Schema.define(version: 2019_11_07_112424) do
+
+  create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "explanation", null: false
+    t.string "size"
+    t.integer "price", null: false
+    t.string "status", null: false
+    t.string "delivery_fee", null: false
+    t.string "delivery_origin", null: false
+    t.string "delivery_type", null: false
+    t.string "schedule", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "user_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -65,4 +96,8 @@ ActiveRecord::Schema.define(version: 2019_11_04_080321) do
 
   add_foreign_key "cards", "users"
   add_foreign_key "user_addresses", "users"
+
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "items", "users"
+
 end

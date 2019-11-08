@@ -6,8 +6,13 @@ class UsersController < ApplicationController
   def new
   end
 
-  def destroy
-    redirect_to root_path, notice: 'ログアウトしました'
+  def mypage
   end
-  
+
+  def identification
+  end
+
+  def logout
+  end
+ 
 end

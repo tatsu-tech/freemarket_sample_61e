@@ -1,0 +1,66 @@
+.single-box{
+  width: 100vw;
+  height: 100vh;
+  background-color: #f5f5f5;
+  &__header{
+    height: 128px;
+    text-align: center;
+  }
+  &__main{
+    padding:0 0 220px;
+    &--box{
+      margin: 0 auto;
+      width:700px;
+      background-color: white;
+      text-align: center;
+      &__registration{
+        font-size: 22px;
+        padding: 32px;
+        display: block;
+        font-weight: bold;
+      }
+    }
+  }
+  &__footer{
+    width: 456px;
+    height: 220px;
+    margin: 0 auto;
+    text-align: center;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 40px 0;
+    &__logo{
+      margin: 40px auto 0;
+    }
+    &__copyright{
+      font-size: 12px;
+      margin: 8px 0 0;
+    } 
+  }
+}
+
+.gide{
+  font-size: 12px;
+  list-style: none;
+  display:inline;
+  &__1 {
+    display:inline;
+  }
+  &__2{
+    margin: 0 0 0 16px;
+    display:inline;
+  }
+  &__3{
+    margin: 0 0 0 16px;
+    display:inline;
+  }
+}
+.single-box__footer__logo__svg{
+  width:85px;
+  height: 60px;
+  .cls-7{
+  width:65px;
+  height: 80px;
+  }
+}
