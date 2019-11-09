@@ -41,11 +41,16 @@
             .signup1-container__header__progress__lists__dot.before
 
     %main.signup1-container__main
-      = form_for @user, url: signup2_signup_index_path ,method: :get do |f|
-        %section.signup1-container__main__view
-          %h2.signup1-container__main__view__info 会員番号入力
-          
+      %section.signup1-container__main__view
+        %h2.signup1-container__main__view__info 会員情報入力
+        - if @user.errors.any?
+          - unless @user.valid?
+            - if errors = @user.errors.full_messages
+              %ul.signup-error-message
+                -errors.each do |error|
+                  %li 正しい値を入力してください
 
+        = form_for @user, url: signup2_signup_index_path ,method: :get do |f|
           .signup1-container__main__view__form__box
             .signup1-container__main__view__form__box__input.form-group.form-nickname
               %label{for: "name"} ニックネーム

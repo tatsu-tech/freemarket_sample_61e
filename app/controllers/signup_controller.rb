@@ -22,13 +22,13 @@ class SignupController < ApplicationController
     session[:name_family_kana] = user_params[:name_family_kana]
     session[:name_first_kana] = user_params[:name_first_kana]
     @user = User.new
-    @user_address = UserAddress.new
+    @user.user_address = UserAddress.new
   end
 
   def signup3 
     session[:mobile_phone_number] = user_params[:mobile_phone_number]
     @user = User.new
-    @user_address = UserAddress.new
+    @user.user_address = UserAddress.new
   end
 
   def signup4 
@@ -42,7 +42,7 @@ class SignupController < ApplicationController
     session[:town] = user_address_params[:town]
     # session[:apartment] = user_address_params[:apartment]
     session[:phone_number] = user_address_params[:phone_number]
-    @user_address = UserAddress.new
+    @user.user_address = UserAddress.new
 
     @user = User.new(
       nickname: session[:nickname],

@@ -44,7 +44,14 @@
       %section.signup1-container__main__view
         %h2.signup1-container__main__view__info 発送元・お届け先住所入力
         .signup1-container__main__view__form__box
-          = form_for @user_address, url: signup4_signup_index_path ,method: :get do |f|
+          - if @user.user_address.errors.any?
+            - unless @user.user_address.valid?
+              - if errors = @user.user_address.errors.full_messages
+                %ul.signup-error-message
+                  -errors.each do |error|
+                    %li 正しい値を入力してください
+
+          = form_for @user.user_address, url: signup4_signup_index_path ,method: :get do |f|
             .signup1-container__main__view__form__box__input.form-group.form-nickname
               %label{for: "name"} お名前
               %span{class: "form-must"}必須
