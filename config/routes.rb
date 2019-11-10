@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       get 'mypage/email_password'
       get 'mypage/identification'
       get 'mypage/sms_confirmation'
+      get 'users/logout'
     end
   end
 
