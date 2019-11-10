@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  # require 'aws-sdk'
+
   def index
   end
 
@@ -16,6 +18,8 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.with_attached_images.find(params[:id])
+    session[:item_id] = params[:id]
   end
 
   private
