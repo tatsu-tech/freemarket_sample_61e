@@ -6,7 +6,8 @@ class User < ApplicationRecord
         
   has_one  :user_address
   has_many :cards
-
+  has_many :items
+  has_many :likes
   validates :nickname,:email,:password,:password_confirmation,:name_family_kanji,:name_first_kanji,:name_family_kana,:name_first_kana,:mobile_phone_number,:birthday, presence: true
   validates :password,length: {minimum:7}
   validates :mobile_phone_number,uniqueness: true, length: {minimum:11}

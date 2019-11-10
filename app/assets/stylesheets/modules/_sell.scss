@@ -38,32 +38,32 @@
       margin-top: 3px;
       line-height: 1.5;
     }
-    &__box {
+    &__wrap{
       width: 620px;
       height: 162px;
       margin:16px auto 0;
-      border:1px dashed #ccc;
-      background:#f5f5f5;
-      &__inner-text {
-        word-wrap:break-word;
-        text-align:center;
-        line-height:11;
+      display:flex;
+      &__preview {
+        &__img {
+          width:119px;
+          height:162px;
+          background:#f5f5f5;
+          margin-right:5px;
+          object-fit: contain;
+        }
       }
-    }
-    &__Preview {
-      width: 123px;
-      height:158px;
-      text-align:center;
-      img {
-        width:123px;
-        height:116px;
-        object-fit: contain;
-      }
-      a {
-        line-height:30px;
-        text-decoration:underline;
+      &__box {
+        border:1px dashed #ccc;
+        margin-left:5px;
+        padding:30px 10px;
         cursor: pointer;
-      }
+        width:100%;
+        background:#f5f5f5;
+        &__inner-text {
+          word-wrap:break-word;
+          text-align:center;
+        }
+      } 
     }
   }
   &__box {
@@ -152,6 +152,11 @@
       top:19px;
     }
   }
+}
+.preview-reset{
+  margin-top:15px;
+  font-size:12px;
+  cursor: pointer;
 }
 .sell-submit-btn {
   background:$red;

@@ -147,9 +147,6 @@ has_many_attached :images
 |record_id|references|null: false, polymorphic: true, index: true, unique: true|
 |blob_id|references|foreign_key: true|
 
-### Association
-belongs_to :item
-
 ## comments table
 |Column|Type|Options|
 |------|----|-------|
