@@ -1,4 +1,4 @@
-%body
+.signup-wrapper
   .signup1-container
     %header.signup1-container__header
       %h1
@@ -43,53 +43,68 @@
     %main.signup1-container__main
       %section.signup1-container__main__view
         %h2.signup1-container__main__view__info 発送元・お届け先住所入力
-        %form.signup1-container__main__view__form{action: "https://www.mercari.com/jp/signup/sms_confirmation/", method: "POST", novalidate: "novalidate"}
-          %input{name: "__csrf_value", type: "hidden", value: "884276d5e923c555f3e7b899a72f46a1f33f8ac95cd40f136cb3883715831bff14b86c00f0fc0370b4da79c023d1342486e8c572427c6ba3a047416afd42d48a4"}
+        .signup1-container__main__view__form__box
+          - if @user.user_address.errors.any?
+            - unless @user.user_address.valid?
+              - if errors = @user.user_address.errors.full_messages
+                %ul.signup-error-message
+                  -errors.each do |error|
+                    %li 正しい値を入力してください
 
-          .signup1-container__main__view__form__box
+          = form_for @user.user_address, url: signup4_signup_index_path ,method: :get do |f|
             .signup1-container__main__view__form__box__input.form-group.form-nickname
               %label{for: "name"} お名前
               %span{class: "form-must"}必須
-              %input{type: "text", placeholder: "例）山田", class: "input-default-1", name: "family_name_kanji"}
-            .signup1-container__main__view__form__box__input.form-group.form-nickname
-              %input{type: "text", placeholder: "例）彩", class: "input-default-1", name: "first_name__kanji"}
+              = f.text_field :send_name_family_kanji, class: "input-default-1__half", placeholder:"例）山田"
+              = f.text_field :send_name_first_kanji, class: "input-default-1__half", placeholder:"例）彩"
+              -# %input{type: "text", placeholder: "例）山田", class: "input-default-1", name: "family_name_kanji"}
+            -# .signup1-container__main__view__form__box__input.form-group.form-nickname
+            -#   %input{type: "text", placeholder: "例）彩", class: "input-default-1", name: "first_name__kanji"}
 
             .signup1-container__main__view__form__box__input.form-group
               %label{for: "name"} お名前カナ
               %span{class: "form-must"}必須
-              %input{type: "text", placeholder: "例）ヤマダ", class: "input-default-1", name: "family_name_kana"}
-            .signup1-container__main__view__form__box__input.form-group.form-nickname
-              %input{type: "text", placeholder: "例）アヤ", class: "input-default-1", name: "first_name__kana"}
+              = f.text_field :send_name_family_kana, class: "input-default-1__half", placeholder:"例）ヤマダ"
+              = f.text_field :send_name_first_kana, class: "input-default-1__half", placeholder:"例）アヤ"
+              -# %input{type: "text", placeholder: "例）ヤマダ", class: "input-default-1", name: "family_name_kana"}
+            -# .signup1-container__main__view__form__box__input.form-group.form-nickname
+            -#   %input{type: "text", placeholder: "例）アヤ", class: "input-default-1", name: "first_name__kana"}
 
             .signup1-container__main__view__form__box__input.form-group
               %label{for: "name"} 郵便番号
               %span{class: "form-must"}必須
-              %input{type: "text", placeholder: "例）123-4567", class: "input-default-1", name: "postal code"}
+              = f.text_field :zip, class: "input-default-1",placeholder: "例）123-4567"
+              -# %input{type: "text", placeholder: "例）123-4567", class: "input-default-1", name: "zip"}
 
             .signup1-container__main__view__form__box__input.form-group.relative
               = fa_icon "angle-down", class: "pull-down long"
               %label{for: "name"} 都道府県
               %span{class: "form-must"}必須
-              %select{type: "text", placeholder: "選択してください", class: "select-default-long", name: "prefecture"}
-                %option
+              = f.text_field :prefecture, class: "select-default-long",placeholder: "入力してください"
+              -# %select{type: "text", placeholder: "選択してください", class: "select-default-long", name: "prefecture"}
+                -# %option
             .signup1-container__main__view__form__box__input.form-group.relative
               = fa_icon "angle-down", class: "pull-down long"
               %label{for: "name"} 市区町村
               %span{class: "form-must"}必須
-              %select{type: "text", placeholder: "選択してください", class: "select-default-long", name: "city"}
-                %option
+              = f.text_field :city, class: "select-default-long",placeholder: "入力してください"
+              -# %select{type: "text", placeholder: "選択してください", class: "select-default-long", name: "city"}
+              -#   %option
 
             .signup1-container__main__view__form__box__input.form-group
               %label{for: "name"} 番地
               %span{class: "form-must"} 任意
-              %input{type: "text", placeholder: "例）青山1-1-1", class: "input-default-1", name: "address"}
+              = f.text_field :town, class: "input-default",placeholder: "例）青山1-1-1"
+              -# %input{type: "text", placeholder: "例）青山1-1-1", class: "input-default-1", name: "town"}
 
             .signup1-container__main__view__form__box__input.form-group
               %label{for: "name"} 固定電話
               %span{class: "form-must"} 任意
-              %input{type: "text", placeholder: "固定電話の番号を入力", class: "input-default-1", name: "phone_number"}
+              = f.text_field :phone_number, class: "input-default",placeholder: "固定電話の番号を入力"
+              -# %input{type: "text", placeholder: "固定電話の番号を入力", class: "input-default-1", name: "phone_number"}
 
-            %button{type:"submit", class:"btn-default1"}次へ進む
+            = f.submit "次へ進む", class:"btn-default1"
+            -# %button{type:"submit", class:"btn-default1"}次へ進む
 
     %footer.signup1-footer
       = render partial: 'shared/bottombar'

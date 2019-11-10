@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :views
   devise_for :users
   root 'items#index'
   resources :items, only: [:index, :new, :create, :show]
+  
   resources :users do
     member do
       get 'mypage'
@@ -26,4 +28,25 @@ Rails.application.routes.draw do
       get 'mypage/sms_confirmation'
     end
   end
+
+  resources :signup do
+    collection do
+      get 'signup'
+      get 'signup1'
+      get 'signup2'
+      get 'signup3'
+      get 'signup4'
+      get 'done'
+    end
+  end
+
+  resources :cards, only: [:new, :show] do
+    collection do
+      post 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay'
+      post 'delete', to: 'cards#delete'
+    end
+  end
+  
 end
+

@@ -125,18 +125,27 @@ has_many :brands_groups
 ### Association
 belongs_to :user
 belongs_to :category
-has_many :images
 has_many :comments
 has_many :offers
+has_many_attached :images
 
-## images table
+## active_storage_blobs table
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null: false|
-|item_id|integer|null: false, foreign_key: true|
+|key|string|null: false, index: true, unique: true|
+|filename|string|null: false|
+|content_type|string|null: false|
+|metadata|text|--|
+|byte_size|bigint|null: false|
+|checksum|string|null: false|
 
-### Association
-belongs_to :item
+## active_storage_attachments table
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, index: true, unique: true|
+|record_type|string|null: false, index: true, unique: true|
+|record_id|references|null: false, polymorphic: true, index: true, unique: true|
+|blob_id|references|foreign_key: true|
 
 ## comments table
 |Column|Type|Options|
