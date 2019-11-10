@@ -16,10 +16,12 @@
             %br/
             購入時も安全な独自システムのアプリです
           .area__carousel__body--left--bottom
-            %a.area__carousel__body--left--bottom--app-store
-              = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg", class: "app-store-l"
-            %a.area__carousel__body--left--bottom--google-play
-              = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg", class: "google-play-l"
+            = link_to "" do
+              .area__carousel__body--left--bottom--app-store
+                = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg", class: "app-store-l"
+            = link_to "" do
+              .area__carousel__body--left--bottom--google-play
+                = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg", class: "google-play-l"
         .area__carousel__body--right
           = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/top-banner-main-device-1f627e51e488f6ca35feaa6a08b79736.png", class: "phone-img-l"
         .area__carousel__body--page-icon
@@ -29,23 +31,28 @@
         .area__popular-category__head--title
           人気のカテゴリー
         .area__popular-category__head--nav
-          %a.area__popular-category__head--nav--link-btn
-            レディース
-          %a.area__popular-category__head--nav--link-btn
-            メンズ
-          %a.area__popular-category__head--nav--link-btn
-            家電・スマホ・カメラ
-          %a.area__popular-category__head--nav--link-btn
-            おもちゃ・ホビー・グッズ
-
+          = link_to "" do
+            .area__popular-category__head--nav--link-btn
+              レディース
+          = link_to "" do
+            .area__popular-category__head--nav--link-btn
+              メンズ
+          = link_to "" do
+            .area__popular-category__head--nav--link-btn
+              家電・スマホ・カメラ
+          = link_to "" do
+            .area__popular-category__head--nav--link-btn
+              おもちゃ・ホビー・グッズ
+  
       .area__popular-category__body
         .area__popular-category__body__list
           .area__popular-category__body__list--top
             .area__popular-category__body__list--top--left
               メンズ新着アイテム
-            %a.area__popular-category__body__list--top--right
-              もっと見る
-              %i.fa.fa-chevron-right{"aria-hidden": "true"}
+            = link_to "" do
+              .area__popular-category__body__list--top--right
+                もっと見る
+                %i.fa.fa-chevron-right{"aria-hidden": "true"}
           .area__popular-category__body__list--bottom
             = render "item"
 
@@ -54,23 +61,28 @@
         .area__popular-brand__head--title
           人気のブランド
         .area__popular-brand__head--nav
-          %a.area__popular-brand__head--nav--link-btn
-            シャネル
-          %a.area__popular-brand__head--nav--link-btn
-            ルイヴィトン
-          %a.area__popular-brand__head--nav--link-btn
-            シュプリーム
-          %a.area__popular-brand__head--nav--link-btn
-            ナイキ
+          = link_to "" do
+            .area__popular-brand__head--nav--link-btn
+              シャネル
+          = link_to "" do
+            .area__popular-brand__head--nav--link-btn
+              ルイヴィトン
+          = link_to "" do
+            .area__popular-brand__head--nav--link-btn
+              シュプリーム
+          = link_to "" do
+            .area__popular-brand__head--nav--link-btn
+              ナイキ
 
       .area__popular-brand__body
         .area__popular-brand__body__list
           .area__popular-brand__body__list--top
             .area__popular-brand__body__list--top--left
               ナイキ新着アイテム
-            %a.area__popular-brand__body__list--top--right
-              もっと見る
-              %i.fa.fa-chevron-right{"aria-hidden": "true"}
+            = link_to "" do
+              .area__popular-brand__body__list--top--right
+                もっと見る
+                %i.fa.fa-chevron-right{"aria-hidden": "true"}
           .area__popular-brand__body__list--bottom
             = render "item"
 

@@ -1,7 +1,7 @@
 .header
   .header__body
     .header__body__head
-      %a.header__body__head--left
+      = link_to "", class: "header__body__head--left" do
         = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", class: 'mercari-logo-l'
       .header__body__head--right
         = form_for root_path, method: :get, html: { class: :search } do |f|
@@ -9,67 +9,171 @@
           %i.fa.fa-search{"aria-hidden": "true"}
     .header__body__foot
       .header__body__foot--left
-        %a.header__body__foot--left--category
-          %i.fa.fa-list-ul{"aria-hidden": "true"}
-          カテゴリーから探す
-          .header__body__foot--left--category--l
-            %li レディース
-            %li メンズ
-            %li ベビー・キッズ
-            %li インテリア・住まい・小物
-            %li 本・音楽・ゲーム
-            %li おもちゃ・ホビー・グッズ
-            %li コスメ・香水・美容
-            %li 家電・スマホ・カメラ
-            %li スポーツ・レジャー
-            %li ハンドメイド
-            %li チケット
-            %li 自動車・オートバイ
-            %li その他
-            %li カテゴリー一覧
-            .header__body__foot--left--category--l--m
-              %li トップス
-              %li ジャケット/アウター
-              %li パンツ
-              %li スカート
-              %li ワンピース
-              %li 靴
-              %li ルームウェア/パジャマ
-              %li レッグウェア
-              %li 帽子
-              %li バッグ
-              %li アクセサリー
-              %li ヘアアクセサリー
-              %li 小物
-              %li 時計
-              .header__body__foot--left--category--l--m--s
-                %li Tシャツ/カットソー(半袖/袖なし)
-                %li Tシャツ/カットソー(七分/長袖)
-                %li シャツ/ブラウス(半袖/袖なし)
-                %li シャツ/ブラウス(七分/長袖)
-                %li ポロシャツ
-                %li キャミソール
-                %li タンクトップ
-                %li ホルターネック
-                %li ニット/セーター
-                %li チュニック
-                %li カーディガン/ボレロ
-                %li アンサンブル
-                %li ベスト/ジレ
-                %li パーカー
-        %a.header__body__foot--left--brand
-          %svg.tag-img{"aria-hidden": "true", viewbox: "0 0 23 16"}
-            %path{d: "M6.315 0L4.473 1.806 2.833.019.73 1.977l1.69 1.84L1.198 5.02c-1.594 1.594-1.594 4.188-.01 5.772L6.3 16h13.272a3.08 3.08 0 0 0 3.077-3.077V3.076A3.08 3.08 0 0 0 19.57 0H6.315zm13.46 12.925a.211.211 0 0 1-.205.205H7.504L3.227 8.771a1.226 1.226 0 0 1-.01-1.71L4.38 5.92l1.28 1.371a2.68 2.68 0 1 0 2.13-1.93L6.433 3.907 7.49 2.87h12.082a.211.211 0 0 1 .206.205v9.848h-.002z", fill: "currentColor", "fill-rule": "nonzero"}
-          ブランドから探す
-          .header__body__foot--left--brand--l
-            %li シャネル
-            %li ナイキ
-            %li ルイ ヴィトン
-            %li シュプリーム
-            %li アディダス
-            %li ブランド一覧
+        = link_to "" do
+          .header__body__foot--left--category
+            %i.fa.fa-list-ul{"aria-hidden": "true"}
+            カテゴリーから探す
+            .header__body__foot--left--category--l
+              %li レディース
+              %li メンズ
+              %li ベビー・キッズ
+              %li インテリア・住まい・小物
+              %li 本・音楽・ゲーム
+              %li おもちゃ・ホビー・グッズ
+              %li コスメ・香水・美容
+              %li 家電・スマホ・カメラ
+              %li スポーツ・レジャー
+              %li ハンドメイド
+              %li チケット
+              %li 自動車・オートバイ
+              %li その他
+              %li カテゴリー一覧
+              .header__body__foot--left--category--l--m
+                %li トップス
+                %li ジャケット/アウター
+                %li パンツ
+                %li スカート
+                %li ワンピース
+                %li 靴
+                %li ルームウェア/パジャマ
+                %li レッグウェア
+                %li 帽子
+                %li バッグ
+                %li アクセサリー
+                %li ヘアアクセサリー
+                %li 小物
+                %li 時計
+                .header__body__foot--left--category--l--m--s
+                  %li Tシャツ/カットソー(半袖/袖なし)
+                  %li Tシャツ/カットソー(七分/長袖)
+                  %li シャツ/ブラウス(半袖/袖なし)
+                  %li シャツ/ブラウス(七分/長袖)
+                  %li ポロシャツ
+                  %li キャミソール
+                  %li タンクトップ
+                  %li ホルターネック
+                  %li ニット/セーター
+                  %li チュニック
+                  %li カーディガン/ボレロ
+                  %li アンサンブル
+                  %li ベスト/ジレ
+                  %li パーカー
+        = link_to "" do
+          .header__body__foot--left--brand
+            %svg.tag-img{"aria-hidden": "true", viewbox: "0 0 23 16"}
+              %path{d: "M6.315 0L4.473 1.806 2.833.019.73 1.977l1.69 1.84L1.198 5.02c-1.594 1.594-1.594 4.188-.01 5.772L6.3 16h13.272a3.08 3.08 0 0 0 3.077-3.077V3.076A3.08 3.08 0 0 0 19.57 0H6.315zm13.46 12.925a.211.211 0 0 1-.205.205H7.504L3.227 8.771a1.226 1.226 0 0 1-.01-1.71L4.38 5.92l1.28 1.371a2.68 2.68 0 1 0 2.13-1.93L6.433 3.907 7.49 2.87h12.082a.211.211 0 0 1 .206.205v9.848h-.002z", fill: "currentColor", "fill-rule": "nonzero"}
+            ブランドから探す
+            .header__body__foot--left--brand--l
+              %li シャネル
+              %li ナイキ
+              %li ルイ ヴィトン
+              %li シュプリーム
+              %li アディダス
+              %li ブランド一覧
       .header__body__foot--right
-        %a.header__body__foot--right--signup
-          新規会員登録
-        %a.header__body__foot--right--login
-          ログイン
+        - if user_signed_in?
+          = link_to "" do
+            .header__body__foot--right--good
+              %i.far.fa-heart
+              いいね！一覧
+          = link_to "" do
+            .header__body__foot--right--notice
+              %i.far.fa-bell
+              .header__body__foot--right--notice--text
+                お知らせ
+              .header__body__foot--right--notice--num
+                4
+              = link_to "" do
+                .header__body__foot--right--notice--dropdwn
+                  = render "items/notice-dropdwn"
+          = link_to "" do
+            .header__body__foot--right--todo
+              %i.fas.fa-check
+              やることリスト
+              .header__body__foot--right--todo--dropdwn
+                .header__body__foot--right--todo--dropdwn--list
+                  現在、やることリストはありません
+          = link_to "" do
+            .header__body__foot--right--mypage
+              = image_tag  "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "mypage-icon-s"
+              .header__body__foot--right--mypage--text
+                マイページ
+              %a
+                .header__body__foot--right--mypage--dropdwn
+                  .header__body__foot--right--mypage--dropdwn--back
+                    .header__body__foot--right--mypage--dropdwn--back--icon
+                      = image_tag  "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "mypage-icon-l"
+                  .header__body__foot--right--mypage--dropdwn--name
+                    tatsu
+                  .header__body__foot--right--mypage--dropdwn--count
+                    = link_to "" do
+                      .header__body__foot--right--mypage--dropdwn--count--evaluation
+                        評価:
+                        0
+                    = link_to "" do
+                      .header__body__foot--right--mypage--dropdwn--count--exhibit
+                        出品数:
+                        0
+                  .header__body__foot--right--mypage--dropdwn--money
+                    = link_to "" do
+                      .header__body__foot--right--mypage--dropdwn--money--sales
+                        .header__body__foot--right--mypage--dropdwn--money--sales--left
+                          売上金
+                        .header__body__foot--right--mypage--dropdwn--money--sales--right
+                          ¥
+                          0
+                          .header__body__foot--right--mypage--dropdwn--money--sales--right--icon
+                            %i.fas.fa-chevron-right
+                    = link_to "" do
+                      .header__body__foot--right--mypage--dropdwn--money--point
+                        .header__body__foot--right--mypage--dropdwn--money--point--left
+                          ポイント
+                        .header__body__foot--right--mypage--dropdwn--money--point--right
+                          P
+                          0
+                          .header__body__foot--right--mypage--dropdwn--money--point--right--icon
+                            %i.fas.fa-chevron-right
+                  .header__body__foot--right--mypage--dropdwn--menu
+                    = link_to "" do
+                      .header__body__foot--right--mypage--dropdwn--menu--list
+                        .header__body__foot--right--mypage--dropdwn--menu--list--text
+                          いいね！一覧
+                        .header__body__foot--right--mypage--dropdwn--menu--list--icon
+                          %i.fas.fa-chevron-right
+                    = link_to "" do
+                      .header__body__foot--right--mypage--dropdwn--menu--list
+                        .header__body__foot--right--mypage--dropdwn--menu--list--text
+                          出品した商品-出品中
+                        .header__body__foot--right--mypage--dropdwn--menu--list--icon
+                          %i.fas.fa-chevron-right
+                    = link_to "" do
+                      .header__body__foot--right--mypage--dropdwn--menu--list
+                        .header__body__foot--right--mypage--dropdwn--menu--list--text
+                          出品した商品-取引中
+                        .header__body__foot--right--mypage--dropdwn--menu--list--icon
+                          %i.fas.fa-chevron-right
+                    = link_to "" do
+                      .header__body__foot--right--mypage--dropdwn--menu--list
+                        .header__body__foot--right--mypage--dropdwn--menu--list--text
+                          出品した商品-売却済み
+                        .header__body__foot--right--mypage--dropdwn--menu--list--icon
+                          %i.fas.fa-chevron-right
+                    = link_to "" do
+                      .header__body__foot--right--mypage--dropdwn--menu--list
+                        .header__body__foot--right--mypage--dropdwn--menu--list--text
+                          購入した商品-取引中
+                        .header__body__foot--right--mypage--dropdwn--menu--list--icon
+                          %i.fas.fa-chevron-right
+                    = link_to "" do
+                      .header__body__foot--right--mypage--dropdwn--menu--list
+                        .header__body__foot--right--mypage--dropdwn--menu--list--text
+                          購入した商品-過去の取引
+                        .header__body__foot--right--mypage--dropdwn--menu--list--icon
+                          %i.fas.fa-chevron-right
+        - else
+          = link_to "new_user_registration_path" do
+            .header__body__foot--right--signup
+              新規会員登録
+          = link_to "new_user_session_path" do
+            .header__body__foot--right--login
+              ログイン
