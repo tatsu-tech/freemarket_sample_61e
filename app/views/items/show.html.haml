@@ -8,22 +8,22 @@
         = @item.name
       .top-box__detail
         .top-box__detail--left
-          .top-box__detail--left--main-photo
-            %ul.top-box__detail--left--main-photo--list
-              - @item.images.each_with_index do |image, i|
-                %li.top-box__detail--left--main-photo--list
-                  = image_tag @item.images[i].variant(resize:'300x300',auto_orient: true).processed
-            %ul.top-box__detail--left--sub-photo
-              - @item.images.each_with_index do |image, i|
-                %li.top-box__detail--left--sub-photo--s
-                  = image_tag @item.images[i].variant(resize:'60x60',auto_orient: true).processed
+          %ul.top-box__detail--left--main-photo
+            - @item.images.each_with_index do |image, i|
+              %li.top-box__detail--left--main-photo--list
+                = image_tag @item.images[i].variant(resize:'500x500',auto_orient: true).processed
+          %ul.top-box__detail--left--sub-photo
+            - @item.images.each_with_index do |image, i|
+              %li.top-box__detail--left--sub-photo--s
+                = image_tag @item.images[i].variant(resize:'500x500',auto_orient: true).processed
         .top-box__detail--right
           .top-box__detail--right--author
             .top-box__detail--right--author--menu
               出品者
             .top-box__detail--right--author--name
               .top-box__detail--right--author--name--link
-                = @item.user.nickname
+                = link_to "" do
+                  = @item.user.nickname
                 .top-box__detail--right--author--name--evaluation
                   .top-box__detail--right--author--name--evaluation--mark
                     %i.fas.fa-grin
@@ -80,7 +80,8 @@
             .top-box__detail--right--address--menu
               配送元地域
             .top-box__detail--right--address--link
-              = @item.delivery_origin
+              = link_to "" do
+                = @item.delivery_origin
           .top-box__detail--right--delivery-date
             .top-box__detail--right--delivery-date--menu
               発送日の目安
