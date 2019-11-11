@@ -31,80 +31,18 @@
           .top-box__detail--left--main-photo {
             height: 300px;
             width: 3000px;
-            overflow: hidden;
-
+            position: relative;
             
             .top-box__detail--left--main-photo--list {
               height: 300px;
               width: 300px;
-              display: flex;
-              position: relative;
+              position: absolute;
               
               img {
                 height: auto;
                 width: 100%;
                 position: absolute;
                 margin: auto;
-              }
-              .m-imageT {
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-              }
-              .m-image1 {
-                top: 0;
-                left: 300px;
-                right: 2700px;
-                bottom: 0;
-              }
-              .m-image2 {
-                top: 0;
-                left: 600px;
-                right: 2400px;
-                bottom: 0;
-              }
-              .m-image3 {
-                top: 0;
-                left: 900px;
-                right: 2100px;
-                bottom: 0;
-              }
-              .m-image4 {
-                top: 0;
-                left: 1200px;
-                right: 1800px;
-                bottom: 0;
-              }
-              .m-image5 {
-                top: 0;
-                left: 1500px;
-                right: 1500px;
-                bottom: 0;
-              }
-              .m-image6 {
-                top: 0;
-                left: 1800px;
-                right: 1200px;
-                bottom: 0;
-              }
-              .m-image7 {
-                top: 0;
-                left: 2100px;
-                right: 900px;
-                bottom: 0;
-              }
-              .m-image8 {
-                top: 0;
-                left: 2400px;
-                right: 600px;
-                bottom: 0;
-              }
-              .m-image9 {
-                top: 0;
-                left: 2700px;
-                right: 300px;
-                bottom: 0;
               }
             }
           }
@@ -117,18 +55,11 @@
             .top-box__detail--left--sub-photo--s {
               height: 60px;
               width: 60px;
-              overflow: hidden;
+              cursor: pointer;
 
               img {
                 height: auto;
                 width: 100%;
-                cursor: pointer;
-              }
-              .s-imageT {
-                opacity: 1;
-              }
-              .s-image1 , .s-image2 , .s-image3, .s-image4, .s-image5, .s-image6, .s-image7, .s-image8, .s-image9 {
-                opacity: 0.4;
               }
             }
           }
