@@ -1,0 +1,77 @@
+.background
+  = render "shared/header"
+
+.detail-background
+  .top-box
+    .top-box__top
+      .top-box__top--bar
+        = @myitem.name
+      .top-box__detail
+        .top-box__detail--left.posi-rela
+          .top-box__detail--left--main-photo
+            %ul.top-box__detail--left--main-photo--list
+              - @myitem.images.each_with_index do |image, i|
+                %li.top-box__detail--left--main-photo--list
+                  = image_tag @myitem.images[i].variant(resize:'300x300',auto_orient: true).processed
+            %ul.top-box__detail--left--sub-photo
+              - @myitem.images.each_with_index do |image, i|
+                %li.top-box__detail--left--sub-photo--s
+                  = image_tag @myitem.images[i].variant(resize:'60x60',auto_orient: true).processed
+        .top-box__detail--right
+          .top-box__detail--right--author
+            .top-box__detail--right--author--menu
+              出品者
+            .top-box__detail--right--author--name
+              .top-box__detail--right--author--name--link
+                = @myitem.user.nickname
+          .top-box__detail--right--status
+            .top-box__detail--right--status--menu
+              商品の状態
+            .top-box__detail--right--status--content
+              = @myitem.status
+          .top-box__detail--right--delivery-fee
+            .top-box__detail--right--delivery-fee--menu
+              配送料の負担
+            .top-box__detail--right--delivery-fee--content
+              = @myitem.delivery_fee
+          .top-box__detail--right--delivery-way
+            .top-box__detail--right--delivery-way--menu
+              配送の方法
+            .top-box__detail--right--delivery-way--content
+              = @myitem.delivery_type
+          .top-box__detail--right--address
+            .top-box__detail--right--address--menu
+              配送元地域
+            .top-box__detail--right--address--link
+              = @myitem.delivery_origin
+          .top-box__detail--right--delivery-date
+            .top-box__detail--right--delivery-date--menu
+              発送日の目安
+            .top-box__detail--right--delivery-date--content
+              = @myitem.schedule
+      .top-box__price
+        .top-box__price--reft
+          ¥
+          = @myitem.price.to_s(:delimited)
+        .top-box__price--right
+          .top-box__price--right.tax
+            (税込)
+          .top-box__price--right.fee
+            送料込み
+    .myitem-explanation
+      .myitem-explanation__content
+        = @myitem.explanation
+.myitem-wrraper
+  .myitem-edit-box
+    = link_to "" do
+      .myitem-edit-box__change-btn
+        商品の編集
+      %p or
+    = link_to "" do
+      .myitem-edit-box__change-btn
+        商品を再開する
+    .myitem-edit-box__delete-btn
+      = link_to 'この商品を削除する', myitem_path, method: :delete
+
+.background
+  = render "shared/footer"

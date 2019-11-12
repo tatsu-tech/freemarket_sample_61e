@@ -1,0 +1,71 @@
+.myitem-explanation {
+  background-color: $white;
+  font-size: 18px;
+  line-height: 1.5;
+  &__content {
+    padding:0 40px 40px;
+    word-break: break-all;
+  }
+}
+
+.myitem-wrraper {
+  padding:8px 0px 50px;
+  background-color: rgb(245, 245, 245);
+  .myitem-edit-box {
+    background-color: $white;
+    width: 700px;
+    margin: 0 auto;
+    padding: 8px 16px;
+    text-align: center;
+    &__change-btn {
+      width: 100%;
+      margin:16px 0;
+      font-size:14px;
+      line-height: 48px;
+      color: #fff;
+      background-color: $red;
+      transition: all  .3s ease-out;
+    }
+    &__change-btn:hover {
+      opacity: 0.7;
+    }
+    &__delete-btn {
+      width: 100%;
+      margin:16px 0;
+      font-size:14px;
+      line-height: 48px;
+      color: #fff;
+      background-color: #aaa;
+      transition: all  .3s ease-out;
+    }
+    &__delete-btn:hover {
+      opacity: 0.7;
+    }
+    a {
+      text-decoration: none;
+      color: $white;
+    }
+    p {
+      color:#333333
+    }
+  }
+}
+.item-situation-icon {
+  position: absolute;
+  top:0;
+  left:0;
+  z-index:1;
+  border-top: 120px solid #888;
+  border-right: 120px solid transparent;
+  &__stop {
+    z-index:2;
+    position: absolute;
+    top:34px;
+    left:-5px;
+    font-size:18px;
+    color:#fff;
+    transform:rotate(-45deg);
+    letter-spacing: 2px;
+    font-weight:600px;
+  }
+}
