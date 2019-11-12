@@ -1,0 +1,43 @@
+.notification {
+  position: fixed;
+  top:0;
+  z-index: 1010;
+  .notice {
+    width:100vw;
+    background-color: $blue;
+    color: $white;
+    text-align: center;
+    line-height:30px;
+  }
+  .alert {
+    background-color: $red;
+    color: $white;
+    text-align: center;
+    line-height:30px;
+  }
+}
+#hideMe {
+  -moz-animation: cssAnimation .7s ease 3s both;
+  /* Firefox */
+  -webkit-animation: cssAnimation .7s ease 3s both;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation .7s ease 3s both;
+  /* Opera */
+  animation: cssAnimation .7s ease 3s both;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@keyframes cssAnimation {
+  to {
+      width:0;
+      height:0;
+      overflow:hidden;
+  }
+}
+@-webkit-keyframes cssAnimation {
+  to {
+      width:0;
+      height:0;
+      visibility:hidden;
+  }
+}

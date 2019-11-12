@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
   resources :items, only: [:index, :new, :create, :show]
-  
+  resources :myitems, only: [:index, :show, :edit, :update, :destroy]
+
   resources :users do
     member do
       get 'mypage'
@@ -26,6 +27,7 @@ Rails.application.routes.draw do
       get 'mypage/email_password'
       get 'mypage/identification'
       get 'mypage/sms_confirmation'
+      get 'mypage/itemdelete'
     end
   end
 
