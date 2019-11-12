@@ -44,12 +44,21 @@
       margin:16px auto 0;
       display:flex;
       &__preview {
-        &__img {
+        &__box{
           width:119px;
           height:162px;
-          background:#f5f5f5;
           margin-right:5px;
+          background:#f5f5f5;
+          text-align:center;
+        }
+        &__img {
+          width:119px;
+          height:120px;
           object-fit: contain;
+        }
+        &__delete-btn {
+          font-size:12px;
+          cursor: pointer;
         }
       }
       &__box {

@@ -63,15 +63,14 @@
         = @myitem.explanation
 .myitem-wrraper
   .myitem-edit-box
-    = link_to "" do
-      .myitem-edit-box__change-btn
-        商品の編集
-      %p or
+    = link_to edit_item_path(@myitem), class: "myitem-edit-box__change-btn" do
+      商品の編集
+    %p or
     = link_to "" do
       .myitem-edit-box__change-btn
         商品を再開する
-    .myitem-edit-box__delete-btn
-      = link_to 'この商品を削除する', myitem_path, method: :delete
+    = link_to  myitem_path, method: :delete, class: "myitem-edit-box__delete-btn" do
+      この商品を削除する
 
 .background
   = render "shared/footer"
