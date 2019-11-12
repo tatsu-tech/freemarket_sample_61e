@@ -11,9 +11,9 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(create_params)
     if @item.save
-      redirect_to item_path(@item)
+      redirect_to myitem_path(@item), notice: '商品の出品に成功しました'
     else
-      render 'items/new'
+      render 'items/new', notice: '出品に失敗しました。必要事項を入力してください。'
     end
   end
 

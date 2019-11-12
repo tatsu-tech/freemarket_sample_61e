@@ -37,6 +37,7 @@
                     %i.fas.fa-frown
                     .top-box__detail--right--author--name--evaluation--mark--num
                       10
+
           .top-box__detail--right--category
             .top-box__detail--right--category--menu
               カテゴリー
@@ -61,6 +62,7 @@
               商品のサイズ
             .top-box__detail--right--size--content
               22.5cm
+
           .top-box__detail--right--status
             .top-box__detail--right--status--menu
               商品の状態
@@ -90,7 +92,7 @@
       .top-box__price
         .top-box__price--reft
           ¥
-          = @item.price
+          = @item.price.to_s(:delimited)
         .top-box__price--right
           .top-box__price--right.tax
             (税込)
