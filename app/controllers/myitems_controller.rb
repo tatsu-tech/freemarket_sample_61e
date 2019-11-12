@@ -1,7 +1,6 @@
 class MyitemsController < ApplicationController
   before_action :check_user_id, only: [:index, :show, :edit, :update, :destroy]
-  before_action :set_item
-  
+  before_action :set_item, only: [:show, :edit, :destroy]
   def index
   end
 

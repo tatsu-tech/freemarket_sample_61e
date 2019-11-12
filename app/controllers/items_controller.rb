@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  # require 'aws-sdk'
+  before_action :set_item, only: [:edit, :update]
 
   def index
     @items = Item.all
@@ -24,7 +24,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
     # 販売手数料の初期値
     @sales_fee = (@item.price.to_i*0.1).round
     # 販売利益の初期値
@@ -32,7 +31,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(create_params) # updateが成功した場合
         params[:delete_images].split(",").each do |id|
           ActiveStorage::Attachment.find(id).delete
@@ -47,5 +45,9 @@ class ItemsController < ApplicationController
 
   def create_params
     params.require(:item).permit(:name, :explanation, :size, :price, :status, :delivery_fee, :delivery_origin, :delivery_type, :schedule, :category_id, :brand_id, :user_id, images:[]).merge(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 end
