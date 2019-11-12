@@ -42,7 +42,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cards, only: [:new, :show] do
+  resources :cards, only: [:new, :show, :edit] do
     collection do
       post 'show', to: 'cards#show'
       post 'pay', to: 'cards#pay'

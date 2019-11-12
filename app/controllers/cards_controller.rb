@@ -3,7 +3,6 @@ class CardsController < ApplicationController
 
   def new
     card = Card.where(user_id: current_user.id)
-    redirect_to if card.exists?
   end
 
   def pay
@@ -49,4 +48,7 @@ class CardsController < ApplicationController
     end
   end
 
+  def edit
+  end
+  
 end
