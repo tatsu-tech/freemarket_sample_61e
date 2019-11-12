@@ -4,16 +4,16 @@ class MyitemsController < ApplicationController
   end
 
   def show
-    @myitem = Item.find_by(id: params[:id])
+    @myitem = Item.find(params[:id])
   end
 
   def edit
-    @myitem = Item.find(id: params[:id])
+    @myitem = Item.find(params[:id])
 
   end
 
   def destroy
-    @myitem = Item.find_by(id: params[:id])
+    @myitem = Item.find(params[:id])
     @myitem.destroy
     redirect_to mypage_user_path, notice: '出品した商品を削除しました'
   end
