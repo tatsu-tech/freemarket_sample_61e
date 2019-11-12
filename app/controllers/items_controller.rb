@@ -32,7 +32,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    # binding.pry
     @item = Item.find(params[:id])
     if @item.update(create_params) # updateが成功した場合
         params[:delete_images].split(",").each do |id|

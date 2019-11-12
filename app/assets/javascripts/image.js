@@ -38,7 +38,7 @@ $(document).on('turbolinks:load', function() {
       var files = e.target.files;
       e.preventDefault();
       var count_images = $('.sell-content__upload__wrap__preview__img').length; // 初期で表示されている画像の枚数をカウント
-      if (count_images == 5){//写真が10枚の時はファイルフィールドを隠す
+      if (count_images == 5){//写真が5枚の時はファイルフィールドを隠す
         $('.image-input-field').hide();
       } 
       if (count_images+files.length > 5) {
