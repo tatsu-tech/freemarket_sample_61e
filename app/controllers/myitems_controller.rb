@@ -9,7 +9,7 @@ class MyitemsController < ApplicationController
 
   def edit
     @myitem = Item.find(id: params[:id])
-    
+
   end
 
   def destroy
@@ -21,7 +21,7 @@ class MyitemsController < ApplicationController
   private
 
   def check_user_id
-    myitem = Item.find_by(id: params[:id])
+    myitem = Item.find(params[:id])
     redirect_to root_path unless current_user&.id
   end
 
