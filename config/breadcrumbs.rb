@@ -22,6 +22,11 @@ crumb :logout do
   parent :root
 end
 
+# crumb :card do
+#   link "支払い方法", edit_card_path
+#   parent :mypage
+# end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
