@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function() {
   var form = $("#charge_form");
-  Payjp.setPublicKey("pk_test_6d89c8792c4bb812515e783f"); //(自身の公開鍵)
+  Payjp.setPublicKey("pk_test_b915b477910372df1542603d"); //(自身の公開鍵)
 
   $("#charge_form").on("click", ".btn-default1", function(e) {
     e.preventDefault();
