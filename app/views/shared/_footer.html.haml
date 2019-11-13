@@ -117,8 +117,7 @@
               .footer__foot__body--top--country--list--s
                 United States
       .footer__foot__body--bottom
-        = link_to "" do
-          .footer__foot__body--bottom--left
-            = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg",class: "mercari-logo-white"
+        = link_to root_path, class: "footer__foot__body--bottom--left" do
+          = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg",class: "mercari-logo-white"
         .footer__foot__body--bottom--right
           © 2019 Mercari
