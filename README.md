@@ -114,10 +114,11 @@ has_many :brands_groups
 |size|string||
 |price|integer|null: false|
 |status|string|null: false|
-|delivery_fee|string|null: false|
-|delivery_origin|string|null: false|
-|delivery_type|string|null: false|
-|schedule|string|null: false|
+|delivery_fee|integer|null: false, default: 0|
+|delivery_origin|integer|null: false, default: 0|
+|delivery_type|integer|null: false, default: 0|
+|schedule|integer|null: false, default: 0|
+|process|integer|null: false, default: 0|
 |category_id|integer|null: false, forein_key: true|
 |brand_id|integer|foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
