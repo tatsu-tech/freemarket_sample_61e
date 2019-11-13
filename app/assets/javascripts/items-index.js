@@ -49,7 +49,6 @@ $(document).on('turbolinks:load', function() {
       $(".header__body__foot--left--category--l").show();
     });
   });
-
   $(function(){
     $(".header__body__foot--left").on("mouseleave", ".header__body__foot--left--category", function(){
       $(".header__body__foot--left--category--l").hide();
@@ -61,7 +60,6 @@ $(document).on('turbolinks:load', function() {
       $(".header__body__foot--left--category--l--m").show();
     });
   });
-
   $(function(){
     $(".header__body__foot--left--category").on("mouseleave",".header__body__foot--left--category--l", function(){
       $(".header__body__foot--left--category--l--m").hide();
@@ -73,7 +71,6 @@ $(document).on('turbolinks:load', function() {
       $(".header__body__foot--left--category--l--m--s").show();
     });
   });
-
   $(function(){
     $(".header__body__foot--left--category--l").on("mouseleave",".header__body__foot--left--category--l--m", function(){
       $(".header__body__foot--left--category--l--m--s").hide();
@@ -85,11 +82,50 @@ $(document).on('turbolinks:load', function() {
       $(".header__body__foot--left--brand--l").show();
     });
   });
-
   $(function(){
     $(".header__body__foot--left").on("mouseleave", ".header__body__foot--left--brand", function(){
       $(".header__body__foot--left--brand--l").hide();
     });
+  });
+
+  $(function(){
+    $(".header__body__foot--right").on("mouseenter", ".header__body__foot--right--notice", function(){
+      $(".header__body__foot--right--notice--dropdwn").show();
+    });
+  });
+  $(function(){
+    $(".header__body__foot--right").on("mouseleave", ".header__body__foot--right--notice", function(){
+      $(".header__body__foot--right--notice--dropdwn").hide();
+    });
+  })
+
+  $(function(){
+    $(".header__body__foot--right").on("mouseenter", ".header__body__foot--right--todo", function(){
+      $(".header__body__foot--right--todo--dropdwn").show();
+    });
+  });
+  $(function(){
+    $(".header__body__foot--right").on("mouseleave", ".header__body__foot--right--todo", function(){
+      $(".header__body__foot--right--todo--dropdwn").hide();
+    });
+  })
+
+  $(function(){
+    $(".header__body__foot--right").on("mouseenter", ".header__body__foot--right--mypage", function(){
+      $(".header__body__foot--right--mypage--dropdwn").show();
+    });
+  });
+  $(function(){
+    $(".header__body__foot--right").on("mouseleave", ".header__body__foot--right--mypage", function(){
+      $(".header__body__foot--right--mypage--dropdwn").hide();
+    });
+  })
+
+  $('.header__body__foot--right--notice').hover(function(){
+    $('.header__body__foot--right--notice').css('color', 'rgb(0, 149, 238)');
+  },
+  function() {
+    $(this).css('color', '#000000')
   });
 
 });

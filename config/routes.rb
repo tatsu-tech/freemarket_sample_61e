@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'items#purchase'
 
-  resources :items, only: [:index, :new, :create, :show]
-  
+  root 'items#index'
+  resources :items, only: [:index, :new, :create, :show, :edit, :update]
+  resources :myitems, only: [:index, :show, :edit, :update, :destroy]
+
   resources :users do
     member do
       get 'mypage'
@@ -26,6 +27,7 @@ Rails.application.routes.draw do
       get 'mypage/email_password'
       get 'mypage/identification'
       get 'mypage/sms_confirmation'
+      get 'users/logout'
     end
   end
 
@@ -40,7 +42,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cards, only: [:new, :show] do
+  resources :cards, only: [:new, :show, :edit] do
     collection do
       post 'show', to: 'cards#show'
       post 'pay', to: 'cards#pay'

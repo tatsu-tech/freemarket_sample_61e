@@ -35,6 +35,16 @@ h1{
   vertical-align:  top;
 }
 
+.form-want{
+  background-color: gray;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align:  top;
+}
+
 .input-default-1{
   width:100%;
   margin:8px 0 0;
@@ -61,11 +71,10 @@ h1{
   display: inline-block;
   font-size: 12px;
   list-style:none;
- 
 }
 
 .form-group{
-  margin-top: 32px;
+  margin-top: 24px;
   width: 100%;
 }
 
@@ -119,10 +128,10 @@ h3{
         line-height: 1.5;
         text-align: center;
         font-weight: bold;
+        border-bottom: 1px solid #f5f5f5;
       }
       &__form{
         padding: 40px 40px 64px;
-        border-top: 1px solid #f5f5f5;
         &__box{
           max-width: 343px;
           margin: 0 auto;
@@ -131,6 +140,22 @@ h3{
             &__box{
               width: 100%;
               &__date{
+                margin-top: 8px;
+              }
+            }
+            &__card{
+              display: block;
+              width: calc(50%-2px);
+
+              &__month{
+                display: inline-block;
+                width: calc(100%-38px);
+                margin-top: 8px;
+              }
+
+              &__year{
+                display: inline-block;
+                width: calc(100%-38px);
                 margin-top: 8px;
               }
             }
@@ -219,6 +244,7 @@ h3{
 }
 
 .right{
+  font-size: 14px;
   text-align: right;
   color: #0099e8;
 }
@@ -230,8 +256,6 @@ h3{
 .card-logos{
   display: flex;
   text-align: left;
-  &__logo{
-  }
 }
 
 .active{
@@ -268,7 +292,7 @@ h3{
   background-repeat: no-repeat;
   background-size: 10px 30px;
   background-position: right 10px center;
-  font-size: 8px;
+  font-size: 14px;
   height: 48px;
   width:100%;
   background-color:white;
@@ -438,7 +462,7 @@ h3{
 }
 
 .select-default-month{
-  padding-left: 15px;
+  padding: 0 16px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -447,31 +471,39 @@ h3{
   background-position: right 10px center;
   font-size: 8px;
   height: 48px;
-  width:76px;
+  width:131.5px;
   background-color:white;
   border-width: 1px;
   border-style: solid;
   border-color: #ccc;
-  z-index: -1;
+  font-size: 16px;
+  position: relative;
 }
 
 .select-default-year{
-  padding-left: 15px;
+  padding: 0 16px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   background-repeat: no-repeat;
   background-size: 10px 30px;
   background-position: right 10px center;
-  font-size: 8px;
   height: 48px;
-  width:76px;
+  width:131.5px;
   background-color:white;
   border-width: 1px;
   border-style: solid;
   border-color: #ccc;
   z-index: -1;
+  font-size: 16px;
 }
+
+.card-pulldown{
+  position: absolute;
+  margin: 15px 6px 0 -20px;
+}
+
+
 
 .input-default-number{
   width:100%;
@@ -497,4 +529,51 @@ h3{
   line-height: 1.5;
   font-size: 16px;
   width: calc(50%-6px);
+}
+
+.signup-error-message{
+  color: red;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.box_name{
+  font-size: 14px;
+}
+
+.form-question{
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #0099e8;
+  color: #fff;
+  line-height: 14px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.last-text{
+  font-size: 14px;
+  text-align: right;
+  margin-top: 32px;
+  color: #0099e8;
+  padding-bottom: 64px;
+}
+
+.last-text:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.new_user{
+  padding-top: 40px;
+}
+
+.new_user_address{
+  padding-top: 40px;
+}
+
+.form-padding{
+  padding: 40px 0 64px;
 }
