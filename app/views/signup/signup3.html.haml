@@ -55,8 +55,8 @@
             .signup1-container__main__view__form__box__input.form-group.form-nickname
               %label{for: "name"} お名前
               %span{class: "form-must"}必須
-              = f.text_field :send_name_family_kanji, class: "input-default-1__half", placeholder:"例）山田"
-              = f.text_field :send_name_first_kanji, class: "input-default-1__half", placeholder:"例）彩"
+              = f.text_field :send_name_family_kanji, class: "input-default-1", placeholder:"例）山田"
+              = f.text_field :send_name_first_kanji, class: "input-default-1", placeholder:"例）彩"
               -# %input{type: "text", placeholder: "例）山田", class: "input-default-1", name: "family_name_kanji"}
             -# .signup1-container__main__view__form__box__input.form-group.form-nickname
             -#   %input{type: "text", placeholder: "例）彩", class: "input-default-1", name: "first_name__kanji"}
@@ -64,8 +64,8 @@
             .signup1-container__main__view__form__box__input.form-group
               %label{for: "name"} お名前カナ
               %span{class: "form-must"}必須
-              = f.text_field :send_name_family_kana, class: "input-default-1__half", placeholder:"例）ヤマダ"
-              = f.text_field :send_name_first_kana, class: "input-default-1__half", placeholder:"例）アヤ"
+              = f.text_field :send_name_family_kana, class: "input-default-1", placeholder:"例）ヤマダ"
+              = f.text_field :send_name_first_kana, class: "input-default-1", placeholder:"例）アヤ"
               -# %input{type: "text", placeholder: "例）ヤマダ", class: "input-default-1", name: "family_name_kana"}
             -# .signup1-container__main__view__form__box__input.form-group.form-nickname
             -#   %input{type: "text", placeholder: "例）アヤ", class: "input-default-1", name: "first_name__kana"}
@@ -93,18 +93,26 @@
 
             .signup1-container__main__view__form__box__input.form-group
               %label{for: "name"} 番地
-              %span{class: "form-must"} 任意
-              = f.text_field :town, class: "input-default",placeholder: "例）青山1-1-1"
+              %span{class: "form-must"}必須
+              = f.text_field :town, class: "input-default-1",placeholder: "例）青山1-1-1"
               -# %input{type: "text", placeholder: "例）青山1-1-1", class: "input-default-1", name: "town"}
 
             .signup1-container__main__view__form__box__input.form-group
+              %label{for: "name"} 建物名
+              %span{class: "form-want"} 任意
+              = f.text_field :apartment, class: "input-default-1",placeholder: "例）柳ビル103"
+
+            .signup1-container__main__view__form__box__input.form-group
               %label{for: "name"} 固定電話
-              %span{class: "form-must"} 任意
-              = f.text_field :phone_number, class: "input-default",placeholder: "固定電話の番号を入力"
+              %span{class: "form-want"} 任意
+              = f.text_field :phone_number, class: "input-default-1",placeholder: "固定電話の番号を入力"
               -# %input{type: "text", placeholder: "固定電話の番号を入力", class: "input-default-1", name: "phone_number"}
 
             = f.submit "次へ進む", class:"btn-default1"
             -# %button{type:"submit", class:"btn-default1"}次へ進む
+
+            .last-text
+              本人情報の登録について
 
     %footer.signup1-footer
       = render partial: 'shared/bottombar'

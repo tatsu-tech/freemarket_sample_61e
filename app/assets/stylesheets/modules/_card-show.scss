@@ -1,0 +1,104 @@
+.mypage-card-edit{
+  background-color: $white;
+  width: 700px;
+  float: right;
+
+  &__box{
+
+    &--title{
+      font-size: 24px;
+      font-weight: bold;
+      padding: 8px 24px;
+      border-bottom: 1px solid #f5f5f5;
+      text-align: center;
+
+    }
+
+    &--content{
+      border-top: 1px solid #f5f5f5;
+      padding: 64px;
+
+      &__text{
+        max-width: 320px;
+        margin: auto;
+        font-weight: bold;
+      }
+      &__section{
+        padding: 24px 0;
+        border-bottom: 1px solid #eee;
+
+        &--btn{
+          width: 320px;
+          margin: 0 auto;
+          color: white;
+          a {
+            color: white;
+          }
+        }
+
+        &--btn:hover {
+          opacity: 0.7;
+        }
+
+        &--show{
+          position: relative;
+          max-width: 320px;
+          display: block;
+          font-weight: lighter;
+          margin: 0 auto;
+          &--delete{
+            position: absolute;
+            background: $white;
+            color: #ea352d;
+            border: 1px solid #ea352d;
+            border-radius: 4px;
+            padding: 0 4px;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+          }
+        }
+
+      }
+
+      &__arart{
+        display: block;
+        margin: 40px 0 0;
+        text-align: right;
+        font-size: 14px;
+        color: #0099E8;
+        cursor: pointer;
+      }
+      &__arart:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.card-register-btn{
+  display: block;
+  max-width: 320px;
+  background-color: #ea352d;
+  color: white;
+  font-size: 14px;
+  border: 1px solid #ea352d;
+  text-align: center;
+  margin: 0 0 8px;
+  height: 50px;
+  line-height: 48px;
+  cursor: pointer;
+}
+
+.card-icon{
+  margin-right: 16px;
+}
+
+.fa-cc-visa{
+  width:60px;
+  height:auto;
+}
+
+.card_form--form{
+  padding: 40px 0 64px;
+}
