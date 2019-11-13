@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   # require 'aws-sdk'
 
   def index
+    @items = Item.with_attached_images.order("created_at DESC").limit(10)
   end
 
   def new

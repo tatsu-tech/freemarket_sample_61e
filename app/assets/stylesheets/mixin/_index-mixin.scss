@@ -77,9 +77,9 @@
 }
 
 @mixin gradient() {
-  height: 35px;
-  width: 70px;
-  background: linear-gradient(90deg,hsla(0,0%,100%,0),$white 50%);
+  height: 30px;
+  width: 80px;
+  background: linear-gradient(90deg,hsla(0,0%,100%,0),$white 65%);
   right: 0;
   bottom: 0;
   position: absolute;
@@ -111,10 +111,11 @@
 }
 
 @mixin detail() {
-  background-color: $white;
+  background-color: #fff;
   color: #222;
   height: 25%;
   font-size: 14px;
-  line-height: 14px;
-  padding: 15px;
+  line-height: 1.8em;
+  padding: 8px 12px 0;
+  overflow: hidden;
 }

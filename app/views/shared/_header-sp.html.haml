@@ -78,11 +78,12 @@
               いいね！一覧
           = link_to "" do
             .header__body__foot--right--notice
-              %i.far.fa-bell
-              .header__body__foot--right--notice--text
-                お知らせ
+              .header__body__foot--right--notice--icon
+                %i.far.fa-bell
               .header__body__foot--right--notice--num
                 4
+              .header__body__foot--right--notice--text
+                お知らせ
               = link_to "" do
                 .header__body__foot--right--notice--dropdwn
                   = render "items/notice-dropdwn"
