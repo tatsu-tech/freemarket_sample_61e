@@ -1,90 +1,12 @@
-= link_to "" do
-  .item
-    .gradient
-    .image
-      = image_tag "https://static.mercdn.net/thumb/photos/m34174688110_1.jpg?1570196920", class: "item-img"
-      .price
-        ¥10,000
-    .detail
-      美品！！ ナイキ シューズ 白赤 NIKE ORDERS
-= link_to "" do
-  .item
-    .gradient
-    .image
-      = image_tag "https://static.mercdn.net/thumb/photos/m34174688110_1.jpg?1570196920", class: "item-img"
-      .price
-        ¥10,000
-    .detail
-      美品！！ ナイキ シューズ 白赤 NIKE ORDERS
-= link_to "" do
-  .item
-    .gradient
-    .image
-      = image_tag "https://static.mercdn.net/thumb/photos/m34174688110_1.jpg?1570196920", class: "item-img"
-      .price
-        ¥10,000
-    .detail
-      美品！！ ナイキ シューズ 白赤 NIKE ORDERS
-= link_to "" do
-  .item
-    .gradient
-    .image
-      = image_tag "https://static.mercdn.net/thumb/photos/m34174688110_1.jpg?1570196920", class: "item-img"
-      .price
-        ¥10,000
-    .detail
-      美品！！ ナイキ シューズ 白赤 NIKE ORDERS
-= link_to "" do
-  .item
-    .gradient
-    .image
-      = image_tag "https://static.mercdn.net/thumb/photos/m34174688110_1.jpg?1570196920", class: "item-img"
-      .price
-        ¥10,000
-    .detail
-      美品！！ ナイキ シューズ 白赤 NIKE ORDERS
-= link_to "" do
-  .item
-    .gradient
-    .image
-      = image_tag "https://static.mercdn.net/thumb/photos/m34174688110_1.jpg?1570196920", class: "item-img"
-      .price
-        ¥10,000
-    .detail
-      美品！！ ナイキ シューズ 白赤 NIKE ORDERS
-= link_to "" do
-  .item
-    .gradient
-    .image
-      = image_tag "https://static.mercdn.net/thumb/photos/m34174688110_1.jpg?1570196920", class: "item-img"
-      .price
-        ¥10,000
-    .detail
-      美品！！ ナイキ シューズ 白赤 NIKE ORDERS
-= link_to "" do
-  .item
-    .gradient
-    .image
-      = image_tag "https://static.mercdn.net/thumb/photos/m34174688110_1.jpg?1570196920", class: "item-img"
-      .price
-        ¥10,000
-    .detail
-      美品！！ ナイキ シューズ 白赤 NIKE ORDERS
-= link_to "" do
-  .item
-    .gradient
-    .image
-      = image_tag "https://static.mercdn.net/thumb/photos/m34174688110_1.jpg?1570196920", class: "item-img"
-      .price
-        ¥10,000
-    .detail
-      美品！！ ナイキ シューズ 白赤 NIKE ORDERS
-= link_to "" do
-  .item
-    .gradient
-    .image
-      = image_tag "https://static.mercdn.net/thumb/photos/m34174688110_1.jpg?1570196920", class: "item-img"
-      .price
-        ¥10,000
-    .detail
-      美品！！ ナイキ シューズ 白赤 NIKE ORDERS
+- @items.each do |item|
+  = link_to item_path(item.id) do
+    .item
+      .gradient
+      .image
+        - item.images.first(1).each do |image|
+          = image_tag image, class: "item-img"
+        .price
+          ¥
+          = item.price
+      .detail
+        = item.name
