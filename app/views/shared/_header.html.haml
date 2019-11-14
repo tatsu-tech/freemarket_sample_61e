@@ -104,7 +104,7 @@
                     .header__body__foot--right--mypage--dropdwn--back--icon
                       = image_tag  "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "mypage-icon-l"
                   .header__body__foot--right--mypage--dropdwn--name
-                    tatsu
+                    = current_user.nickname
                   .header__body__foot--right--mypage--dropdwn--count
                     = link_to "" do
                       .header__body__foot--right--mypage--dropdwn--count--evaluation
