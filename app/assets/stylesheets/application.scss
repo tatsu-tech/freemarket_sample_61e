@@ -14,6 +14,7 @@
 @import "config/yender";
 @import "mixin/sell-mixin";
 @import "mixin/show-mixin";
+@import "mixin/myitems-mixin";
 @import "modules/sell";
 @import "modules/show";
 @import "modules/subfooter";
@@ -22,6 +23,7 @@
 @import "modules/purchase";
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 @import "modules/result";
+@import "modules/schiation";
 @import "modules/card-show";
 @import "modules/card-register";
 @import "modules/myitems";

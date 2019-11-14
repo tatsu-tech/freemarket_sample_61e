@@ -1,0 +1,17 @@
+@mixin tag-schiation() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-right: 120px solid transparent;
+}
+
+@mixin schiation() {
+  position: absolute;
+  z-index: 2;
+  font-size: 18px;
+  color: #fff;
+  transform: rotate(-45deg);
+  letter-spacing: 2px;
+  font-weight: bold;
+}

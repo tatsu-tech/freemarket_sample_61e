@@ -1,0 +1,27 @@
+.background
+  = render "shared/exhibit-btn"
+  = render "shared/header"
+  - breadcrumb :mypage
+  = render "shared/breadcrumbs"
+
+  .mypage-wrapper
+    .mypage-exhibit
+      .mypage-exhibit__box
+        .mypage-exhibit__box--top
+          購入した商品
+        .mypage-exhibit__box--middle-purchase
+          = link_to users_purchase_user_path do
+            .mypage-exhibit__box--middle-purchase--left
+              取引中
+          = link_to users_purchased_user_path do
+            .mypage-exhibit__box--middle-purchase--right.active-white
+              過去の取引
+        .mypage-exhibit__box--bottom
+          .mypage-exhibit__box--bottom--list
+          .mypage-exhibit__box--bottom--none
+            過去に取引した商品がありません
+
+    = render "shared/mypage-nav"
+
+.background
+  = render "shared/footer"

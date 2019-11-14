@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'items#index'
   resources :items, only: [:index, :new, :create, :show, :edit, :update]
-  resources :myitems, only: [:index, :show, :edit, :update, :destroy]
+  resources :myitems, only: [:index, :show, :destroy]
 
   resources :users do
     member do
@@ -11,11 +11,11 @@ Rails.application.routes.draw do
       get 'mypage/notification'
       get 'mypage/todo'
       get 'mypage/like/history'
-      get 'mypage/listings/listing'
-      get 'mypage/listings/in_progress'
-      get 'mypage/listings/completed'
-      get 'mypage/purchase'
-      get 'mypage/purchased'
+      get 'users/listing'
+      get 'users/in_progress'
+      get 'users/completed'
+      get 'users/purchase'
+      get 'users/purchased'
       get 'mypage/news'
       get 'mypage/review/history'
       get 'mypage/support'
