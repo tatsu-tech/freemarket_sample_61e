@@ -46,9 +46,14 @@
     %main.signup1-container__main.vh
       %section.signup1-container__main__view
         %h2.signup1-container__main__view__info 電話番号の確認
-        
-
         .signup1-container__main__view__form__box
+          - if @user.errors.any?
+            - unless @user.valid?
+              - if errors = @user.errors.full_messages
+                %ul.signup-error-message
+                  -errors.each do |error|
+                    %li 正しい値を入力してください
+
           = form_for @user, url: signup3_signup_index_path ,method: :get do |f|
             .signup1-container__main__view__form__box__input.form-group.form-nickname
               %label{for: "phone_number"} 携帯電話の番号
@@ -58,7 +63,7 @@
               %p 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
               %button{type:"submit", class:"btn-default1"}SMSを送信する
               %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
-            %div.form-group.right
+            .last-text
               %p 電話番号の確認が必要な理由>
 
     %footer.signup1-footer

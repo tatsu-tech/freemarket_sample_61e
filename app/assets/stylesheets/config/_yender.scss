@@ -14,7 +14,7 @@
   font-size:20px;
 }
 .hidden {
-  visibility:hidden;
+  display:none;
 }
 .w100 {
   width:100%;
@@ -24,4 +24,7 @@
 }
 .dflex {
   display:flex;
+}
+.posi-rela {
+  position: relative;
 }

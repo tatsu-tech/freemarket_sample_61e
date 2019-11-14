@@ -18,9 +18,14 @@ crumb :identification do
 end
 
 crumb :logout do
-  link "ログアウト", logout_path
+  link "ログアウト", users_logout_user_path
   parent :root
 end
+
+# crumb :card do
+#   link "支払い方法", edit_card_path
+#   parent :mypage
+# end
 
 # crumb :projects do
 #   link "Projects", projects_path

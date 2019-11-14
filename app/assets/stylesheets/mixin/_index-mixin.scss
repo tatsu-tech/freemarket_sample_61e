@@ -56,3 +56,66 @@
   font-weight: 600;
   line-height: 1.4em;
 }
+
+@mixin body-list-bottom-a() {
+  width: 18%;
+  height: 250px;
+  margin-bottom: 25px;
+}
+
+@mixin item() {
+  height: 250px;
+  margin-bottom: 25px;
+  filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));
+  position: relative;
+}
+
+@mixin item-img() {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+@mixin gradient() {
+  height: 30px;
+  width: 80px;
+  background: linear-gradient(90deg,hsla(0,0%,100%,0),$white 65%);
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+@mixin image() {
+  background-color: lightgray;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 75%;
+  background-size:cover;
+}
+
+@mixin price() {
+  z-index: 1;
+  color: $white;
+  background: rgba(0,0,0,.4);
+  height: 28px;
+  font-size: 17px;
+  align-items: center;
+  border-radius: 0 14px 14px 0;
+  letter-spacing: .02em;
+  display: inline-flex;
+  padding: 0 12px;
+  left: 0;
+  bottom: 8px;
+  position: absolute;
+}
+
+@mixin detail() {
+  background-color: #fff;
+  color: #222;
+  height: 25%;
+  font-size: 14px;
+  line-height: 1.8em;
+  padding: 8px 12px 0;
+  overflow: hidden;
+}
