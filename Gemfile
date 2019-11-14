@@ -82,6 +82,7 @@ gem 'gretel'
 gem 'payjp'
 gem 'active_hash'
 gem "aws-sdk-s3", require: false
+gem 'gon'
 
 group :production do
   gem 'unicorn', '5.4.1'
