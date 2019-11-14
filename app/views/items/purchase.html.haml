@@ -43,9 +43,8 @@
                   支払い金額
                 .purchase__body__content-inner-form__table-list-price
                   ¥1,000
-            = form_tag({controller: :transactions, action: :pay}, {method: :post}) do
+            = form_tag({controller: :transactions, action: :create}, {method: :post}) do
               %button.payjp-button 購入する
-              -# %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript", "data-text" => "購入する", "data-key" => "pk_test_6d89c8792c4bb812515e783f"} 
 
       .purchase__body__user
         .purchase__body__user__label
