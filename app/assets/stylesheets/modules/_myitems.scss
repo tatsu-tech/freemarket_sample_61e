@@ -52,22 +52,30 @@
     }
   }
 }
-.item-situation-icon {
-  position: absolute;
-  top:0;
-  left:0;
-  z-index:1;
+.tag-stop {
+  @include tag-schiation();
   border-top: 120px solid #888;
-  border-right: 120px solid transparent;
-  &__stop {
-    z-index:2;
-    position: absolute;
-    top:34px;
-    left:-5px;
-    font-size:18px;
-    color:#fff;
-    transform:rotate(-45deg);
-    letter-spacing: 2px;
-    font-weight:600px;
-  }
+}
+.stop {
+  @include schiation();
+  top:34px;
+  left:-5px;
+}
+.tag-trade {
+  @include tag-schiation();
+  border-top: 120px solid $blue;
+}
+.trade {
+  @include schiation();
+  top: 33px;
+  left: 13px;
+}
+.tag-sold {
+  @include tag-schiation();
+  border-top: 120px solid $red;
+}
+.sold {
+  @include schiation();
+  top: 37px;
+  left: 14px;
 }

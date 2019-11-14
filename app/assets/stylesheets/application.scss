@@ -14,12 +14,13 @@
 @import "config/yender";
 @import "mixin/sell-mixin";
 @import "mixin/show-mixin";
+@import "mixin/myitems-mixin";
 @import "modules/sell";
 @import "modules/show";
 @import "modules/subfooter";
 @import "modules/logout";
 @import "modules/breadcrumbs";
-
+@import "modules/schiation";
 @import "modules/card-show";
 @import "modules/card-register";
 
