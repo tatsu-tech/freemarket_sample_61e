@@ -74,12 +74,15 @@
       商品の編集
     %p or
     - if @myitem.process == "selling"
-      = link_to "" do
-        .myitem-edit-box__delete-btn 商品の出品を停止する
+      = form_with model: @myitem, local: true, class:'myitem-edit-box__delete-btn' do |f|
+        = f.hidden_field :process, value: "sellingstop"
+        = f.button :button, method: :get, type:'submit' do
+          商品の出品を停止する
     - if @myitem.process == "sellingstop"
-      = link_to "" do
-        .myitem-edit-box__change-btn 商品を再開する
-
+      = form_with model: @myitem, local: true, class:'myitem-edit-box__change-btn' do |f|
+        = f.hidden_field :process, value: "selling"
+        = f.button :button, method: :get, type:'submit' do
+          商品の出品を再開する
     = link_to  myitem_path, method: :delete, class: "myitem-edit-box__delete-btn" do
       この商品を削除する
 
