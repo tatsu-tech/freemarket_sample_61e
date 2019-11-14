@@ -1,5 +1,6 @@
 class MyitemsController < ApplicationController
-  before_action :check_user_id, only: [:index, :show, :edit, :update, :destroy]
+  before_action :set_myitem_id, only: [:index, :show, :edit, :update, :destroy]
+  before_action :
 
   def index
   end
@@ -22,9 +23,13 @@ class MyitemsController < ApplicationController
   helper_method :process_update
   private
 
-  def check_user_id
+  def set_myitem_id
     @myitem = Item.find(params[:id])
     redirect_to root_path unless current_user&.id
+  end
+
+  def check_user_id
+    redirect_to myitem_path current_user?
   end
   
 end
