@@ -33,19 +33,19 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(create_params) # updateが成功した場合
-      if Rails.env.production?
-        params[:delete_images].split(",").each do |id|
-          ActiveStorage::Attachment.find(id).delete
-        end
-      else
-        params[:delete_images].split(",").each do |id|
-          ActiveStorage::Attachment.find(id).delete
-        end
+          if params[:delete_images].present?
+              if Rails.env.production?
+                params[:delete_images].split(",").each do |id|
+                  ActiveStorage::Attachment.find(id).delete
+                end
+              else
+                params[:delete_images].split(",").each do |id|
+                  ActiveStorage::Attachment.find(id).delete
+                end
+              end
+          end
+          redirect_to myitem_path(@item)
       end
-        redirect_to myitem_path(@item)
-    else
-      redirect_to :edit_item_path
-    end
   end
 
   private

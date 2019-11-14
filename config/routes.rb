@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
   resources :items, only: [:index, :new, :create, :show, :edit, :update]
-  resources :myitems, only: [:index, :show, :destroy]
+  resources :myitems, only: [:index, :show, :edit, :update, :destroy]
+  # post 'myitems/:id' => 'myitems#show'
 
   resources :users do
     member do
