@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
-  before_action :set_item, only: [:edit, :update]
+  before_action :set_item, only: [:edit, :update, :purchase]
 
   def index
     @items = Item.with_attached_images.order("created_at DESC").limit(10)
@@ -46,6 +46,9 @@ class ItemsController < ApplicationController
           end
           redirect_to myitem_path(@item)
       end
+  end
+
+  def purchase
   end
 
   private

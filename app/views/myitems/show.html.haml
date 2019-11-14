@@ -16,12 +16,15 @@
             - @myitem.images.each_with_index do |image, i|
               %li.top-box__detail--left--sub-photo--s
                 = image_tag @myitem.images[i].variant(resize:'500x500',auto_orient: true).processed
-          -# .tag-stop
-          -# .stop 公開停止中
-          -# .tag-trade
-          -# .trade 取引中
-          .tag-sold
-          .sold SOLD
+          - if @myitem.process == "sellingstop"
+            .tag-stop
+            .stop 公開停止中
+          - if @myitem.process == "selltradeing"
+            .tag-trade
+            .trade 取引中
+          - if @myitem.process == "sellcomp"
+            .tag-sold
+            .sold SOLD
         .top-box__detail--right
           .top-box__detail--right--author
             .top-box__detail--right--author--menu
