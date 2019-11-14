@@ -43,7 +43,7 @@
                   .mypage-item-body
                     .mypage-item-text 事務局から個別メッセージ「お近くで開催予定！「メルカリ教室 出品体験編」のご案内」
                     %time
-                      = fa_icon "clock-o"
+                      %i.far.fa-clock
                       %span.mypage-item__time-before 1 日前
                   .angle
                     = fa_icon "angle-right"
@@ -56,7 +56,7 @@
                   .mypage-item-body
                     .mypage-item-text 【明日が最終日】”1,000円分のポイントが必ずもらえる”キャンペーン詳細はこちら！
                     %time
-                      = fa_icon "clock-o"
+                      %i.far.fa-clock
                       %span 2 日前
                   .angle
                     = fa_icon "angle-right"
@@ -69,7 +69,7 @@
                   .mypage-item-body
                     .mypage-item-text 【1,000円分のポイントが必ずもらえる】キャンペーン実施中！詳細はこちら！
                     %time
-                      = fa_icon "clock-o"
+                      %i.far.fa-clock
                       %span 4 日前
                   .angle
                     = fa_icon "angle-right"
@@ -82,7 +82,7 @@
                   .mypage-item-body
                     .mypage-item-text かゆい所に手が届く！厚めの商品発送にオススメの「ゆうパケットプラス」が新登場！
                     %time
-                      = fa_icon "clock-o"
+                      %i.far.fa-clock
                       %span 5 日前
                   .angle
                     = fa_icon "angle-right"              
@@ -110,148 +110,7 @@
               %li.mypage-item-not-found
                 取引中の商品がありません
 
-    .mypage-nav
-      %ul.mypage-nav__list
-        %li
-          = link_to "mypage", class: 'mypage-nav__list-item-mypage' do
-            マイページ
-            .arrow-right-mypage
-              = fa_icon "angle-right"
-
-        %li
-          = link_to "mypage", class: "mypage-nav__list-item" do
-            お知らせ
-            .arrow-right
-              = fa_icon "angle-right"
-
-        %li
-          = link_to "mypage", class: 'mypage-nav__list-item' do
-            やることリスト
-            .arrow-right
-              = fa_icon "angle-right"
-
-        %li
-          = link_to "mypage", class: 'mypage-nav__list-item' do
-            いいね！一覧
-            .arrow-right
-              = fa_icon "angle-right"
-
-        %li
-          = link_to "mypage", class: 'mypage-nav__list-item' do
-            出品する
-            .arrow-right
-              = fa_icon "angle-right"
-
-        %li
-          = link_to "mypage", class: 'mypage-nav__list-item' do
-            出品した商品-出品中
-            .arrow-right
-              = fa_icon "angle-right"
-
-        %li
-          = link_to "mypage", class: 'mypage-nav__list-item' do
-            出品した商品-取引中
-            .arrow-right
-              = fa_icon "angle-right"
-
-        %li
-          = link_to "mypage", class: 'mypage-nav__list-item' do
-            出品した商品-売却済み
-            .arrow-right
-              = fa_icon "angle-right"
-
-        %li
-          = link_to "mypage", class: 'mypage-nav__list-item' do
-            購入した商品-取引中
-            .arrow-right
-              = fa_icon "angle-right"
-
-        %li
-          = link_to "mypage", class: 'mypage-nav__list-item' do
-            購入した商品-過去の取引
-            .arrow-right
-              = fa_icon "angle-right"
-
-        %li
-          = link_to "mypage", class: 'mypage-nav__list-item' do
-            ニュース一覧
-            .arrow-right
-              = fa_icon "angle-right"
-
-        %li
-          = link_to "mypage", class: 'mypage-nav__list-item' do
-            評価一覧
-            .arrow-right
-              = fa_icon "angle-right"
-              
-        %li
-          = link_to "mypage", class: 'mypage-nav__list-item' do
-            ガイド
-            .arrow-right
-              = fa_icon "angle-right"
-
-        %li
-          = link_to "mypage", class: 'mypage-nav__list-item' do
-            お問い合わせ
-            .arrow-right
-              = fa_icon "angle-right"
-
-
-      .side-menu__merpay
-        .side-menu__merpay-head メルペイ
-        %ul.side-menu__merpay-ul
-
-          %li
-            = link_to "mypage" do
-              売上・振込申請
-              .arrow-right
-                = fa_icon "angle-right"
-
-          %li
-            = link_to "mypage", class: 'mypage-nav__list-item' do
-              ポイント
-              .arrow-right
-                = fa_icon "angle-right"
-
-      .side-menu__config
-        .side-menu__config-head 設定
-        %ul.side-menu__config-ul
-          %li
-            = link_to "mypage", class: 'mypage-nav__list-item' do
-              プロフィール
-              .arrow-right
-                = fa_icon "angle-right"
-
-          %li
-            = link_to "mypage", class: 'mypage-nav__list-item' do
-              発送元・お届け先住所変更
-              .arrow-right
-                = fa_icon "angle-right"
-          %li
-            = link_to "cards/new", class: 'mypage-nav__list-item' do
-              支払い方法
-              .arrow-right
-                = fa_icon "angle-right"
-          %li
-            = link_to "mypage", class: 'mypage-nav__list-item' do
-              メール/パスワード
-              .arrow-right
-                = fa_icon "angle-right"
-          %li
-            = link_to "mypage", class: 'mypage-nav__list-item' do
-              本人情報
-              .arrow-right
-                = fa_icon "angle-right"
-          %li
-            = link_to "mypage", class: 'mypage-nav__list-item' do
-              電話番号の確認
-              .arrow-right
-                = fa_icon "angle-right"
-          %li
-            = link_to users_logout_user_path, class: 'mypage-nav__list-item' do
-              ログアウト
-              .arrow-right
-                = fa_icon "angle-right"
+    = render "shared/mypage-nav"
 
 .background
   = render "shared/footer"
