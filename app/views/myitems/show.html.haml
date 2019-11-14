@@ -66,9 +66,13 @@
     = link_to edit_item_path(@myitem), class: "myitem-edit-box__change-btn" do
       商品の編集
     %p or
-    = link_to "" do
-      .myitem-edit-box__change-btn
-        商品を再開する
+    - if @myitem.process == "selling"
+      = link_to "" do
+        .myitem-edit-box__delete-btn 商品の出品を停止する
+    - if @myitem.process == "sellingstop"
+      = link_to "" do
+        .myitem-edit-box__change-btn 商品を再開する
+
     = link_to  myitem_path, method: :delete, class: "myitem-edit-box__delete-btn" do
       この商品を削除する
 
