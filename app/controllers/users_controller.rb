@@ -14,5 +14,20 @@ class UsersController < ApplicationController
 
   def logout
   end
+
+  def listing
+  end
+
+  def in_progress
+  end
+
+  def completed
+  end
+
+  def purchase
+  end
+
+  def purchased
+  end
  
 end

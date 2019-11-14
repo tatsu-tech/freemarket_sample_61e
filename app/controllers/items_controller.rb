@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit]
   before_action :set_item, only: [:edit, :update]
 
   def index
@@ -32,9 +33,15 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(create_params) # updateが成功した場合
+      if Rails.env.production?
         params[:delete_images].split(",").each do |id|
           ActiveStorage::Attachment.find(id).delete
         end
+      else
+        params[:delete_images].split(",").each do |id|
+          ActiveStorage::Attachment.find(id).delete
+        end
+      end
         redirect_to myitem_path(@item)
     else
       redirect_to :edit_item_path
@@ -44,7 +51,7 @@ class ItemsController < ApplicationController
   private
 
   def create_params
-    params.require(:item).permit(:name, :explanation, :size, :price, :status, :delivery_fee, :delivery_origin, :delivery_type, :schedule, :category_id, :brand_id, :user_id, images:[]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :explanation, :size, :price, :status, :delivery_fee, :delivery_origin, :delivery_type, :schedule, :category_id, :process, :brand_id, :user_id, images:[]).merge(user_id: current_user.id)
   end
 
   def set_item
