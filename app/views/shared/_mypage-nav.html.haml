@@ -1,7 +1,7 @@
 .mypage-nav
   %ul.mypage-nav__list
     %li
-      = link_to "mypage", class: 'mypage-nav__list-item' do
+      = link_to users_mypage_user_path(current_user.id), class: 'mypage-nav__list-item' do
         マイページ
         .arrow-right
           = fa_icon "angle-right"
@@ -25,37 +25,37 @@
           = fa_icon "angle-right"
 
     %li
-      = link_to "mypage", class: 'mypage-nav__list-item' do
+      = link_to new_item_path(current_user.id), class: 'mypage-nav__list-item' do
         出品する
         .arrow-right
           = fa_icon "angle-right"
 
     %li
-      = link_to "mypage", class: 'mypage-nav__list-item' do
+      = link_to users_listing_user_path(current_user.id), class: 'mypage-nav__list-item' do
         出品した商品-出品中
         .arrow-right
           = fa_icon "angle-right"
 
     %li
-      = link_to "mypage", class: 'mypage-nav__list-item' do
+      = link_to users_in_progress_user_path(current_user.id), class: 'mypage-nav__list-item' do
         出品した商品-取引中
         .arrow-right
           = fa_icon "angle-right"
 
     %li
-      = link_to "mypage", class: 'mypage-nav__list-item' do
+      = link_to users_completed_user_path(current_user.id), class: 'mypage-nav__list-item' do
         出品した商品-売却済み
         .arrow-right
           = fa_icon "angle-right"
 
     %li
-      = link_to "mypage", class: 'mypage-nav__list-item' do
+      = link_to users_purchase_user_path(current_user.id), class: 'mypage-nav__list-item' do
         購入した商品-取引中
         .arrow-right
           = fa_icon "angle-right"
 
     %li
-      = link_to "mypage", class: 'mypage-nav__list-item' do
+      = link_to users_purchased_user_path(current_user.id), class: 'mypage-nav__list-item' do
         購入した商品-過去の取引
         .arrow-right
           = fa_icon "angle-right"
@@ -105,7 +105,7 @@
     .side-menu__config-head 設定
     %ul.side-menu__config-ul
       %li
-        = link_to "mypage", class: 'mypage-nav__list-item' do
+        = link_to users_profile_user_path(current_user.id), class: 'mypage-nav__list-item' do
           プロフィール
           .arrow-right
             = fa_icon "angle-right"
@@ -126,7 +126,7 @@
           .arrow-right
             = fa_icon "angle-right"
       %li
-        = link_to "mypage", class: 'mypage-nav__list-item' do
+        = link_to users_identification_user_path(current_user.id), class: 'mypage-nav__list-item' do
           本人情報
           .arrow-right
             = fa_icon "angle-right"
@@ -136,7 +136,7 @@
           .arrow-right
             = fa_icon "angle-right"
       %li
-        = link_to users_logout_user_path, class: 'mypage-nav__list-item' do
+        = link_to users_logout_user_path(current_user.id), class: 'mypage-nav__list-item' do
           ログアウト
           .arrow-right
             = fa_icon "angle-right"
