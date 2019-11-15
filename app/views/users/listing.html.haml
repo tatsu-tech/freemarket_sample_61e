@@ -20,44 +20,39 @@
             .mypage-exhibit__box--middle--right
               売却済み
         .mypage-exhibit__box--bottom
-          -# 一部機能のみマージしたいことから、一時以下の部分をコメントアウトさせていただきます。
-          -# - if @myitem.name.length > 1
-          -#   %ul.mypage-exhibit__box--bottom--list
-          -#     - @myitem.each do |myitem|
-          -#       = link_to myitem_path(myitem.id) do
-          -#         %li.mypage-exhibit__box--bottom--list--s
-          -#           .mypage-exhibit__box--bottom--list--s--left
-          -#             .mypage-exhibit__box--bottom--list--s--left--image
-          -#               = image_tag myitem.images
-          -#           .mypage-exhibit__box--bottom--list--s--center
-          -#             .mypage-exhibit__box--bottom--list--s--center--head
-          -#               = myitem.name
-          -#             .mypage-exhibit__box--bottom--list--s--center--foot
+          - if @myitems.present?
+            %ul.mypage-exhibit__box--bottom--list
+              - @myitems.each_with_index do |myitem|
+                = link_to myitem_path(myitem.id) do
+                  %li.mypage-exhibit__box--bottom--list--s
+                    .mypage-exhibit__box--bottom--list--s--left
+                      .mypage-exhibit__box--bottom--list--s--left--image
+                        - myitem.images.first(1).each do |image|
+                          = image_tag image
+                    .mypage-exhibit__box--bottom--list--s--center
+                      .mypage-exhibit__box--bottom--list--s--center--head
+                        = myitem.name
+                      .mypage-exhibit__box--bottom--list--s--center--foot
                         -# ifの条件分岐によりいいねがある場合とコメントがある場合に表示するようにする
-                        -# まだテーブルを作っていないので割愛
-                        -# - if 
-                        -#   .mypage-exhibit__box--bottom--list--s--center--foot--good
-                        -#     %i.far.fa-heart
-                        -#     2
-                        -# - if
-                        -#   .mypage-exhibit__box--bottom--list--s--center--foot--comment
-                        -#     %i.far.fa-comment-alt
-                        -#     2
-          -#               .mypage-exhibit__box--bottom--list--s--center--foot--schiation
-          -#                 - if myitem.process == 0
-          -#                   .schiation-exhibit
-          -#                     出品中
-          -#                 - if myitem.process == 1
-          -#                   .schiation-stop
-          -#                     公開停止中
-          -#                 - if myitem.process == 3
-          -#                   .schiation-sold
-          -#                     売却済
-          -#           .mypage-exhibit__box--bottom--list--s--right
-          -#             %i.fas.fa-angle-right
-          -# - if @myitem.name.length == 0
-          -#   .mypage-exhibit__box--bottom--none
-          -#     出品中の商品がありません
+                        -# まだテーブルを作っていないので現状割愛
+                        -# .mypage-exhibit__box--bottom--list--s--center--foot--good
+                        -#   %i.far.fa-heart
+                        -#   2
+                        -# .mypage-exhibit__box--bottom--list--s--center--foot--comment
+                        -#   %i.far.fa-comment-alt
+                        -#   2
+                        .mypage-exhibit__box--bottom--list--s--center--foot--schiation
+                          - if myitem.process == "selling"
+                            .schiation-exhibit
+                              出品中
+                          - if myitem.process == "sellingstop"
+                            .schiation-stop
+                              公開停止中
+                    .mypage-exhibit__box--bottom--list--s--right
+                      %i.fas.fa-angle-right
+          - else
+            .mypage-exhibit__box--bottom--none
+              出品中の商品がありません
       .mypage-exhibit__foot
         = link_to users_listing_user_path do
           .mypage-exhibit__foot--left
