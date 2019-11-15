@@ -16,20 +16,17 @@ class UsersController < ApplicationController
   end
 
   def listing
-    @myitems = Item.where(process: ["selling","sellingstop"])
-    @myitems.where(user_id: current_user.id)
+    @myitems = Item.where(process: ["selling","sellingstop"]).where(user_id: current_user.id)
     redirect_to root_path unless user_signed_in?
   end
 
   def in_progress
-    @myitems = Item.where(process: "selltradeing")
-    @myitems.where(user_id: current_user.id)
+    @myitems = Item.where(process: "selltradeing").where(user_id: current_user.id)
     redirect_to root_path unless user_signed_in?
   end
 
   def completed
-    @myitems = Item.where(process: "sellcomp")
-    @myitems.where(user_id: current_user.id)
+    @myitems = Item.where(process: "sellcomp").where(user_id: current_user.id)
     redirect_to root_path unless user_signed_in?
   end
 

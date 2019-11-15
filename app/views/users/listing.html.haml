@@ -23,33 +23,33 @@
           - if @myitems.present?
             %ul.mypage-exhibit__box--bottom--list
               - @myitems.each_with_index do |myitem|
-                - myitem.images.each do |image|
-                  = link_to myitem_path(myitem.id) do
-                    %li.mypage-exhibit__box--bottom--list--s
-                      .mypage-exhibit__box--bottom--list--s--left
-                        .mypage-exhibit__box--bottom--list--s--left--image
+                = link_to myitem_path(myitem.id) do
+                  %li.mypage-exhibit__box--bottom--list--s
+                    .mypage-exhibit__box--bottom--list--s--left
+                      .mypage-exhibit__box--bottom--list--s--left--image
+                        - myitem.images.first(1).each do |image|
                           = image_tag image
-                      .mypage-exhibit__box--bottom--list--s--center
-                        .mypage-exhibit__box--bottom--list--s--center--head
-                          = myitem.name
-                        .mypage-exhibit__box--bottom--list--s--center--foot
-                          -# ifの条件分岐によりいいねがある場合とコメントがある場合に表示するようにする
-                          -# まだテーブルを作っていないので現状割愛
-                          -# .mypage-exhibit__box--bottom--list--s--center--foot--good
-                          -#   %i.far.fa-heart
-                          -#   2
-                          -# .mypage-exhibit__box--bottom--list--s--center--foot--comment
-                          -#   %i.far.fa-comment-alt
-                          -#   2
-                          .mypage-exhibit__box--bottom--list--s--center--foot--schiation
-                            - if myitem.process == "selling"
-                              .schiation-exhibit
-                                出品中
-                            - if myitem.process == "sellingstop"
-                              .schiation-stop
-                                公開停止中
-                      .mypage-exhibit__box--bottom--list--s--right
-                        %i.fas.fa-angle-right
+                    .mypage-exhibit__box--bottom--list--s--center
+                      .mypage-exhibit__box--bottom--list--s--center--head
+                        = myitem.name
+                      .mypage-exhibit__box--bottom--list--s--center--foot
+                        -# ifの条件分岐によりいいねがある場合とコメントがある場合に表示するようにする
+                        -# まだテーブルを作っていないので現状割愛
+                        -# .mypage-exhibit__box--bottom--list--s--center--foot--good
+                        -#   %i.far.fa-heart
+                        -#   2
+                        -# .mypage-exhibit__box--bottom--list--s--center--foot--comment
+                        -#   %i.far.fa-comment-alt
+                        -#   2
+                        .mypage-exhibit__box--bottom--list--s--center--foot--schiation
+                          - if myitem.process == "selling"
+                            .schiation-exhibit
+                              出品中
+                          - if myitem.process == "sellingstop"
+                            .schiation-stop
+                              公開停止中
+                    .mypage-exhibit__box--bottom--list--s--right
+                      %i.fas.fa-angle-right
           - else
             .mypage-exhibit__box--bottom--none
               出品中の商品がありません
