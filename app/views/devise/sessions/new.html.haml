@@ -1,5 +1,5 @@
-%body
-  .signup1-container
+.signin-wrapper
+  .signup1-container.padding-fix
     %header.signup1-container__header
       %h1
         %svg{role: "image", version: "1.1", viewbox: "0 0 182 49", xmlns: "http://www.w3.org/2000/svg", width:"185px", height:"49px", id: "mercari"}
@@ -31,10 +31,10 @@
           %div.login-zone__sns
             %btn.btn__login__fb 
               = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path
-              = fa_icon "facebook-square", class: "sns-icon"
+              %i.fab.fa-facebook.sns-icon
             %btn.btn__login__google.rese
               = link_to "Googleでログインする", user_google_oauth2_omniauth_authorize_path
-              = fa_icon "google", class: "sns-icon"
+              %i.fab.fa-google.sns-icon
           .login-zone__form
             .login-zone__form__list
             = f.text_field :email, class: "input-default-1", placeholder:"メールアドレス"
@@ -55,9 +55,7 @@
           -#     .login-zone__form__box__submit
           -#       = f.submit "ログイン", class: 'login-btn'
           -#     %a パスワードをお忘れの方
-
-  .single-container__footer.login-footer
-    = render partial:'shared/bottombar'
+  = render partial:'shared/bottombar'
 -# .wrapper
 -#   .single-container
 -#     .single-container__header
