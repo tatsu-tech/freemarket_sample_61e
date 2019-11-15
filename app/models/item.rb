@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  belongs_to :user, optional: true
+  belongs_to :user
   belongs_to :category, optional: true
   has_many :comments
   has_many :offers
@@ -35,5 +35,13 @@ class Item < ApplicationRecord
     "---":0,
     "1~2日で発送":1, "2~3日で発送":2, "4~7日で発送":3
   },_prefix: true
+    enum process:{
+      selling:0,       #公開中（出品した商品）
+      sellingstop:1,   #公開停止中（出品した商品）
+      selltradeing:2,  #取引済（出品した商品）
+      sellcomp:3,      #売却済（出品した商品）
+      buytradeing:4,   #取引中（購入した商品）
+      buyingcomp:5     #過去の取引（出品した商品）
+    },_prefix: true
 
 end

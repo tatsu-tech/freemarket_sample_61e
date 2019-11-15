@@ -4,20 +4,20 @@ Rails.application.routes.draw do
   }
 
   root 'items#index'
+  resources :items, only: [:index, :new, :create, :show, :edit, :update]
+  resources :myitems, only: [:index, :show, :edit, :update, :destroy]
 
-  resources :items, only: [:index, :new, :create, :show]
-  
   resources :users do
     member do
       get 'mypage'
       get 'mypage/notification'
       get 'mypage/todo'
       get 'mypage/like/history'
-      get 'mypage/listings/listing'
-      get 'mypage/listings/in_progress'
-      get 'mypage/listings/completed'
-      get 'mypage/purchase'
-      get 'mypage/purchased'
+      get 'users/listing'
+      get 'users/in_progress'
+      get 'users/completed'
+      get 'users/purchase'
+      get 'users/purchased'
       get 'mypage/news'
       get 'mypage/review/history'
       get 'mypage/support'
@@ -29,6 +29,7 @@ Rails.application.routes.draw do
       get 'mypage/email_password'
       get 'mypage/identification'
       get 'mypage/sms_confirmation'
+      get 'users/logout'
     end
   end
 
@@ -44,11 +45,18 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cards, only: [:new, :show] do
+  resources :cards, only: [:new, :show, :edit] do
     collection do
       post 'show', to: 'cards#show'
       post 'pay', to: 'cards#pay'
       post 'delete', to: 'cards#delete'
+    end
+  end
+
+  resources :transactions do
+    collection do
+      post 'pay' => 'transactions#pay', as: 'pay'
+      get 'result' => 'transactions#result'
     end
   end
   

@@ -1,0 +1,27 @@
+.purchase-result {
+  padding-bottom: 20px;
+
+  .purchase-result__head {
+    background-color: blanchedalmond;
+    color: crimson;
+    height: 120px;
+    padding: 30px;
+    text-align: center;
+
+    .result-clock {
+      font-size: 30px;
+    }
+    .waiting-message {
+      font-size: 14px;
+      color: #333;
+    }
+  }
+
+  .purchase-result__price {
+    text-align: center;
+    font-size: 28px;
+    .purchase-result__shipping {
+      font-size: 14px;
+    }
+  }
+}

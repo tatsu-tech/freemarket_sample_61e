@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'user_address'
+rc
 
 describe UserAddress do
   describe '#signup3-validates' do

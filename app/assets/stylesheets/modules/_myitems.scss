@@ -1,0 +1,92 @@
+.myitem-explanation {
+  background-color: $white;
+  font-size: 18px;
+  line-height: 1.5;
+  &__content {
+    padding:0 40px 40px;
+    word-break: break-all;
+  }
+}
+
+.myitem-wrraper {
+  padding:8px 0px 50px;
+  background-color: rgb(245, 245, 245);
+  .myitem-edit-box {
+    background-color: $white;
+    width: 700px;
+    margin: 0 auto;
+    padding: 8px 16px;
+    text-align: center;
+    &__change-btn {
+      display:block;
+      width: 100%;
+      margin:16px 0;
+      font-size:14px;
+      line-height: 48px;
+      color: #fff;
+      background-color: $red;
+      transition: all  .3s ease-out;
+    }
+    &__change-btn:hover {
+      opacity: 0.7;
+    }
+    &__delete-btn {
+      display:block;
+      width: 100%;
+      margin:16px 0;
+      font-size:14px;
+      line-height: 48px;
+      color: #fff;
+      background-color: #aaa;
+      transition: all  .3s ease-out;
+    }
+    &__delete-btn:hover {
+      opacity: 0.7;
+    }
+    button{
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      padding: 0;
+      appearance: none;
+      text-decoration: none;
+      color: $white;
+      font-size:14px;
+    }
+    a {
+      text-decoration: none;
+      color: $white;
+    }
+    p {
+      color:#333333
+    }
+  }
+}
+.tag-stop {
+  @include tag-schiation();
+  border-top: 120px solid #888;
+}
+.stop {
+  @include schiation();
+  top:34px;
+  left:-5px;
+}
+.tag-trade {
+  @include tag-schiation();
+  border-top: 120px solid $blue;
+}
+.trade {
+  @include schiation();
+  top: 33px;
+  left: 13px;
+}
+.tag-sold {
+  @include tag-schiation();
+  border-top: 120px solid $red;
+}
+.sold {
+  @include schiation();
+  top: 37px;
+  left: 14px;
+}

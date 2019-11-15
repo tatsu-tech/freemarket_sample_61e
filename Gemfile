@@ -86,7 +86,7 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
-
+gem 'gon'
 
 group :production do
   gem 'unicorn', '5.4.1'

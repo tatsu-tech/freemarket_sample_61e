@@ -32,9 +32,8 @@ class SignupController < ApplicationController
     @user.user_address = UserAddress.new
   end
 
-  def signup4
-                                                  #signup3での入力内容をsessionで保持
-    password = create_password
+  def signup4 
+    gon.pk_key = ENV['PAYJP_TEST_PUBLIC_KEY']
     session[:send_name_family_kanji] = user_address_params[:send_name_family_kanji]
     session[:send_name_first_kanji] = user_address_params[:send_name_first_kanji]
     session[:send_name_family_kana] = user_address_params[:send_name_family_kana]

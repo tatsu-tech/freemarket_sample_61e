@@ -2,12 +2,14 @@ class CardsController < ApplicationController
   require "payjp"
 
   def new
+    gon.pk_key = ENV['PAYJP_TEST_PUBLIC_KEY']
     card = Card.where(user_id: current_user.id)
-    redirect_to done_signup_index_path  if card.exists?
+
   end
 
   def pay
-    Payjp.api_key = 'sk_test_f16297a659e2865c9803e3b8'
+    gon.pk_key = ENV['PAYJP_TEST_PUBLIC_KEY']
+    Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
     if params['payjp_token'].blank?
       binding.pry
       redirect_to action: "new"
@@ -31,7 +33,7 @@ class CardsController < ApplicationController
     card = Card.where(user_id: current_user.id).first
     if card.blank?
     else
-      Payjp.api_key = 'sk_test_f16297a659e2865c9803e3b8'
+      Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
       customer = Payjp::Customer.retrieve(card.customer_id)
       custpmer.delete
       card.delete
@@ -44,10 +46,13 @@ class CardsController < ApplicationController
     if card.blank?
       redirect_to action: "new"
     else
-      Payjp.api_key = 'sk_test_f16297a659e2865c9803e3b8'
+      Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.card.retrieve(card.card_id)
     end
   end
 
+  def edit
+  end
+  
 end
