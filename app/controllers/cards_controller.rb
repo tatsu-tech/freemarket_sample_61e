@@ -4,12 +4,14 @@ class CardsController < ApplicationController
   def new
     gon.pk_key = ENV['PAYJP_TEST_PUBLIC_KEY']
     card = Card.where(user_id: current_user.id)
+
   end
 
   def pay
     gon.pk_key = ENV['PAYJP_TEST_PUBLIC_KEY']
     Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
     if params['payjp_token'].blank?
+      binding.pry
       redirect_to action: "new"
     else
       customer = Payjp::Customer.create(

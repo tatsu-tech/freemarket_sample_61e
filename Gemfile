@@ -82,6 +82,10 @@ gem 'gretel'
 gem 'payjp'
 gem 'active_hash'
 gem "aws-sdk-s3", require: false
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'
 gem 'gon'
 
 group :production do
