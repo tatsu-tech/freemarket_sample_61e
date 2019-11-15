@@ -1,6 +1,5 @@
 class MyitemsController < ApplicationController
   before_action :set_myitem_id, only: [:index, :show, :edit, :update, :destroy]
-  before_action :
 
   def index
   end

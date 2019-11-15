@@ -234,6 +234,9 @@
           font-size: 50px;
           font-weight: 500;
           margin-right: 16px;
+          line-height:42px;
+          font-family: 'Source Sans Pro';
+          font-weight:600;
         }
         .top-box__price--right {
 
@@ -251,6 +254,16 @@
       }
       .top-box__buy-btn {
         background-color: #ea352d;
+          color: $white;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 60px;
+        display: block;
+        margin-top: 16px;
+        text-align: center;
+      }
+      .top-box__sold-btn {
+        background-color: #888;
           color: $white;
         font-size: 24px;
         font-weight: 600;

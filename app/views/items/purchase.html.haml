@@ -27,12 +27,13 @@
       .purchase__body__content
         .purchase__body__content-inner
           .purchase__body__content-inner-image-box
-            = image_tag "woman-1320810_640.jpg", class: "purchase__body__content-inner-image-box-image"
+            = image_tag @item.images[0], class: "purchase__body__content-inner-image-box-image"
           .purchase__body__content-inner-title
-            Ruby1(はじめてのプログラミング)
+            = @item.name
           .purchase__body__content-inner-form
             .purchase__body__content-inner-form__price
-              ¥1,000
+              ¥
+              = @item.price.to_s(:delimited)
               .purchase__body__content-inner-form__price-shipping
                 送料込み
             .purchase__body__content-inner-form__point
@@ -42,7 +43,8 @@
                 .purchase__body__content-inner-form__table-list-title
                   支払い金額
                 .purchase__body__content-inner-form__table-list-price
-                  ¥1,000
+                  ¥
+                  = @item.price.to_s(:delimited)
             = form_tag({controller: :transactions, action: :create}, {method: :post}) do
               %button.payjp-button 購入する
 

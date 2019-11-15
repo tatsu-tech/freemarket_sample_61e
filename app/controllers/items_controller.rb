@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
-  before_action :set_item, only: [:edit, :update]
+  before_action :set_item, only: [:edit, :update, :purchase]
 
   def index
     @items = Item.with_attached_images.order("created_at DESC").limit(10)
@@ -21,6 +21,9 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.with_attached_images.find(params[:id])
+      if @item.user_id == current_user.id
+        redirect_to myitem_path(@item.id)
+      end
     session[:item_id] = params[:id]
   end
 
@@ -48,6 +51,9 @@ class ItemsController < ApplicationController
       end
   end
 
+  def purchase
+  end
+
   private
 
   def create_params
@@ -57,4 +63,5 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
+
 end
