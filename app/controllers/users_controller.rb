@@ -16,6 +16,8 @@ class UsersController < ApplicationController
   end
 
   def listing
+    @myitem = Item.find(current_user.id)
+    redirect_to root_path unless current_user&.id
   end
 
   def in_progress
