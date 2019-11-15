@@ -1,7 +1,6 @@
 $(document).on('turbolinks:load', function() {
   // パスの取得
   const pathName = location.pathname;
-  console.log(pathName)
 
   // マイページのパスの時
   $(function() {
