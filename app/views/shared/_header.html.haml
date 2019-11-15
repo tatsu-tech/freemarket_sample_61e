@@ -171,7 +171,7 @@
                         .header__body__foot--right--mypage--dropdwn--menu--list--icon
                           %i.fas.fa-chevron-right
         - else
-          = link_to "signup/signup", class: "header__body__foot--right--signup" do
+          = link_to signup_signup_index_path, class: "header__body__foot--right--signup" do
             新規会員登録
           = link_to new_user_session_path, class: "header__body__foot--right--login" do
             ログイン

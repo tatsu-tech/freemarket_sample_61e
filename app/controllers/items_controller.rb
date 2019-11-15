@@ -21,8 +21,10 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.with_attached_images.find(params[:id])
-      if @item.user_id == current_user.id
-        redirect_to myitem_path(@item.id)
+      if user_signed_in?
+        if @item.user_id == current_user.id
+          redirect_to myitem_path(@item.id)
+        end
       end
     session[:item_id] = params[:id]
   end

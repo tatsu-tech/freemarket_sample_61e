@@ -20,9 +20,35 @@
             .mypage-exhibit__box--middle--right
               売却済み
         .mypage-exhibit__box--bottom
-          .mypage-exhibit__box--bottom--list
-          .mypage-exhibit__box--bottom--none
-            取引中の商品がありません
+          - if @myitems.present?
+            %ul.mypage-exhibit__box--bottom--list
+              - @myitems.each_with_index do |myitem|
+                - myitem.images.each do |image|
+                  = link_to myitem_path(myitem.id) do
+                    %li.mypage-exhibit__box--bottom--list--s
+                      .mypage-exhibit__box--bottom--list--s--left
+                        .mypage-exhibit__box--bottom--list--s--left--image
+                          = image_tag image
+                      .mypage-exhibit__box--bottom--list--s--center
+                        .mypage-exhibit__box--bottom--list--s--center--head
+                          = myitem.name
+                        .mypage-exhibit__box--bottom--list--s--center--foot
+                          -# ifの条件分岐によりいいねがある場合とコメントがある場合に表示するようにする
+                          -# まだテーブルを作っていないので現状割愛
+                          -# .mypage-exhibit__box--bottom--list--s--center--foot--good
+                          -#   %i.far.fa-heart
+                          -#   2
+                          -# .mypage-exhibit__box--bottom--list--s--center--foot--comment
+                          -#   %i.far.fa-comment-alt
+                          -#   2
+                          .mypage-exhibit__box--bottom--list--s--center--foot--schiation
+                            .schiation-trade
+                              取引中
+                      .mypage-exhibit__box--bottom--list--s--right
+                        %i.fas.fa-angle-right
+          - else
+            .mypage-exhibit__box--bottom--none
+              取引中の商品がありません
       .mypage-exhibit__foot
         = link_to users_listing_user_path do
           .mypage-exhibit__foot--left

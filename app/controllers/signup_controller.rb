@@ -33,6 +33,7 @@ class SignupController < ApplicationController
   end
 
   def signup4 
+    password = create_password
     gon.pk_key = ENV['PAYJP_TEST_PUBLIC_KEY']
     session[:send_name_family_kanji] = user_address_params[:send_name_family_kanji]
     session[:send_name_first_kanji] = user_address_params[:send_name_first_kanji]
