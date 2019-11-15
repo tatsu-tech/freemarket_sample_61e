@@ -47,6 +47,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -81,6 +82,11 @@ gem 'gretel'
 gem 'payjp'
 gem 'active_hash'
 gem "aws-sdk-s3", require: false
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'
+
 
 group :production do
   gem 'unicorn', '5.4.1'

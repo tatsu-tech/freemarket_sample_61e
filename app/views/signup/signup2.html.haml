@@ -52,7 +52,7 @@
               - if errors = @user.errors.full_messages
                 %ul.signup-error-message
                   -errors.each do |error|
-                    %li 正しい値を入力してください
+                    %li=error
 
           = form_for @user, url: signup3_signup_index_path ,method: :get do |f|
             .signup1-container__main__view__form__box__input.form-group.form-nickname

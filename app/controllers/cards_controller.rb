@@ -3,12 +3,13 @@ class CardsController < ApplicationController
 
   def new
     card = Card.where(user_id: current_user.id)
-    redirect_to if card.exists?
+    redirect_to done_signup_index_path  if card.exists?
   end
 
   def pay
     Payjp.api_key = 'sk_test_f16297a659e2865c9803e3b8'
     if params['payjp_token'].blank?
+      binding.pry
       redirect_to action: "new"
     else
       customer = Payjp::Customer.create(

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :views
-  devise_for :users
+  devise_for :users,controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks'
+  }
+
   root 'items#index'
 
   resources :items, only: [:index, :new, :create, :show]
@@ -38,6 +40,7 @@ Rails.application.routes.draw do
       get 'signup3'
       get 'signup4'
       get 'done'
+      get 'sns'
     end
   end
 
