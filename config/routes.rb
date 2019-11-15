@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+  devise_for :users,controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks'
+  }
   root 'items#index'
-  resources :items, only: [:index, :new, :create, :show, :edit, :update]
-  resources :myitems, only: [:index, :show, :destroy]
+  resources :items, only: [:index, :new, :create, :show, :edit, :update] do
+    member do
+      get 'purchase'
+    end
+  end
+  resources :myitems, only: [:index, :show, :edit, :update, :destroy]
 
   resources :users do
     member do
@@ -38,6 +45,7 @@ Rails.application.routes.draw do
       get 'signup3'
       get 'signup4'
       get 'done'
+      get 'sns'
     end
   end
 
@@ -46,6 +54,13 @@ Rails.application.routes.draw do
       post 'show', to: 'cards#show'
       post 'pay', to: 'cards#pay'
       post 'delete', to: 'cards#delete'
+    end
+  end
+
+  resources :transactions do
+    collection do
+      post 'pay' => 'transactions#pay', as: 'pay'
+      get 'result' => 'transactions#result'
     end
   end
   

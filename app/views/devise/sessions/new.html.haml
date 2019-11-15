@@ -30,10 +30,10 @@
             = link_to "新規会員登録", signup_signup_index_path
           %div.login-zone__sns
             %btn.btn__login__fb 
-              = "Facebookでログイン"
+              = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path
               = fa_icon "facebook-square", class: "sns-icon"
             %btn.btn__login__google.rese
-              = "Googleでログイン"
+              = link_to "Googleでログインする", user_google_oauth2_omniauth_authorize_path
               = fa_icon "google", class: "sns-icon"
           .login-zone__form
             .login-zone__form__list

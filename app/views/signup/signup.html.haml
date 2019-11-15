@@ -13,11 +13,12 @@
               = link_to "メールアドレスで登録する", signup1_signup_index_path
               = fa_icon "envelope", class: "sns-icon"
             .btn.btn__fb
-              = "Facebookで登録する"
-              %i.fab.fa-facebook.sns-icon
+              = link_to "Facebookで登録する",user_facebook_omniauth_authorize_path 
+              = fa_icon "facebook-square", class: "sns-icon"
             .btn.btn__google
-              = "Googleで登録する"
-              %i.fab.fa-google.sns-icon
+              = link_to "Googleで登録する", user_google_oauth2_omniauth_authorize_path
+              = fa_icon "google", class: "sns-icon"
               
     .single-container__footer.in-footer
     = render partial: 'shared/bottombar'
+    

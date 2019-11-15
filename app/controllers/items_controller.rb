@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
-  before_action :set_item, only: [:edit, :update]
+  before_action :set_item, only: [:edit, :update, :purchase]
 
   def index
     @items = Item.with_attached_images.order("created_at DESC").limit(10)
@@ -21,6 +21,9 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.with_attached_images.find(params[:id])
+      if @item.user_id == current_user.id
+        redirect_to myitem_path(@item.id)
+      end
     session[:item_id] = params[:id]
   end
 
@@ -33,19 +36,22 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(create_params) # updateが成功した場合
-      if Rails.env.production?
-        params[:delete_images].split(",").each do |id|
-          ActiveStorage::Attachment.find(id).delete
-        end
-      else
-        params[:delete_images].split(",").each do |id|
-          ActiveStorage::Attachment.find(id).delete
-        end
+          if params[:delete_images].present?
+              if Rails.env.production?
+                params[:delete_images].split(",").each do |id|
+                  ActiveStorage::Attachment.find(id).delete
+                end
+              else
+                params[:delete_images].split(",").each do |id|
+                  ActiveStorage::Attachment.find(id).delete
+                end
+              end
+          end
+          redirect_to myitem_path(@item)
       end
-        redirect_to myitem_path(@item)
-    else
-      redirect_to :edit_item_path
-    end
+  end
+
+  def purchase
   end
 
   private
@@ -57,4 +63,5 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
+
 end
