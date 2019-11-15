@@ -38,7 +38,7 @@ class Item < ApplicationRecord
     enum process:{
       selling:0,       #公開中（出品した商品）
       sellingstop:1,   #公開停止中（出品した商品）
-      selltradeing:2,  #取引済（出品した商品）
+      selltradeing:2,  #取引中（出品した商品）
       sellcomp:3,      #売却済（出品した商品）
       buytradeing:4,   #取引中（購入した商品）
       buyingcomp:5     #過去の取引（出品した商品）

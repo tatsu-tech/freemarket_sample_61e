@@ -1,8 +1,10 @@
 $(document).on('turbolinks:load', function() {
   var form = $("#charge_form");
-  Payjp.setPublicKey("pk_test_6d89c8792c4bb812515e783f"); //(自身の公開鍵)
+  Payjp.setPublicKey(gon.pk_key); //(自身の公開鍵)
+  console.log(gon.pk_key);
 
   $("#charge_form").on("click", ".btn-default1", function(e) {
+    console.log("ok")
     e.preventDefault();
     form.find("input[type=submit]").prop("disabled", true);
     var card = {
@@ -20,7 +22,7 @@ $(document).on('turbolinks:load', function() {
         console.log(card)
         var token = response.id;
         $("#charge_form").append($('<input type="hidden" name="payjp_token" class="payjp-token" />').val(token));
-        $("#charge_form").get(0).submit();
+        $("#charge_form")[0].submit();
 
       }
       else {
