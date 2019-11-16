@@ -21,6 +21,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.with_attached_images.find(params[:id])
+    @others = Item.where.not(id: @item.id).where(user_id: @item.user_id).where(process: "selling").order("created_at DESC").limit(6)
       if user_signed_in?
         if @item.user_id == current_user.id
           redirect_to myitem_path(@item.id)

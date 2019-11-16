@@ -564,6 +564,14 @@
       }
     }
   }
+  .forth-box-none {
+    width: 700px;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    margin: 24px auto 0;
+    padding-bottom: 24px;
+  }
   .forth-box {
     width: 700px;
     margin: 24px auto 0;
@@ -587,6 +595,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      padding-bottom: 20px;
 
       .forth-box__body--content {
         height: 330px;
@@ -602,12 +611,9 @@
             overflow: hidden;
 
             img {
-              position: absolute;
-              left: 50%;
-              top: 50%;
               width: 100%;
-              height: auto;
-              transform: translate(-50%, -50%);
+              height: 100%;
+              object-fit: cover;
             }
           }
         }
@@ -618,6 +624,9 @@
           .forth-box__body--content--foot--detail--name {
             font-size: 16px;
             position: relative;
+            overflow: hidden;
+            height: 3em;
+            line-height: 1.5;
 
             .forth-box__body--content--foot--detail--name--hide {
               height: 25px;
