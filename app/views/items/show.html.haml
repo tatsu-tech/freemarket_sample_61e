@@ -191,13 +191,18 @@
         .third-box__foot--pinterest
           %i.fab.fa-pinterest
         
-  .forth-box
-    = link_to "" do
-      .forth-box__header
-        = @item.user.nickname
-        さんのその他の出品
-    .forth-box__body
-      = render "shared/other-user-items"
+  - if @others.present?
+    .forth-box
+      = link_to "" do
+        .forth-box__header
+          = @item.user.nickname
+          さんのその他の出品
+      .forth-box__body
+        = render "shared/other-user-items"
+  - else
+    .forth-box-none
+      = @item.user.nickname
+      さんのその他の出品はありません
 
 .background
   = render "shared/footer"

@@ -1,96 +1,21 @@
-.forth-box__body--content
-  %a{href:""}
-    .forth-box__body--content--head
-      .forth-box__body--content--head--photo
-        = image_tag 'https://static.mercdn.net/thumb/photos/m79719340269_1.jpg?1572100350'
-    .forth-box__body--content--foot--detail
-      .forth-box__body--content--foot--detail--name
-        【お買い得】EIZO ショートブーツ
-        .forth-box__body--content--foot--detail--name--hide
-      .forth-box__body--content--foot--detail--bottom-bar
-        .forth-box__body--content--foot--detail--bottom-bar--price
-          ¥6,000
-        .forth-box__body--content--foot--detail--bottom-bar--good
-          %i.far.fa-heart
-          .forth-box__body--content--foot--detail--bottom-bar--good--content
-            2
-.forth-box__body--content
-  %a{href:""}
-    .forth-box__body--content--head
-      .forth-box__body--content--head--photo
-        = image_tag 'https://static.mercdn.net/thumb/photos/m79719340269_1.jpg?1572100350'
-    .forth-box__body--content--foot--detail
-      .forth-box__body--content--foot--detail--name
-        【お買い得】EIZO ショートブーツ
-        .forth-box__body--content--foot--detail--name--hide
-      .forth-box__body--content--foot--detail--bottom-bar
-        .forth-box__body--content--foot--detail--bottom-bar--price
-          ¥6,000
-        .forth-box__body--content--foot--detail--bottom-bar--good
-          %i.far.fa-heart
-          .forth-box__body--content--foot--detail--bottom-bar--good--content
-            2
-.forth-box__body--content
-  %a{href:""}
-    .forth-box__body--content--head
-      .forth-box__body--content--head--photo
-        = image_tag 'https://static.mercdn.net/thumb/photos/m79719340269_1.jpg?1572100350'
-    .forth-box__body--content--foot--detail
-      .forth-box__body--content--foot--detail--name
-        【お買い得】EIZO ショートブーツ
-        .forth-box__body--content--foot--detail--name--hide
-      .forth-box__body--content--foot--detail--bottom-bar
-        .forth-box__body--content--foot--detail--bottom-bar--price
-          ¥6,000
-        .forth-box__body--content--foot--detail--bottom-bar--good
-          %i.far.fa-heart
-          .forth-box__body--content--foot--detail--bottom-bar--good--content
-            2
-.forth-box__body--content
-  %a{href:""}
-    .forth-box__body--content--head
-      .forth-box__body--content--head--photo
-        = image_tag 'https://static.mercdn.net/thumb/photos/m79719340269_1.jpg?1572100350'
-    .forth-box__body--content--foot--detail
-      .forth-box__body--content--foot--detail--name
-        【お買い得】EIZO ショートブーツ
-        .forth-box__body--content--foot--detail--name--hide
-      .forth-box__body--content--foot--detail--bottom-bar
-        .forth-box__body--content--foot--detail--bottom-bar--price
-          ¥6,000
-        .forth-box__body--content--foot--detail--bottom-bar--good
-          %i.far.fa-heart
-          .forth-box__body--content--foot--detail--bottom-bar--good--content
-            2
-.forth-box__body--content
-  %a{href:""}
-    .forth-box__body--content--head
-      .forth-box__body--content--head--photo
-        = image_tag 'https://static.mercdn.net/thumb/photos/m79719340269_1.jpg?1572100350'
-    .forth-box__body--content--foot--detail
-      .forth-box__body--content--foot--detail--name
-        【お買い得】EIZO ショートブーツ
-        .forth-box__body--content--foot--detail--name--hide
-      .forth-box__body--content--foot--detail--bottom-bar
-        .forth-box__body--content--foot--detail--bottom-bar--price
-          ¥6,000
-        .forth-box__body--content--foot--detail--bottom-bar--good
-          %i.far.fa-heart
-          .forth-box__body--content--foot--detail--bottom-bar--good--content
-            2
-.forth-box__body--content
-  %a{href:""}
-    .forth-box__body--content--head
-      .forth-box__body--content--head--photo
-        = image_tag 'https://static.mercdn.net/thumb/photos/m79719340269_1.jpg?1572100350'
-    .forth-box__body--content--foot--detail
-      .forth-box__body--content--foot--detail--name
-        【お買い得】EIZO ショートブーツ
-        .forth-box__body--content--foot--detail--name--hide
-      .forth-box__body--content--foot--detail--bottom-bar
-        .forth-box__body--content--foot--detail--bottom-bar--price
-          ¥6,000
-        .forth-box__body--content--foot--detail--bottom-bar--good
-          %i.far.fa-heart
-          .forth-box__body--content--foot--detail--bottom-bar--good--content
-            2
+- @others.each do |other|
+  .forth-box__body--content
+    = link_to item_path(other.id) do
+      .forth-box__body--content--head
+        .forth-box__body--content--head--photo
+          - other.images.first(1).each do |image|
+            = image_tag image
+      .forth-box__body--content--foot--detail
+        .forth-box__body--content--foot--detail--name
+          = other.name
+          .forth-box__body--content--foot--detail--name--hide
+        .forth-box__body--content--foot--detail--bottom-bar
+          .forth-box__body--content--foot--detail--bottom-bar--price
+            ¥
+            = other.price
+          -# 条件分岐によりいいねが付いているもののみ表示するようにする
+          -# いいねテーブルをまだ作っていないため現状割愛
+          -# .forth-box__body--content--foot--detail--bottom-bar--good
+          -#   %i.far.fa-heart
+          -#   .forth-box__body--content--foot--detail--bottom-bar--good--content
+          -#     2
