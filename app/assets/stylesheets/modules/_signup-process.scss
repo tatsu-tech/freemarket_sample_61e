@@ -411,9 +411,6 @@ h3{
         }
       }
       &--right {
-        position: absolute;
-        bottom: 1px;
-        right: 0;
 
         .phone-img-s {
           height: 200px;
@@ -571,4 +568,10 @@ h3{
 
 .form-padding{
   padding: 40px 0 64px;
+}
+
+.process{
+  position: absolute;
+  bottom: 3px;
+  right: 0;
 }
