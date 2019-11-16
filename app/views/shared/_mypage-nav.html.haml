@@ -116,7 +116,7 @@
           .arrow-right
             = fa_icon "angle-right"
       %li
-        = link_to "", class: 'mypage-nav__list-item' do
+        = link_to edit_card_path(current_user.id), class: 'mypage-nav__list-item' do
           支払い方法
           .arrow-right
             = fa_icon "angle-right"

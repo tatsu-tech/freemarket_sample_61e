@@ -19,7 +19,7 @@ $(document).on('turbolinks:load', function() {
         $(".input-default-cvc").removeAttr("name");
         $(".select-default-month").removeAttr("name");
         $(".select-default-year").removeAttr("name");
-        console.log(card)
+
         var token = response.id;
         $("#charge_form").append($('<input type="hidden" name="payjp_token" class="payjp-token" />').val(token));
         $("#charge_form")[0].submit();
