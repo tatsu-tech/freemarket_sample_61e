@@ -13,14 +13,13 @@ $(document).on('turbolinks:load', function() {
         exp_month: parseInt($(".select-default-month").val()),
         exp_year: parseInt($(".select-default-year").val())
     };
-    console.log(card)
     Payjp.createToken(card, function(status, response) {
       if (status == 200) {
         $(".input-default-number").removeAttr("name");
         $(".input-default-cvc").removeAttr("name");
         $(".select-default-month").removeAttr("name");
         $(".select-default-year").removeAttr("name");
-        console.log(card)
+
         var token = response.id;
         $("#charge_form").append($('<input type="hidden" name="payjp_token" class="payjp-token" />').val(token));
         $("#charge_form")[0].submit();
