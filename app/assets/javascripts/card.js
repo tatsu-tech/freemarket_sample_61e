@@ -13,6 +13,7 @@ $(document).on('turbolinks:load', function() {
         exp_month: parseInt($(".select-default-month").val()),
         exp_year: parseInt($(".select-default-year").val())
     };
+    console.log(card)
     Payjp.createToken(card, function(status, response) {
       if (status == 200) {
         $(".input-default-number").removeAttr("name");

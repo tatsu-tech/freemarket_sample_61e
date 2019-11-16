@@ -80,7 +80,7 @@
               = fa_icon "angle-down", class: "pull-down long"
               %label{for: "name"} 都道府県
               %span{class: "form-must"}必須
-              = f.text_field :prefecture, class: "select-default-long",placeholder: "入力してください"
+              = f.select :prefecture, UserAddress.prefectures.keys, {}, class: "select-default-long",placeholder: "入力してください"
               -# %select{type: "text", placeholder: "選択してください", class: "select-default-long", name: "prefecture"}
                 -# %option
             .signup1-container__main__view__form__box__input.form-group.relative
