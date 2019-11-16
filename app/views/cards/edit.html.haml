@@ -14,9 +14,8 @@
             クレジットカード一覧
           .mypage-card-edit__box--content__section
             .mypage-card-edit__box--content__section--btn
-              = link_to "/cards/edit1", class: "card-register-btn" do
-                =fa_icon "credit-card", class: "card-icon"
-                クレジットカードを追加する
+              = link_to "クレジットカードを追加する", edit1_cards_path, class: "card-register-btn"
+              = fa_icon "credit-card", class: "card-icon"
           .mypage-card-edit__box--content__arart
             支払い方法について
 
