@@ -1,34 +1,36 @@
 .searched-background {
   width: 1020px;
   margin: 40px auto 0;
-  .searched-background__side-bar {
+
+  &__side-bar {
 
   }
-  .searched-background__area {
+  &__area {
     
-    .searched-background__area--top {
-      .searched-background__area--top--word {
+    &--top {
+
+      &--word {
         font-size: 22px;
         font-weight: bold;
         align-items: center;
         display: flex;
         margin-bottom: 5px;
-        .searched-background__area--top--word--head {
+
+        &--head {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
           max-width: 80%;
           margin-right: 10px;
-          
         }
       }
-      .searched-background__area--top--num {
+      &--num {
         font-size: 15px;
         color: rgb(150, 150, 150);
         margin-bottom: 30px;
       }
     }
-    .searched-background__area--list {
+    &--list {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       column-gap: 20px;
@@ -60,7 +62,7 @@
         border: solid 1px $blue;
       }
     }
-    .searched-background__area--none {
+    &--none {
       font-size: 15px;
       color: rgb(150, 150, 150);
       padding-bottom: 40px;
