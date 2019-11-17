@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     member do
       get 'purchase'
     end
+    collection do
+      get 'searched'
+    end
   end
   resources :myitems, only: [:index, :show, :edit, :update, :destroy]
 

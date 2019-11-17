@@ -12,7 +12,7 @@
         .forth-box__body--content--foot--detail--bottom-bar
           .forth-box__body--content--foot--detail--bottom-bar--price
             ¥
-            = other.price
+            = other.price.to_s(:delimited)
           -# 条件分岐によりいいねが付いているもののみ表示するようにする
           -# いいねテーブルをまだ作っていないため現状割愛
           -# .forth-box__body--content--foot--detail--bottom-bar--good

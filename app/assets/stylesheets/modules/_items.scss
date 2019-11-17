@@ -133,18 +133,23 @@
             background-color: rgb(245, 245, 245);
             font-size: 16px;
             height: 40px;
-            width: 100%;
+            width: 93%;
             line-height: 1.4em;
             border-width: 1px;
             border-style: solid;
             border-color: rgb(204, 204, 204);
-            border-radius: 4px;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            border-right: none;
             padding: 0px 0px 0px 10px;
           }
-          .fa.fa-search {
+          .search-btn {
+            height: 40px;
+            width: 7%;
             position: absolute;
-            right: 18px;
-            top: 12px;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            cursor: pointer;
           }
         }
       }
