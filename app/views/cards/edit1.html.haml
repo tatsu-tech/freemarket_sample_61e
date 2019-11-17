@@ -174,9 +174,9 @@
               .arrow-right
                 = fa_icon "angle-right"
           %li
-            = link_to "mypage", class: 'mypage-nav__list-item' do
+            = link_to users_identification_user_path(current_user), class: 'mypage-nav__list-item' do
               本人情報
-              .arrow-right-mypage
+              .arrow-right
                 = fa_icon "angle-right"
           %li
             = link_to "mypage", class: 'mypage-nav__list-item' do
@@ -184,9 +184,10 @@
               .arrow-right
                 = fa_icon "angle-right"
           %li
-            ログアウト
-            .arrow-right
-              = fa_icon "angle-right"
+            = link_to users_logout_user_path(current_user), class: 'mypage-nav__list-item' do
+              ログアウト
+              .arrow-right
+                = fa_icon "angle-right"
 
 .background
   = render "shared/footer"

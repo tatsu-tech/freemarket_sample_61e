@@ -760,7 +760,7 @@
         justify-content: space-between;
         margin: 0px auto;
 
-        &--left {
+        &--left-text {
           padding-top: 40px;
 
           &--top {
@@ -849,29 +849,6 @@
               &--icon {
                 display: flex;
                 margin-top: 30px;
-
-                &--twitter {
-                  margin-right: 20px;
-                  color: $white;
-                  height: 32px;
-                  width: 32px;
-
-                  .fa-twitter {
-                    color: $white;
-                    height: 32px;
-                    width: 32px;
-                  }
-                }
-                &--facebook {
-                  color: $white;
-                  height: 30px;
-                  width: 30px;
-                  .fa-facebook-square {
-                    color: $white;
-                    height: 30px;
-                    width: 30px;
-                  }
-                }
               }
             }
           }  
@@ -971,4 +948,15 @@
       }
     }
   }
+}
+.twitter-logo-foot {
+  color: $white;
+  height: 32px;
+  width: 32px;
+  margin-right: 20px;
+}
+.facebook-logo-foot {
+  color: $white;
+  height: 30px;
+  width: 30px;
 }
