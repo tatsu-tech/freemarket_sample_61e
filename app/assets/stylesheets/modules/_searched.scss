@@ -1,0 +1,69 @@
+.searched-background {
+  width: 1020px;
+  margin: 40px auto 0;
+  .searched-background__side-bar {
+
+  }
+  .searched-background__area {
+    
+    .searched-background__area--top {
+      .searched-background__area--top--word {
+        font-size: 22px;
+        font-weight: bold;
+        align-items: center;
+        display: flex;
+        margin-bottom: 5px;
+        .searched-background__area--top--word--head {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          max-width: 80%;
+          margin-right: 10px;
+          
+        }
+      }
+      .searched-background__area--top--num {
+        font-size: 15px;
+        color: rgb(150, 150, 150);
+        margin-bottom: 30px;
+      }
+    }
+    .searched-background__area--list {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      column-gap: 20px;
+      row-gap: 20px;
+      padding-bottom: 40px;
+
+      .searched-item {
+        @include item();
+        margin: 0;
+
+        .searched-item-img {
+          @include item-img();
+        }
+        .searched-gradient {
+          @include gradient();
+        }
+        .searched-image {
+          @include image();
+                
+          .searched-price {
+            @include price();
+          }
+        }
+      }
+      .searched-detail {
+        @include detail();
+      }
+      .searched-item:hover {
+        border: solid 1px $blue;
+      }
+    }
+    .searched-background__area--none {
+      font-size: 15px;
+      color: rgb(150, 150, 150);
+      padding-bottom: 40px;
+    }
+  }
+}
