@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(create_params)
+
     if @item.save
       redirect_to myitem_path(@item), notice: '商品の出品に成功しました'
     else
@@ -27,6 +28,7 @@ class ItemsController < ApplicationController
           redirect_to myitem_path(@item.id)
         end
       end
+    end
     session[:item_id] = params[:id]
   end
 

@@ -26,9 +26,5 @@ class MyitemsController < ApplicationController
     @myitem = Item.find(params[:id])
     redirect_to root_path unless current_user&.id
   end
-
-  def check_user_id
-    redirect_to myitem_path current_user?
-  end
   
 end
