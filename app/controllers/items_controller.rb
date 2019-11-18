@@ -32,7 +32,6 @@ class ItemsController < ApplicationController
           redirect_to myitem_path(@item.id)
         end
       end
-    end
     session[:item_id] = params[:id]
   end
 
@@ -57,7 +56,7 @@ class ItemsController < ApplicationController
               end
           end
           redirect_to myitem_path(@item)
-      end
+    end
   end
 
   def purchase
