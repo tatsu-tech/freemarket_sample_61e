@@ -3,7 +3,11 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :purchase]
 
   def index
-    @items = Item.where.not(user_id: current_user.id).with_attached_images.order("created_at DESC").limit(10)
+    if user_signed_in?
+      @items = Item.where.not(user_id: current_user.id).with_attached_images.order("created_at DESC").limit(10)
+    else
+      @items = Item.with_attached_images.order("created_at DESC").limit(10)
+    end
   end
 
   def new
@@ -60,7 +64,11 @@ class ItemsController < ApplicationController
   end
 
   def searched
-    @searched = Item.where.not(user_id: current_user.id).where('name LIKE ?', "%#{params[:text]}%")
+    if user_signed_in?
+      @searched = Item.where.not(user_id: current_user.id).where('name LIKE ?', "%#{params[:text]}%")
+    else
+      @items = Item.where('name LIKE ?', "%#{params[:text]}%")
+    end
   end
 
   private

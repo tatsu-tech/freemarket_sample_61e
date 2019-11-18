@@ -69,6 +69,8 @@ Rails.application.routes.draw do
       get 'result' => 'transactions#result'
     end
   end
+
+  resources :likes, only: [:index]
   
 end
 

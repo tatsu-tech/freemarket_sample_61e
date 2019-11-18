@@ -73,7 +73,7 @@
               %li ブランド一覧
       .header__body__foot--right
         - if user_signed_in?
-          = link_to "" do
+          = link_to likes_path do
             .header__body__foot--right--good
               %i.far.fa-heart
               いいね！一覧

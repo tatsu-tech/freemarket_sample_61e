@@ -39,7 +39,12 @@
             .searched-background__area--top--word--foot
               の検索結果
         .searched-background__area--none
-          該当する商品が見つかりません。検索条件を変えて、再度お試しください。
+          - if user_signed_in?
+            該当する商品が見つかりません。検索条件を変えて、再度お試しください。
+            %br/
+            (あなたが出品した商品はこの検索一覧には出てきません。ご覧になりたい場合はマイページからご覧になれます。)
+          - else
+            該当する商品が見つかりません。検索条件を変えて、再度お試しください。
 
 .background
   = render "shared/footer"
