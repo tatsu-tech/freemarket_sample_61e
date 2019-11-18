@@ -56,7 +56,7 @@ class ItemsController < ApplicationController
               end
           end
           redirect_to myitem_path(@item)
-      end
+    end
   end
 
   def purchase
