@@ -64,14 +64,14 @@
               = f.email_field :email, class: "input-default-1", placeholder:"PC・携帯どちらでも可"
               -# %input{type:"email", name: "email", placeholder:"PC・携帯どちらでも可", class: "input-default-1"}
 
-            - unless @user.nickname.present?
+            - unless @user.nickname.present? && @user.email.present?
               .signup1-container__main__view__form__box__input.form-group
                 %label{for: "password"}パスワード
                 %span{class: "form-must"}必須
                 = f.password_field :password, class: "input-default-1", placeholder: "7文字以上"
                 -# %input{type: "password", name: "password", placeholder: "7文字以上", class: "input-default-1"}
 
-            - unless @user.nickname.present?  
+            - unless @user.nickname.present? && @user.email.present?
               .signup1-container__main__view__form__box__input.form-group
                 %label{for: "password"}パスワード確認
                 %span{class: "form-must"}必須
@@ -82,9 +82,9 @@
               %h3.signup1-container__main__view__form__box__input__middle--string 本人確認
               %p.signup1-container__main__view__form__box__input__middle--text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
 
-            .signup1-container__main__view__form__box__input.form-group
+            .signup1-container__main__view__form__box__input.form-group.flex
               %div
-                %label お名前（全角）
+                %label.label-up お名前（全角）
                 %span{class: "form-must"}必須
               = f.text_field :name_family_kanji, class: "input-default-1__half", placeholder:"例）山田"
               = f.text_field :name_first_kanji, class: "input-default-1__half", placeholder:"例）彩"
