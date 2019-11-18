@@ -7,7 +7,7 @@ class SignupController < ApplicationController
   def index
   end
 
-  def signup1 
+  def signup1                                              #サインインしている場合はサインアップ画面へ進ませないよう設定。商品一覧画面へ。
     redirect_to root_path if user_signed_in? 
     @user = User.new
   end
@@ -33,6 +33,7 @@ class SignupController < ApplicationController
   end
 
   def signup4 
+    password = create_password
     gon.pk_key = ENV['PAYJP_TEST_PUBLIC_KEY']
     session[:send_name_family_kanji] = user_address_params[:send_name_family_kanji]
     session[:send_name_first_kanji] = user_address_params[:send_name_first_kanji]
@@ -209,11 +210,11 @@ class SignupController < ApplicationController
   def birthday_match
     date = params[:birthday]                            #f.date_selectで生成された情報をまとめて1つの情報にする。
 
-    if date["birthday(1i)"].empty? && date["birthday(2i)"].empty? && date["birthday(3i)"].empty?
+    if date["birthday(1i)"].empty? && date["birthday(2i)"].empty? && date["birthday(3i)"].empty? #(1i)は年、(2i)は月、(3i)は日
       return
     end
 
-    Date.new date["birthday(1i)"].to_i,date["birthday(2i)"].to_i,date["birthday(3i)"].to_i
+    Date.new date["birthday(1i)"].to_i,date["birthday(2i)"].to_i,date["birthday(3i)"].to_i #文字列としてインプットしたものを数値にして結合
   end
 
 end

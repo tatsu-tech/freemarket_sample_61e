@@ -1,5 +1,5 @@
-.wrapper
-  .single-container
+.signup-wrapper
+  .single-container.margin-fix
     .single-container__header.in-head
       = render partial: 'shared/topbar'
 
@@ -14,11 +14,10 @@
               = fa_icon "envelope", class: "sns-icon"
             .btn.btn__fb
               = link_to "Facebookで登録する",user_facebook_omniauth_authorize_path 
-              = fa_icon "facebook-square", class: "sns-icon"
+              %i.fab.fa-facebook.sns-icon
             .btn.btn__google
               = link_to "Googleで登録する", user_google_oauth2_omniauth_authorize_path
-              = fa_icon "google", class: "sns-icon"
+              %i.fab.fa-google.sns-icon
               
-    .single-container__footer.in-footer
-    = render partial: 'shared/bottombar'
+  = render partial: 'shared/bottombar'
     

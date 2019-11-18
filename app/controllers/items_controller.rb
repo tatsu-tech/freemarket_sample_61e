@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :purchase]
 
   def index
-    @items = Item.with_attached_images.order("created_at DESC").limit(10)
+    @items = Item.where.not(user_id: current_user.id).with_attached_images.order("created_at DESC").limit(10)
   end
 
   def new
@@ -22,9 +22,11 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.with_attached_images.find(params[:id])
-    if user_signed_in?
-      if @item.user_id == current_user.id
-        redirect_to myitem_path(@item.id)
+    @others = Item.where.not(id: @item.id).where(user_id: @item.user_id).where(process: "selling").order("created_at DESC").limit(6)
+      if user_signed_in?
+        if @item.user_id == current_user.id
+          redirect_to myitem_path(@item.id)
+        end
       end
     end
     session[:item_id] = params[:id]
@@ -55,6 +57,10 @@ class ItemsController < ApplicationController
   end
 
   def purchase
+  end
+
+  def searched
+    @searched = Item.where.not(user_id: current_user.id).where('name LIKE ?', "%#{params[:text]}%")
   end
 
   private

@@ -57,7 +57,90 @@
     &--bottom {
 
       &--list {
+        &--s {
+          font-size: 14px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px;
+          &--left {
+            width: 10%;
 
+            &--image {
+              height: 50px;
+              width: 50px;
+
+              img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+          &--center {
+            width: 89%;
+            &--head {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              margin: 0 15px 5px 0;
+            }
+            &--foot {
+              display: flex;
+              align-items: center;
+
+              &--good {
+                
+                margin-right: 10px;
+                .fa-heart {
+                  color: #ccc;
+                }
+              }
+              &--comment {
+                
+                margin-right: 10px;
+                .fa-comment-alt {
+                  color: #ccc;
+                }
+              }
+              &--schiation {
+                .schiation-exhibit {
+                  background-color: $blue;
+                  color: $white;
+                  border-radius: 3px;
+                  padding: 1px 3px;
+                }
+                .schiation-stop {
+                  background-color: $red;
+                  color: $white;
+                  border-radius: 3px;
+                  padding: 1px 3px;
+                }
+                .schiation-trade {
+                  background-color: rgb(255, 196, 0);
+                  color: $white;
+                  border-radius: 3px;
+                  padding: 1px 3px;
+                }
+                .schiation-sold {
+                  background-color: #999999;
+                  color: $white;
+                  border-radius: 3px;
+                  padding: 1px 3px;
+                }
+              }
+            }
+          }
+          &--right {
+            width: 1%;
+            .fa-angle-right {
+              font-size: 18px;
+            }
+          }
+        }
+        &--s:hover {
+          background-color: #fafafa
+        }
       }
       &--none {
         background-image: url("https://web-jp-assets.mercdn.net/_next/static/images/logo-gray-light-bf49bd7f43703356d83e9097214a2d23.svg");

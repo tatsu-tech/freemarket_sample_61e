@@ -1,0 +1,45 @@
+.background
+  - if user_signed_in?
+    = render "shared/exhibit-btn"
+
+  = render "shared/header-sp"
+
+  .searched-background
+    .searched-background__side-bar
+    .searched-background__area
+      - if @searched.present?
+        .searched-background__area--top
+          .searched-background__area--top--word
+            .searched-background__area--top--word--head
+              = params[:text]
+            .searched-background__area--top--word--foot
+              の検索結果
+          .searched-background__area--top--num
+            1 -
+            = @searched.ids.length
+            件表示
+        .searched-background__area--list
+          - @searched.each do |item|
+            = link_to item_path(item.id) do
+              .searched-item
+                .searched-gradient
+                .searched-image
+                  - item.images.first(1).each do |image|
+                    = image_tag image, class: "searched-item-img"
+                  .searched-price
+                    ¥
+                    = item.price.to_s(:delimited)
+                .searched-detail
+                  = item.name
+      - else
+        .searched-background__area--top
+          .searched-background__area--top--word
+            .searched-background__area--top--word--head
+              = params[:text]
+            .searched-background__area--top--word--foot
+              の検索結果
+        .searched-background__area--none
+          該当する商品が見つかりません。検索条件を変えて、再度お試しください。
+
+.background
+  = render "shared/footer"

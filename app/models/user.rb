@@ -47,8 +47,3 @@ class User < ApplicationRecord
   validates :password,length: {minimum:7}
   validates :mobile_phone_number,uniqueness: true, length: {minimum:11}
 end
-
-
-
-
-

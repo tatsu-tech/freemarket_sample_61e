@@ -1,38 +1,41 @@
 Rails.application.routes.draw do
+
   devise_for :users,controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
-
   root 'items#index'
   resources :items, only: [:index, :new, :create, :show, :edit, :update] do
     member do
       get 'purchase'
+    end
+    collection do
+      get 'searched'
     end
   end
   resources :myitems, only: [:index, :show, :edit, :update, :destroy]
 
   resources :users do
     member do
-      get 'mypage'
-      get 'mypage/notification'
-      get 'mypage/todo'
-      get 'mypage/like/history'
+      get 'users/mypage'
+      get 'users/notification'
+      get 'users/todo'
+      get 'users/like/history'
       get 'users/listing'
       get 'users/in_progress'
       get 'users/completed'
       get 'users/purchase'
       get 'users/purchased'
-      get 'mypage/news'
-      get 'mypage/review/history'
-      get 'mypage/support'
-      get 'mypage/sales'
-      get 'mypage/point'
-      get 'mypage/profile'
-      get 'mypage/deliver_address'
-      get 'mypage/card'
-      get 'mypage/email_password'
-      get 'mypage/identification'
-      get 'mypage/sms_confirmation'
+      get 'users/news'
+      get 'users/review/history'
+      get 'users/support'
+      get 'users/sales'
+      get 'users/point'
+      get 'users/profile'
+      get 'users/deliver_address'
+      get 'users/card'
+      get 'users/email_password'
+      get 'users/identification'
+      get 'users/sms_confirmation'
       get 'users/logout'
     end
   end
@@ -53,7 +56,10 @@ Rails.application.routes.draw do
     collection do
       post 'show', to: 'cards#show'
       post 'pay', to: 'cards#pay'
+      post 'add', to: 'cards#add'
       post 'delete', to: 'cards#delete'
+      get  'edit1'
+      get  'edit2'
     end
   end
 
