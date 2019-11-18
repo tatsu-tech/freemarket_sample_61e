@@ -8,6 +8,11 @@ $(document).on('turbolinks:load', function() {
       $("ul.mypage-nav__list li:eq(0) .arrow-right").css("color", "black");
       $("ul.mypage-nav__list li:eq(0)").css("background-color", "rgb(238, 238, 238)");
     
+  // いいね！一覧のパスの時
+    } else if (pathName == ("/likes")) {
+      $("ul.mypage-nav__list li:eq(3)").css("background-color", "rgb(238, 238, 238)");
+      $("ul.mypage-nav__list li:eq(3) .arrow-right").css("color", "black");
+
   // 出品した商品-出品中のパスの時
     } else if (pathName == ("/users/1/users/listing")) {
       $("ul.mypage-nav__list li:eq(5)").css("background-color", "rgb(238, 238, 238)");

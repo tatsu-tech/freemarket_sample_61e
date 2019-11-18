@@ -1,14 +1,12 @@
 .mypage-exhibit {
-  width: 700px;
-  float: right;
+  @include mypage-right();
 
   &__box {
-    background-color: $white;
+    @include mypage-box();
 
     &--top {
+      @include mypage-box-top();
       font-size: 16px;
-      font-weight: bold;
-      line-height: 72px;
       padding: 0 16px;
     }
     &--middle {
@@ -41,6 +39,7 @@
       display: flex;
       justify-content: space-between;
       text-align: center;
+
       .active-white {
         background-color: $white;
         border-top: 2px solid $red;
@@ -57,18 +56,16 @@
     &--bottom {
 
       &--list {
+
         &--s {
-          font-size: 14px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 15px;
+          @include mypage-box-bottom();
+          
           &--left {
-            width: 10%;
+            width: 14%;
 
             &--image {
-              height: 50px;
-              width: 50px;
+              height: 80px;
+              width: 80px;
 
               img {
                 height: 100%;
@@ -78,14 +75,12 @@
             }
           }
           &--center {
-            width: 89%;
+            width: 85%;
+
             &--head {
-              overflow: hidden;
-              text-overflow: ellipsis;
-              white-space: nowrap;
-              margin: 0 15px 5px 0;
+              @include mypage-box-bottom-center-head();
             }
-            &--foot {
+            &--middle {
               display: flex;
               align-items: center;
 
@@ -130,6 +125,18 @@
                 }
               }
             }
+            &--foot {
+              margin-top: 5px;
+              display: flex;
+
+              &--exh-date {
+                color: rgb(150, 150, 150);
+                margin-right: 15px;
+              }
+              &--upd-date {
+                color: rgb(150, 150, 150);
+              }
+            }
           }
           &--right {
             width: 1%;
@@ -139,60 +146,32 @@
           }
         }
         &--s:hover {
-          background-color: #fafafa
+          background-color: #f8f8f8;
         }
       }
       &--none {
-        background-image: url("https://web-jp-assets.mercdn.net/_next/static/images/logo-gray-light-bf49bd7f43703356d83e9097214a2d23.svg");
-        background-size: 78px 85px;
-        color: #ccc;
-        font-size: 16px;
-        font-weight: 600;
-        text-align: center;
-        background-position: center 40px;
-        background-repeat: no-repeat;
-        padding: 160px 0px 60px;
+        @include mypage-box-none();
       }
     }
   }
   &__foot {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
+    @include mypage-foot();
 
     &--left {
-      background-color: $white;
-      height: 42px;
-      width: 42px;
+      @include mypage-foot-landr();
 
       .fa-angle-left {
-        display: inline-block;
-        width: 44px;
-        height: 44px;
-        text-align: center;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        font-size: 25px;
-        line-height: 42px;
+        @include mypage-foot-landr-icon();
       }
     }
     &--left:hover {
       background-color: #eeeeee;
     }
     &--right {
-      background-color: $white;
-      height: 42px;
-      width: 42px;
+      @include mypage-foot-landr();
 
       .fa-angle-right {
-        display: inline-block;
-        width: 44px;
-        height: 44px;
-        text-align: center;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        font-size: 25px;
-        line-height: 42px;
+        @include mypage-foot-landr-icon();
       }
     }
     &--right:hover {

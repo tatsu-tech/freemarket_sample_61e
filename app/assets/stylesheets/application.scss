@@ -1,6 +1,7 @@
 @import "./reset";
 @import "config/variable";
 @import "mixin/index-mixin";
+@import "mixin/mypage-mixin";
 @import "modules/flash";
 @import "modules/users";
 @import "font-awesome";
@@ -28,3 +29,4 @@
 @import "modules/card-register";
 @import "modules/myitems";
 @import "modules/searched";
+@import "modules/likes";
