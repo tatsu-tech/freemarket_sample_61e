@@ -18,21 +18,7 @@
                   %br
                   またはクリックしてファイルをアップロード
                 = f.file_field :images, multiple: true, accept: 'image/jpg,image/png', id: 'photo_upload'
-            -#   -# = f.label 'file-upload-laber' do
-            -#   -#   = f.file_field :images, multiple: true, accept: 'image/jpg,image/png', id: 'photo_upload'
-            -#   -#   クリックしてファイルをアップロード
-            -#   -# .sell-content__upload__wrap__box__inner-text
-
-
-          -# .sell-content__upload__wrap__box
-          -#   %p クリックしてファイルをアップロード
-          -#   = f.file_field :images, multiple: true, accept: 'image/jpg,image/png', id: 'photo_upload'
-          -# .sell-content__upload__wrap__box{onclick: "$('#photo_upload').click()"}
-          -#   .sell-content__upload__wrap__box__inner-text
-          -#     クリックしてファイルをアップロード
-              
-        .image-input-field
-          -# = f.file_field :images, multiple: true, accept: 'image/jpg,image/png', id: 'photo_upload', class:'hidden'
+        .preview-reset#allDelete 出品画像をリセットする
       .sell-content__box
         %h3.sell-content__box__title
           = f.label "商品名"
