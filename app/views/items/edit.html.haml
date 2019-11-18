@@ -8,19 +8,17 @@
         %h3.sell-content__upload__title
           = f.label "出品画像"
           %span.must 必須
-        %p.sell-content__upload__lead 最大5枚までアップロードできます。
+        %p.sell-content__upload__lead 最大10枚までアップロードできます。
         .sell-content__upload__wrap
-          .sell-content__upload__wrap__preview
-            %ul#previewUpload.dflex
-              - @item.images.each_with_index do |image, i|
-                %li.sell-content__upload__wrap__preview__box#previewUpload-one{data: {image: "#{image.id}"}} 
-                  = image_tag @item.images[i], class:"sell-content__upload__wrap__preview__img",as: "image"
-                  %span.sell-content__upload__wrap__preview__delete-btn#imageDelete 削除
+          %ul.sell-content__upload__wrap__preview#previewUpload
+            - @item.images.each_with_index do |image, i|
+              %li.sell-content__upload__wrap__preview__box#previewUpload-one{data: {image: "#{image.id}"}} 
+                = image_tag @item.images[i], class:"sell-content__upload__wrap__preview__img",as: "image"
+                %span.sell-content__upload__wrap__preview__delete-btn#imageDelete 削除
 
-          .sell-content__upload__wrap__box{onclick: "$('#photo_upload').click()"}
-            .sell-content__upload__wrap__box__inner-text
-              クリックしてファイルをアップロード
-        .preview-reset 出品画像をリセットする
+            .sell-content__upload__wrap__box{onclick: "$('#photo_upload').click()"}
+              .sell-content__upload__wrap__box__inner-text
+                クリックしてファイルをアップロード
         .image-input-field
           = f.file_field :images, multiple: true, accept: 'image/jpg,image/png', id: 'photo_upload', class:'hidden'
       .sell-content__box

@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(create_params)
+
     if @item.save
       redirect_to myitem_path(@item), notice: '商品の出品に成功しました'
     else
@@ -21,9 +22,11 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.with_attached_images.find(params[:id])
+    if user_signed_in?
       if @item.user_id == current_user.id
         redirect_to myitem_path(@item.id)
       end
+    end
     session[:item_id] = params[:id]
   end
 
