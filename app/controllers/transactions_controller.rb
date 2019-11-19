@@ -13,9 +13,8 @@ class TransactionsController < ApplicationController
       currency: 'jpy'
     )
     Transaction.create(create_params)
-    item = @item
-    item.process = "selltradeing"
-    item.save
+    @item.process = "selltradeing"
+    @item.save
     render 'result' if charge.captured
   end
 
