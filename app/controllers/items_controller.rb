@@ -4,9 +4,9 @@ class ItemsController < ApplicationController
 
   def index
     if user_signed_in?
-      @items = Item.where.not(user_id: current_user.id).with_attached_images.order("created_at DESC").limit(10)
+      @items = Item.where.not(user_id: current_user.id).where(process: ["selling", "selltradeing"]).with_attached_images.order("created_at DESC").limit(10)
     else
-      @items = Item.with_attached_images.order("created_at DESC").limit(10)
+      @items = Item.where(process: ["selling", "selltradeing"]).with_attached_images.order("created_at DESC").limit(10)
     end
   end
 
