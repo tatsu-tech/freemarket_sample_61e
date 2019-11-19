@@ -34,11 +34,12 @@
       .purchase-result__content-inner.purchase__body__content
         .purchase__body__content-inner
           .purchase-result__content-inner-image-box.purchase__body__content-inner-image-box
-            = image_tag "woman-1320810_640.jpg", class: "purchase-result__content-inner-image-box-image purchase__body__content-inner-image-box-image"
+            = image_tag @item.images[0], class: "purchase-result__content-inner-image-box-image purchase__body__content-inner-image-box-image"
           .purchase-result__content-inner-title.purchase__body__content-inner-title
-            Ruby1(はじめてのプログラミング)
+            = @item.name
       %p.purchase-result__price
-        ¥1,000
+        ¥
+        = @item.price.to_s(:delimited)
         %span.purchase-result__shipping
           送料込み
         

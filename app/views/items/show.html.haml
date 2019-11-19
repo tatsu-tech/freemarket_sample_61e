@@ -109,7 +109,7 @@
     .top-box__middle
       .top-box__middle--explanation
         .top-box__middle--explanation--content
-          = @item.explanation
+          = simple_format(@item.explanation)
     .top-box__bottom
       .top-box__bottom--left
         - if user_signed_in?

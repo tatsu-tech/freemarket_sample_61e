@@ -101,5 +101,6 @@
           = link_to "加盟店規約",'https://www.mercari.com/jp/seller_terms/', target: "_blank", class:"sell-link-text"
           に同意したことになります。
         = f.submit class: 'sell-submit-btn mg-tp-40', disable_with: "Save", value:"出品する", id:"new-send-btn"
-        .sell-back-btn もどる
+        = link_to root_path, class:'text-dc-non' do
+          .sell-back-btn もどる
   = render 'shared/subfooter'
