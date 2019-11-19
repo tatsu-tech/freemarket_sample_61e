@@ -104,7 +104,8 @@
                 .header__body__foot--right--mypage--dropdwn
                   .header__body__foot--right--mypage--dropdwn--back
                     .header__body__foot--right--mypage--dropdwn--back--icon
-                      = image_tag  "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "mypage-icon-l"
+                      = link_to users_mypage_user_path(current_user) do
+                        = image_tag  "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "mypage-icon-l"
                   .header__body__foot--right--mypage--dropdwn--name
                     = current_user.nickname
                   .header__body__foot--right--mypage--dropdwn--count
@@ -115,7 +116,7 @@
                     = link_to "" do
                       .header__body__foot--right--mypage--dropdwn--count--exhibit
                         出品数:
-                        0
+                        = current_user.item_ids.length
                   .header__body__foot--right--mypage--dropdwn--money
                     = link_to "" do
                       .header__body__foot--right--mypage--dropdwn--money--sales
