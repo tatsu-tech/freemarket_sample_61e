@@ -70,7 +70,7 @@
             送料込み
     .myitem-explanation
       .myitem-explanation__content
-        = @myitem.explanation
+        = simple_format(@myitem.explanation)
 .myitem-wrraper
   .myitem-edit-box
     = link_to edit_item_path(@myitem), class: "myitem-edit-box__change-btn" do
