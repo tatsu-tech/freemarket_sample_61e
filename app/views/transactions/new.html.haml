@@ -45,19 +45,23 @@
                 .purchase__body__content-inner-form__table-list-price
                   ¥
                   = @item.price.to_s(:delimited)
-            = form_tag({controller: :transactions, action: :create}, {method: :post}) do
-              %button.payjp-button 購入する
+            = form_with url: item_transactions_path, action: 'create', local: "true" do |f|
+              = f.number_field :integer, type: "hidden", name: :price, value: @item.price
+              = f.text_field :string, type: "hidden", name: :payment_style, value: "クレジットカード"
+              = f.text_field :string, type: "hidden", name: :status, value: "取引中"
+              = f.hidden_field :process, value: "selltradeing"
+              = f.submit '購入する', class: 'payjp-button'
 
       .purchase__body__user
         .purchase__body__user__label
           .purchase__body__user__label-title
             配送先
           %address.purchase__body__user__label-address
-            〒150−0043
+            #{current_user.user_address.zip}
             %br
-            東京都 渋谷区 道玄坂２丁目１０番１２号 新大宗ビル３号館８F
+            #{current_user.user_address.prefecture}#{current_user.user_address.city}#{current_user.user_address.town}#{current_user.user_address.apartment}
             %br
-            真子　就有
+            #{current_user.name_family_kanji} #{current_user.name_first_kanji}
           = link_to "", class: "purchase__body__user__label-fix" do
             変更する
             = fa_icon "angle-right"

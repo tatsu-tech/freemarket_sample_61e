@@ -4,9 +4,11 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
   root 'items#index'
-  resources :items, only: [:index, :new, :create, :show, :edit, :update] do
-    member do
-      get 'purchase'
+  resources :items do
+    resources :transactions do
+      collection do
+        get 'result' => 'transactions#result'
+      end
     end
     collection do
       get 'searched'
@@ -60,13 +62,6 @@ Rails.application.routes.draw do
       post 'delete', to: 'cards#delete'
       get  'edit1'
       get  'edit2'
-    end
-  end
-
-  resources :transactions do
-    collection do
-      post 'pay' => 'transactions#pay', as: 'pay'
-      get 'result' => 'transactions#result'
     end
   end
 
