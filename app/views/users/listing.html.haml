@@ -20,9 +20,46 @@
             .mypage-exhibit__box--middle--right
               売却済み
         .mypage-exhibit__box--bottom
-          .mypage-exhibit__box--bottom--list
-          .mypage-exhibit__box--bottom--none
-            出品中の商品がありません
+          - if @myitems.present?
+            %ul.mypage-exhibit__box--bottom--list
+              - @myitems.each do |myitem|
+                = link_to myitem_path(myitem.id) do
+                  %li.mypage-exhibit__box--bottom--list--s
+                    .mypage-exhibit__box--bottom--list--s--left
+                      .mypage-exhibit__box--bottom--list--s--left--image
+                        - myitem.images.first(1).each do |image|
+                          = image_tag image
+                    .mypage-exhibit__box--bottom--list--s--center
+                      .mypage-exhibit__box--bottom--list--s--center--head
+                        = myitem.name
+                      .mypage-exhibit__box--bottom--list--s--center--middle
+                        -# ifの条件分岐によりいいねがある場合とコメントがある場合に表示するようにする
+                        -# まだテーブルを作っていないので現状割愛
+                        -# .mypage-exhibit__box--bottom--list--s--center--middle--good
+                        -#   %i.far.fa-heart
+                        -#   2
+                        -# .mypage-exhibit__box--bottom--list--s--center--middle--comment
+                        -#   %i.far.fa-comment-alt
+                        -#   2
+                        .mypage-exhibit__box--bottom--list--s--center--middle--schiation
+                          - if myitem.process == "selling"
+                            .schiation-exhibit
+                              出品中
+                          - if myitem.process == "sellingstop"
+                            .schiation-stop
+                              公開停止中
+                      .mypage-exhibit__box--bottom--list--s--center--foot
+                        .mypage-exhibit__box--bottom--list--s--center--foot--exh-date
+                          出品日:
+                          = myitem.created_at.strftime('%Y年%m月%d日')
+                        .mypage-exhibit__box--bottom--list--s--center--foot--upd-date
+                          更新日:
+                          = myitem.updated_at.strftime('%Y年%m月%d日')
+                    .mypage-exhibit__box--bottom--list--s--right
+                      %i.fas.fa-angle-right
+          - else
+            .mypage-exhibit__box--bottom--none
+              出品中の商品がありません
       .mypage-exhibit__foot
         = link_to users_listing_user_path do
           .mypage-exhibit__foot--left

@@ -27,7 +27,22 @@
   }
 }
 
-
+.btn__signup{
+  line-height: 48px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: center;
+  background-color: $blue;
+  color: #fff;
+  border-radius: 0;
+  position: relative;
+  display: block;
+  a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+  }
+}
 .btn__login__fb{
   line-height: 48px;
   border: 1px solid transparent;
@@ -38,7 +53,13 @@
   border-radius: 0;
   position: relative;
   display: block;
+  a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
   }
+  }
+
 .btn__login__google{
   line-height: 48px;
   border: 1px solid gray;
@@ -51,6 +72,11 @@
   border-radius: 0;
   position: relative;
   display: block;
+  a{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+  }
   }
 
 .sns-icon{
@@ -104,8 +130,18 @@
 .login-forget{
   margin-top:32px;
   color: #0099e8;
+  cursor: pointer;
+  font-size: 14px;
+}
+.login-forget:hover{
+  text-decoration: underline;
+  opacity: 0.7;
 }
 
 .in{
   padding:0;
+}
+
+.padding-fix{
+  padding:0 0 40px;
 }

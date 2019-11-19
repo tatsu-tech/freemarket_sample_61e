@@ -13,10 +13,15 @@
           .mypage-card-edit__box--content__text
             クレジットカード一覧
           .mypage-card-edit__box--content__section
-            .mypage-card-edit__box--content__section--btn
-              = link_to "#", class: "card-register-btn" do
-                =fa_icon "credit-card", class: "card-icon"
-                クレジットカードを追加する
+            .mypage-card-edit__box--content__section--show
+              %i.fab.fa-cc-visa
+              %br
+              ************4242
+              %br
+              12 / 25
+              .mypage-card-edit__box--content__section--show--delete
+                削除する
+
           .mypage-card-edit__box--content__arart
             支払い方法について
 
@@ -148,9 +153,9 @@
               .arrow-right
                 = fa_icon "angle-right"
           %li
-            = link_to "mypage", class: 'mypage-nav__list-item' do
+            = link_to users_identification_user_path(current_user), class: 'mypage-nav__list-item' do
               本人情報
-              .arrow-right-mypage
+              .arrow-right
                 = fa_icon "angle-right"
           %li
             = link_to "mypage", class: 'mypage-nav__list-item' do
@@ -158,9 +163,10 @@
               .arrow-right
                 = fa_icon "angle-right"
           %li
-            ログアウト
-            .arrow-right
-              = fa_icon "angle-right"
+            = link_to users_logout_user_path(current_user), class: 'mypage-nav__list-item' do
+              ログアウト
+              .arrow-right
+                = fa_icon "angle-right"
 
 .background
   = render "shared/footer"

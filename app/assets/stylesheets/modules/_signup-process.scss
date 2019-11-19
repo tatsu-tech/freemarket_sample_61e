@@ -88,7 +88,6 @@ h3{
 }
 
 .signup1-container{
-  padding: 0 0 220PX;
   &__header{
     height: 128px;
     text-align: center;
@@ -412,9 +411,6 @@ h3{
         }
       }
       &--right {
-        position: absolute;
-        bottom: 1px;
-        right: 0;
 
         .phone-img-s {
           height: 200px;
@@ -566,14 +562,16 @@ h3{
   cursor: pointer;
 }
 
-.new_user{
-  padding-top: 40px;
-}
-
 .new_user_address{
   padding-top: 40px;
 }
 
 .form-padding{
   padding: 40px 0 64px;
+}
+
+.process{
+  position: absolute;
+  bottom: 3px;
+  right: 0;
 }

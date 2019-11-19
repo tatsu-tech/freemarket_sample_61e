@@ -4,9 +4,10 @@
       = link_to root_path, class: "header__body__head--left" do
         = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/logo-acdd90ac4f472d5a6f7a330d33ab1225.svg", class: 'mercari-logo-l'
       .header__body__head--right
-        = form_for root_path, method: :get, html: { class: :search } do |f|
-          = f.search_field :text, class: "header__body__head--right--form-field",name: "keyword", placeholder: "何かお探しですか？",type: "search", value: ""
-          %i.fa.fa-search{"aria-hidden": "true"}
+        = form_with url: searched_items_path, method: "get", local: "true" do |f|
+          = f.search_field :text, class: "header__body__head--right--form-field", placeholder: "何かお探しですか？", value: "#{params[:text]}"
+          = button_tag type: "submit", class: "search-btn" do
+            %i.fa.fa-search{"aria-hidden": "true"}
     .header__body__foot
       .header__body__foot--left
         = link_to "" do
@@ -72,7 +73,7 @@
               %li ブランド一覧
       .header__body__foot--right
         - if user_signed_in?
-          = link_to "" do
+          = link_to likes_path do
             .header__body__foot--right--good
               %i.far.fa-heart
               いいね！一覧
@@ -94,7 +95,7 @@
               .header__body__foot--right--todo--dropdwn
                 .header__body__foot--right--todo--dropdwn--list
                   現在、やることリストはありません
-          = link_to "/users/#{current_user.id}/mypage" do
+          = link_to users_mypage_user_path(current_user) do
             .header__body__foot--right--mypage
               = image_tag  "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "mypage-icon-s"
               .header__body__foot--right--mypage--text
@@ -141,38 +142,38 @@
                           いいね！一覧
                         .header__body__foot--right--mypage--dropdwn--menu--list--icon
                           %i.fas.fa-chevron-right
-                    = link_to "" do
+                    = link_to users_listing_user_path(current_user) do
                       .header__body__foot--right--mypage--dropdwn--menu--list
                         .header__body__foot--right--mypage--dropdwn--menu--list--text
                           出品した商品-出品中
                         .header__body__foot--right--mypage--dropdwn--menu--list--icon
                           %i.fas.fa-chevron-right
-                    = link_to "" do
+                    = link_to users_in_progress_user_path(current_user) do
                       .header__body__foot--right--mypage--dropdwn--menu--list
                         .header__body__foot--right--mypage--dropdwn--menu--list--text
                           出品した商品-取引中
                         .header__body__foot--right--mypage--dropdwn--menu--list--icon
                           %i.fas.fa-chevron-right
-                    = link_to "" do
+                    = link_to users_completed_user_path(current_user) do
                       .header__body__foot--right--mypage--dropdwn--menu--list
                         .header__body__foot--right--mypage--dropdwn--menu--list--text
                           出品した商品-売却済み
                         .header__body__foot--right--mypage--dropdwn--menu--list--icon
                           %i.fas.fa-chevron-right
-                    = link_to "" do
+                    = link_to users_purchase_user_path(current_user) do
                       .header__body__foot--right--mypage--dropdwn--menu--list
                         .header__body__foot--right--mypage--dropdwn--menu--list--text
                           購入した商品-取引中
                         .header__body__foot--right--mypage--dropdwn--menu--list--icon
                           %i.fas.fa-chevron-right
-                    = link_to "" do
+                    = link_to users_purchased_user_path(current_user) do
                       .header__body__foot--right--mypage--dropdwn--menu--list
                         .header__body__foot--right--mypage--dropdwn--menu--list--text
                           購入した商品-過去の取引
                         .header__body__foot--right--mypage--dropdwn--menu--list--icon
                           %i.fas.fa-chevron-right
         - else
-          = link_to "signup/signup", class: "header__body__foot--right--signup" do
+          = link_to signup_signup_index_path, class: "header__body__foot--right--signup" do
             新規会員登録
           = link_to new_user_session_path, class: "header__body__foot--right--login" do
             ログイン

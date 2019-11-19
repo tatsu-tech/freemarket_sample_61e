@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_13_112958) do
+ActiveRecord::Schema.define(version: 2019_11_15_073650) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -98,6 +98,15 @@ ActiveRecord::Schema.define(version: 2019_11_13_112958) do
     t.index ["user_id"], name: "index_points_on_user_id"
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
   create_table "transactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "price", null: false
     t.string "payment_style", null: false
@@ -122,7 +131,6 @@ ActiveRecord::Schema.define(version: 2019_11_13_112958) do
     t.string "send_name_family_kana", null: false
     t.string "send_name_first_kana", null: false
     t.string "zip", null: false
-    t.string "prefecture", null: false
     t.string "city", null: false
     t.string "town", null: false
     t.string "apartment"
@@ -130,6 +138,7 @@ ActiveRecord::Schema.define(version: 2019_11_13_112958) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.integer "prefecture", default: 0, null: false
     t.index ["user_id"], name: "index_user_addresses_on_user_id"
   end
 
@@ -162,6 +171,7 @@ ActiveRecord::Schema.define(version: 2019_11_13_112958) do
   add_foreign_key "offers", "items"
   add_foreign_key "offers", "users"
   add_foreign_key "points", "users"
+  add_foreign_key "sns_credentials", "users"
   add_foreign_key "transactions", "items"
   add_foreign_key "transactions", "users"
   add_foreign_key "user_addresses", "users"

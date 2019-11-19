@@ -8,16 +8,17 @@
         %h3.sell-content__upload__title
           = f.label "出品画像"
           %span.must 必須
-        %p.sell-content__upload__lead 最大5枚までアップロードできます。
+        %p.sell-content__upload__lead 最大10枚までアップロードできます。
         .sell-content__upload__wrap
-          .sell-content__upload__wrap__preview
-            %ul#previewUpload.dflex
-          .sell-content__upload__wrap__box{onclick: "$('#photo_upload').click()"}
-            .sell-content__upload__wrap__box__inner-text
-              クリックしてファイルをアップロード
-        .preview-reset 出品画像をリセットする
-        .image-input-field
-          = f.file_field :images, multiple: true, accept: 'image/jpg,image/png', id: 'photo_upload', class:'hidden'
+          %ul.sell-content__upload__wrap__preview#previewUpload
+            .sell-content__upload__wrap__box
+              .input-image-box
+                %p
+                  ドラックアンドドロップ
+                  %br
+                  またはクリックしてファイルをアップロード
+                = f.file_field :images, multiple: true, accept: 'image/jpg,image/png', id: 'photo_upload'
+        .preview-reset#allDelete 出品画像をリセットする
       .sell-content__box
         %h3.sell-content__box__title
           = f.label "商品名"
@@ -99,6 +100,6 @@
           また、出品をもちまして
           = link_to "加盟店規約",'https://www.mercari.com/jp/seller_terms/', target: "_blank", class:"sell-link-text"
           に同意したことになります。
-        = f.submit class: 'sell-submit-btn mg-tp-40',disable_with: "Save", value:"出品する"
+        = f.submit class: 'sell-submit-btn mg-tp-40', disable_with: "Save", value:"出品する", id:"new-send-btn"
         .sell-back-btn もどる
   = render 'shared/subfooter'

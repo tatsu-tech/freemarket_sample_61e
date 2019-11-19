@@ -4,10 +4,15 @@ $(document).on('turbolinks:load', function() {
 
   // マイページのパスの時
   $(function() {
-    if (pathName == ("/users/1/mypage")) {
+    if (pathName == ("/users/1/users/mypage")) {
       $("ul.mypage-nav__list li:eq(0) .arrow-right").css("color", "black");
       $("ul.mypage-nav__list li:eq(0)").css("background-color", "rgb(238, 238, 238)");
     
+  // いいね！一覧のパスの時
+    } else if (pathName == ("/likes")) {
+      $("ul.mypage-nav__list li:eq(3)").css("background-color", "rgb(238, 238, 238)");
+      $("ul.mypage-nav__list li:eq(3) .arrow-right").css("color", "black");
+
   // 出品した商品-出品中のパスの時
     } else if (pathName == ("/users/1/users/listing")) {
       $("ul.mypage-nav__list li:eq(5)").css("background-color", "rgb(238, 238, 238)");
@@ -32,6 +37,16 @@ $(document).on('turbolinks:load', function() {
     } else if (pathName == ("/users/1/users/purchased")) {
       $("ul.mypage-nav__list li:eq(9)").css("background-color", "rgb(238, 238, 238)");
       $("ul.mypage-nav__list li:eq(9) .arrow-right").css("color", "black");
+
+  // プロフィールのパスの時
+    } else if (pathName.includes("/users/profile")) {
+      $("ul.side-menu__config-ul li:eq(0)").css("background-color", "rgb(238, 238, 238)");
+      $("ul.side-menu__config-ul li:eq(0) .arrow-right").css("color", "black");
+
+  // 本人情報のパスの時
+    } else if (pathName.includes("/users/identification")) {
+      $("ul.side-menu__config-ul li:eq(4)").css("background-color", "rgb(238, 238, 238)");
+      $("ul.side-menu__config-ul li:eq(4) .arrow-right").css("color", "black");
 
   // ログアウトのパスの時
     } else if (pathName.includes("/users/logout")) {

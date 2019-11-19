@@ -4,6 +4,7 @@ $(document).on('turbolinks:load', function() {
   console.log(gon.pk_key);
 
   $("#charge_form").on("click", ".btn-default1", function(e) {
+    console.log("ok")
     e.preventDefault();
     form.find("input[type=submit]").prop("disabled", true);
     var card = {
@@ -18,10 +19,10 @@ $(document).on('turbolinks:load', function() {
         $(".input-default-cvc").removeAttr("name");
         $(".select-default-month").removeAttr("name");
         $(".select-default-year").removeAttr("name");
-        console.log(card)
+
         var token = response.id;
         $("#charge_form").append($('<input type="hidden" name="payjp_token" class="payjp-token" />').val(token));
-        $("#charge_form").get(0).submit();
+        $("#charge_form")[0].submit();
 
       }
       else {
