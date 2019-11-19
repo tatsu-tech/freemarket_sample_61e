@@ -8,5 +8,10 @@
         .price
           ¥
           = item.price.to_s(:delimited)
+
+        - if item.process == "selltradeing"
+          .tag-sold
+          .sold SOLD
+          
       .detail
         = item.name

@@ -112,12 +112,16 @@
           = @item.explanation
     .top-box__bottom
       .top-box__bottom--left
-        %a.top-box__bottom--left--good
-          .top-box__bottom--left--good--icon
+        %a.top-box__bottom--left--nogood
+          .top-box__bottom--left--nogood--icon
             %i.far.fa-heart
             いいね!
-          .top-box__bottom--left--good--content
             12
+        %a.top-box__bottom--left--good
+          .top-box__bottom--left--good--icon
+            %i.fas.fa-heart
+            いいね!
+            13
         = link_to "" do
           .top-box__bottom--left--bad
             %i.far.fa-flag
