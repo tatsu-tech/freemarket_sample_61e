@@ -287,6 +287,9 @@
         
         &--content {
           line-height: 2;
+          p {
+            margin: 0;
+          }
         }
       }
     }
