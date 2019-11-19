@@ -1,12 +1,11 @@
 class TransactionsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
+  before_action :get_item, only: [:new, :create]
 
   def new
-    @item = Item.find(params[:item_id])
   end
 
   def create
-    @item = Item.find(params[:item_id])
     Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
     charge = Payjp::Charge.create(
       amount: @item.price,
@@ -24,6 +23,10 @@ class TransactionsController < ApplicationController
   end
 
   def failure
+  end
+
+  def get_item
+    @item = Item.find(params[:item_id])
   end
 
   private
