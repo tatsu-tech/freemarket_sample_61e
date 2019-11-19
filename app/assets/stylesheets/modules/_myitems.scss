@@ -5,6 +5,9 @@
   &__content {
     padding:0 40px 40px;
     word-break: break-all;
+    p {
+      margin: 0;
+    }
   }
 }
 
