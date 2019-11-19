@@ -44,4 +44,6 @@ class Item < ApplicationRecord
       buyingcomp:5     #過去の取引（出品した商品）
     },_prefix: true
 
+    validates :name,:explanation,:price,:status,:delivery_fee,:delivery_origin,:delivery_type,:schedule, presence: true
+
 end

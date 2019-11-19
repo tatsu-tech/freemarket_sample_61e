@@ -20,7 +20,8 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to myitem_path(@item), notice: '商品の出品に成功しました'
     else
-      render 'items/new', notice: '出品に失敗しました。必要事項を入力してください。'
+      flash.now[:alert] = '出品に失敗しました。必要事項を入力してください'
+      render 'items/new'
     end
   end
 

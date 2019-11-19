@@ -104,7 +104,7 @@
       - if @item.process == "selling"
         = link_to new_item_transaction_path(@item), class: "top-box__buy-btn" do
           購入画面に進む
-      - if @item.process == "sellcomp"
+      - else
         .top-box__sold-btn 売り切れました
     .top-box__middle
       .top-box__middle--explanation
