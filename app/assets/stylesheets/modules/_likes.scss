@@ -1,0 +1,93 @@
+.mypage-like {
+  @include mypage-right();
+
+  &__box {
+    @include mypage-box();
+
+    &--top {
+      @include mypage-box-top();
+      font-size: 22px;
+      text-align: center;
+      border-bottom: 1px solid rgb(238, 238, 238);
+    }
+    &--bottom {
+
+      &--list {
+
+        &--s {
+          @include mypage-box-bottom();
+
+          &--left {
+            width: 14%;
+
+            &--image {
+              height: 80px;
+              width: 80px;
+
+              img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+          &--center {
+            width: 85%;
+          
+            &--head {
+              @include mypage-box-bottom-center-head();
+
+            }
+            &--foot {
+              width: 1%;
+
+              .fa-angle-right {
+                font-size: 18px;
+              }
+            }
+          }
+          &--right {
+            width: 1%;
+
+            .fa-angle-right {
+              font-size: 18px;
+            }
+          }
+        }
+        &--s:hover {
+          background-color: #f8f8f8;
+        }
+      }
+      &--none {
+        @include mypage-box-none();
+      }
+    }
+  }
+  &__foot {
+    @include mypage-foot();
+
+    &--left {
+      @include mypage-foot-landr();
+
+      .fa-angle-left {
+        @include mypage-foot-landr-icon();
+      }
+    }
+    &--left:hover {
+      background-color: #eeeeee;
+    }
+    &--right {
+      @include mypage-foot-landr();
+
+      .fa-angle-right {
+        @include mypage-foot-landr-icon();
+      }
+    }
+    &--right:hover {
+      background-color: #eeeeee;
+    }
+  }
+}
+.mypage-like:after {
+  clear: both;
+}

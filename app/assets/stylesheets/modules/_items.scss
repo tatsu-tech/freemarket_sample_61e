@@ -133,18 +133,23 @@
             background-color: rgb(245, 245, 245);
             font-size: 16px;
             height: 40px;
-            width: 100%;
+            width: 93%;
             line-height: 1.4em;
             border-width: 1px;
             border-style: solid;
             border-color: rgb(204, 204, 204);
-            border-radius: 4px;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            border-right: none;
             padding: 0px 0px 0px 10px;
           }
-          .fa.fa-search {
+          .search-btn {
+            height: 40px;
+            width: 7%;
             position: absolute;
-            right: 18px;
-            top: 12px;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            cursor: pointer;
           }
         }
       }
@@ -421,7 +426,7 @@
               display: none;
               background-color: $white;
               width: 300px;
-              top: 39px;
+              top: 40px;
               right: -50%;
               position: absolute;
               filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.2));
@@ -747,6 +752,7 @@
       height: 260px;
       margin: 0 calc(50% - 50vw);
       background-image: url("https://web-jp-assets.mercdn.net/_next/static/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg");
+      background-size: cover;
 
       &__area {
         width: 750px;
@@ -754,7 +760,7 @@
         justify-content: space-between;
         margin: 0px auto;
 
-        &--left {
+        &--left-text {
           padding-top: 40px;
 
           &--top {
@@ -843,24 +849,6 @@
               &--icon {
                 display: flex;
                 margin-top: 30px;
-
-                &--twitter {
-                  margin-right: 20px;
-
-                  .twitter-logo {
-                    color: $white;
-                    height: 32px;
-                    width: 32px;
-                  }
-                }
-                &--facebook {
-
-                  .facebook-logo {
-                    color: $white;
-                    height: 30px;
-                    width: 30px;
-                  }
-                }
               }
             }
           }  
@@ -960,4 +948,15 @@
       }
     }
   }
+}
+.twitter-logo-foot {
+  color: $white;
+  height: 32px;
+  width: 32px;
+  margin-right: 20px;
+}
+.facebook-logo-foot {
+  color: $white;
+  height: 30px;
+  width: 30px;
 }

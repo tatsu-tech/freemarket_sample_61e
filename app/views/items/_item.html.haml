@@ -7,6 +7,6 @@
           = image_tag image, class: "item-img"
         .price
           ¥
-          = item.price
+          = item.price.to_s(:delimited)
       .detail
         = item.name

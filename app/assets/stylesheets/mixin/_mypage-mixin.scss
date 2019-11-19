@@ -1,0 +1,66 @@
+@mixin mypage-right() {
+  width: 700px;
+  float: right;
+}
+
+@mixin mypage-box() {
+  background-color: $white;
+}
+
+@mixin mypage-box-top() {
+  line-height: 72px;
+  font-weight: bold;
+}
+
+@mixin mypage-box-bottom() {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+@mixin mypage-box-bottom-center-head() {
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0 15px 5px 0;
+}
+
+@mixin mypage-box-none() {
+  background-image: url("https://web-jp-assets.mercdn.net/_next/static/images/logo-gray-light-bf49bd7f43703356d83e9097214a2d23.svg");
+  background-size: 78px 85px;
+  color: #ccc;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  background-position: center 40px;
+  background-repeat: no-repeat;
+  padding: 160px 0px 60px;
+}
+
+@mixin mypage-foot() {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+@mixin mypage-foot-landr() {
+  background-color: $white;
+  height: 42px;
+  width: 42px;
+}
+
+@mixin mypage-foot-landr-icon() {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 25px;
+  line-height: 42px;
+}
+
+

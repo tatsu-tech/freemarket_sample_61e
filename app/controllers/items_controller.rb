@@ -3,7 +3,11 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :purchase]
 
   def index
-    @items = Item.with_attached_images.order("created_at DESC").limit(10)
+    if user_signed_in?
+      @items = Item.where.not(user_id: current_user.id).with_attached_images.order("created_at DESC").limit(10)
+    else
+      @items = Item.with_attached_images.order("created_at DESC").limit(10)
+    end
   end
 
   def new
@@ -12,6 +16,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(create_params)
+
     if @item.save
       redirect_to myitem_path(@item), notice: '商品の出品に成功しました'
     else
@@ -21,8 +26,11 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.with_attached_images.find(params[:id])
-      if @item.user_id == current_user.id
-        redirect_to myitem_path(@item.id)
+    @others = Item.where.not(id: @item.id).where(user_id: @item.user_id).where(process: "selling").order("created_at DESC").limit(6)
+      if user_signed_in?
+        if @item.user_id == current_user.id
+          redirect_to myitem_path(@item.id)
+        end
       end
     session[:item_id] = params[:id]
   end
@@ -48,10 +56,18 @@ class ItemsController < ApplicationController
               end
           end
           redirect_to myitem_path(@item)
-      end
+    end
   end
 
   def purchase
+  end
+
+  def searched
+    if user_signed_in?
+      @searched = Item.where.not(user_id: current_user.id).where('name LIKE ?', "%#{params[:text]}%")
+    else
+      @items = Item.where('name LIKE ?', "%#{params[:text]}%")
+    end
   end
 
   private

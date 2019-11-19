@@ -1,0 +1,44 @@
+.background
+  = render "shared/exhibit-btn"
+  = render "shared/header"
+  - breadcrumb :mypage
+  = render "shared/breadcrumbs"
+
+  .mypage-wrapper
+    .mypage-like
+      .mypage-like__box
+        .mypage-like__box--top
+          いいね！一覧
+          
+        .mypage-like__box--bottom
+          - if @likes.present?
+            %ul.mypage-like__box--bottom--list
+              - @likes.each do |like|
+                %li.mypage-like__box--bottom--list--s
+                  .mypage-like__box--bottom--list--s--left
+                    .mypage-like__box--bottom--list--s--left--image
+                      - like.item.images.first(1).each do |image|
+                        = image_tag image
+                  .mypage-like__box--bottom--list--s--center
+                    .mypage-like__box--bottom--list--s--center--head
+                      = like.item.name
+                    .mypage-like__box--bottom--list--s--center--foot
+                      ¥
+                      = like.item.price.to_s(:delimited)
+                  .mypage-like__box--bottom--list--s--right
+                    %i.fas.fa-angle-right
+          - else
+            .mypage-like__box--bottom--none
+              いいね！がありません
+      .mypage-like__foot
+        = link_to likes_path do
+          .mypage-like__foot--left
+            %i.fas.fa-angle-left
+        = link_to likes_path do
+          .mypage-like__foot--right
+            %i.fas.fa-angle-right
+      
+    = render "shared/mypage-nav"
+
+.background
+  = render "shared/footer"
