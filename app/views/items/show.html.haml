@@ -112,16 +112,24 @@
           = @item.explanation
     .top-box__bottom
       .top-box__bottom--left
-        %a.top-box__bottom--left--nogood
-          .top-box__bottom--left--nogood--icon
-            %i.far.fa-heart
-            いいね!
-            12
-        %a.top-box__bottom--left--good
-          .top-box__bottom--left--good--icon
-            %i.fas.fa-heart
-            いいね!
-            13
+        - if user_signed_in?
+          %a.top-box__bottom--left--nogood
+            .top-box__bottom--left--nogood--icon
+              %i.far.fa-heart
+              いいね!
+              12
+          %a.top-box__bottom--left--good
+            .top-box__bottom--left--good--icon
+              %i.fas.fa-heart
+              いいね!
+              13
+        - else
+          = link_to signup_signup_index_path do
+            .top-box__bottom--left--good-logout
+              .top-box__bottom--left--good-logout--icon
+                %i.far.fa-heart
+                いいね!
+                12
         = link_to "" do
           .top-box__bottom--left--bad
             %i.far.fa-flag
