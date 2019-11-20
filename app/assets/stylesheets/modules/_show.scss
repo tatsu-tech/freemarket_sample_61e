@@ -230,7 +230,7 @@
         justify-content: center;
         margin-top: 24px;
 
-        &--reft {
+        &--left {
           font-size: 50px;
           font-weight: 500;
           margin-right: 16px;
@@ -240,15 +240,14 @@
         }
         &--right {
           display: flex;
+          align-items: flex-end;
 
           &--tax {
             font-size: 10px;
-            align-items: flex-end;
             margin-right: 5px;
           }
           &--fee {
             font-size: 16px;
-            align-items: flex-end;
           }
         }
       }

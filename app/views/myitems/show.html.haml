@@ -6,15 +6,15 @@
     .top-box__top
       .top-box__top--bar
         = @myitem.name
-      .top-box__detail
-        .top-box__detail--left.posi-rela
-          %ul.top-box__detail--left--main-photo
+      .top-box__top--detail
+        .top-box__top--detail--left.posi-rela
+          %ul.top-box__top--detail--left--main-photo
             - @myitem.images.each_with_index do |image, i|
-              %li.top-box__detail--left--main-photo--list
+              %li.top-box__top--detail--left--main-photo--list
                 = image_tag @myitem.images[i].variant(resize:'500x500',auto_orient: true).processed
-          %ul.top-box__detail--left--sub-photo
+          %ul.top-box__top--detail--left--sub-photo
             - @myitem.images.each_with_index do |image, i|
-              %li.top-box__detail--left--sub-photo--s
+              %li.top-box__top--detail--left--sub-photo--s
                 = image_tag @myitem.images[i].variant(resize:'500x500',auto_orient: true).processed
           - if @myitem.process == "sellingstop"
             .tag-stop
@@ -25,48 +25,48 @@
           - if @myitem.process == "sellcomp"
             .tag-sold
             .sold SOLD
-        .top-box__detail--right
-          .top-box__detail--right--author
-            .top-box__detail--right--author--menu
+        .top-box__top--detail--right
+          .top-box__top--detail--right--author
+            .top-box__top--detail--right--author--menu
               出品者
-            .top-box__detail--right--author--name
-              .top-box__detail--right--author--name--link
+            .top-box__top--detail--right--author--name
+              .top-box__top--detail--right--author--name--link
                 = link_to "" do
                   = @myitem.user.nickname
-          .top-box__detail--right--status
-            .top-box__detail--right--status--menu
+          .top-box__top--detail--right--status
+            .top-box__top--detail--right--status--menu
               商品の状態
-            .top-box__detail--right--status--content
+            .top-box__top--detail--right--status--content
               = @myitem.status
-          .top-box__detail--right--delivery-fee
-            .top-box__detail--right--delivery-fee--menu
+          .top-box__top--detail--right--delivery-fee
+            .top-box__top--detail--right--delivery-fee--menu
               配送料の負担
-            .top-box__detail--right--delivery-fee--content
+            .top-box__top--detail--right--delivery-fee--content
               = @myitem.delivery_fee
-          .top-box__detail--right--delivery-way
-            .top-box__detail--right--delivery-way--menu
+          .top-box__top--detail--right--delivery-way
+            .top-box__top--detail--right--delivery-way--menu
               配送の方法
-            .top-box__detail--right--delivery-way--content
+            .top-box__top--detail--right--delivery-way--content
               = @myitem.delivery_type
-          .top-box__detail--right--address
-            .top-box__detail--right--address--menu
+          .top-box__top--detail--right--address
+            .top-box__top--detail--right--address--menu
               配送元地域
-            .top-box__detail--right--address--link
+            .top-box__top--detail--right--address--link
               = link_to "" do
                 = @myitem.delivery_origin
-          .top-box__detail--right--delivery-date
-            .top-box__detail--right--delivery-date--menu
+          .top-box__top--detail--right--delivery-date
+            .top-box__top--detail--right--delivery-date--menu
               発送日の目安
-            .top-box__detail--right--delivery-date--content
+            .top-box__top--detail--right--delivery-date--content
               = @myitem.schedule
-      .top-box__price
-        .top-box__price--reft
+      .top-box__top--price
+        .top-box__top--price--left
           ¥
           = @myitem.price.to_s(:delimited)
-        .top-box__price--right
-          .top-box__price--right.tax
+        .top-box__top--price--right
+          .top-box__top--price--right--tax
             (税込)
-          .top-box__price--right.fee
+          .top-box__top--price--right--fee
             送料込み
     .myitem-explanation
       .myitem-explanation__content
