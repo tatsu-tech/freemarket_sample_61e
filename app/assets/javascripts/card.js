@@ -1,7 +1,6 @@
 $(document).on('turbolinks:load', function() {
   var form = $("#charge_form");
   Payjp.setPublicKey(gon.pk_key); //(自身の公開鍵)
-  console.log(gon.pk_key);
 
   $("#charge_form").on("click", ".btn-default1", function(e) {
     console.log("ok")

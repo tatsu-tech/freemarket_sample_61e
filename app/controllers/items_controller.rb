@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
-  before_action :set_item, only: [:edit, :update, :purchase]
+  before_action :set_item, only: [:edit, :update]
 
   def index
     if user_signed_in?
@@ -58,9 +58,6 @@ class ItemsController < ApplicationController
           end
           redirect_to myitem_path(@item)
     end
-  end
-
-  def purchase
   end
 
   def searched
