@@ -14,7 +14,7 @@ Rails.application.routes.draw do
       get 'searched'
     end
   end
-  resources :myitems, only: [:index, :show, :edit, :update, :destroy]
+  resources :myitems, only: [:show, :destroy]
 
   resources :users do
     member do
