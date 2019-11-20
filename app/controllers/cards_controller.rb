@@ -36,13 +36,6 @@ class CardsController < ApplicationController
 
   def show
     card = Card.where(user_id: current_user.id).first
-    if card.blank?
-      redirect_to action: "edit"
-    else
-      Payjp.api_key = Rails.application.credentials.payjp[:secret_key]
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.card.retrieve(card.card_id)
-    end
   end
 
   def edit
