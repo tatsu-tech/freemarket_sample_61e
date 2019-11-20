@@ -51,28 +51,35 @@
         -#         -errors.each do |error|
         -#           %li=error
 
-        = form_for @user, url: signup2_signup_index_path ,method: :get do |f|
+        = form_with model: User, url: signup2_signup_index_path , local: true ,method: :get do |f|
           .signup1-container__main__view__form__box
             .signup1-container__main__view__form__box__input.form-group.form-nickname
               %label{for: "name"} ニックネーム
               %span{class: "form-must"}必須
-              = f.text_field :nickname, class: "input-default-1", placeholder: "例）メルカリ太郎"
+              - if @user.nickname.present?
+                = f.text_field :nickname, class: "input-default-1", placeholder: "例）メルカリ太郎", value:"#{@user.nickname}"
+              - else
+                = f.text_field :nickname, class: "input-default-1", placeholder: "例）メルカリ太郎", value:"#{@user.nickname}"
+
               -# %input{type: "text", placeholder: "例）メルカリ太郎", class: "input-default-1", name: "nickname"}
 
             .signup1-container__main__view__form__box__input.form-group
               %label{for: "email"}メールアドレス
               %span{class: "form-must"}必須
-              = f.email_field :email, class: "input-default-1", placeholder:"PC・携帯どちらでも可"
-              -# %input{type:"email", name: "email", placeholder:"PC・携帯どちらでも可", class: "input-default-1"}
+              - if @user.email.present?
+                = f.email_field :email, class: "input-default-1", placeholder:"PC・携帯どちらでも可",value:"#{@user.email}"
+              - else
+                = f.email_field :email, class: "input-default-1", placeholder:"PC・携帯どちらでも可"
+                -# %input{type:"email", name: "email", placeholder:"PC・携帯どちらでも可", class: "input-default-1"}
 
-            - unless @user.nickname.present? && @user.email.present?
+            - unless @user.email.present? && @user.nickname.present?
               .signup1-container__main__view__form__box__input.form-group
                 %label{for: "password"}パスワード
                 %span{class: "form-must"}必須
                 = f.password_field :password, class: "input-default-1", placeholder: "7文字以上"
                 -# %input{type: "password", name: "password", placeholder: "7文字以上", class: "input-default-1"}
 
-            - unless @user.nickname.present? && @user.email.present?
+              -# - unless @user.present? && @user.email.present?
               .signup1-container__main__view__form__box__input.form-group
                 %label{for: "password"}パスワード確認
                 %span{class: "form-must"}必須

@@ -9,7 +9,7 @@ p{
 .signup-wrapper{
   background-color: #f5f5f5;
   position: relative;
-  min-height: 100%;
+  height: 100%;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   font-size: 14px;
   color: #333;
@@ -84,7 +84,7 @@ h3{
 }
 
 .form-nickname{
-  margin-top: 0;
+  margin-top: 24px;
 }
 
 .signup1-container{
@@ -238,9 +238,7 @@ h3{
   margin-top: 32px;
 }
 
-.signup1-footer{
-  position: abusolute;
-}
+
 
 .right{
   font-size: 14px;
@@ -574,4 +572,8 @@ h3{
   position: absolute;
   bottom: 3px;
   right: 0;
+}
+
+.signup4main{
+  height:100%;
 }

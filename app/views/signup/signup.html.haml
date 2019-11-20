@@ -3,21 +3,26 @@
     .single-container__header.in-head
       = render partial: 'shared/topbar'
 
-    %div.single-container__main.in-main
+    %div.single-container__main.in-main.main-padding
       %div.single-container__main--box
         %h2.single-container__main--box__registration
           = "新規会員登録"
         %div.single-container__main--box__form
           %div.single-container__main--box__form__content
-            .btn.btn__mail
-              = link_to "メールアドレスで登録する", signup1_signup_index_path
-              = fa_icon "envelope", class: "sns-icon"
-            .btn.btn__fb
-              = link_to "Facebookで登録する",user_facebook_omniauth_authorize_path 
-              %i.fab.fa-facebook.sns-icon
-            .btn.btn__google
-              = link_to "Googleで登録する", user_google_oauth2_omniauth_authorize_path
-              %i.fab.fa-google.sns-icon
-              
-  = render partial: 'shared/bottombar'
+            = link_to signup1_signup_index_path do
+              .btn.btn__mail
+                メールアドレスで登録
+                %i.fa.fa-envelope.sns-icon
+            = link_to user_facebook_omniauth_authorize_path do
+              .btn.btn__fb
+                Facebookで登録する
+                %i.fab.fa-facebook.sns-icon
+            
+            = link_to user_google_oauth2_omniauth_authorize_path do
+              .btn.btn__google
+                Googleで登録する
+                %i.fab.fa-google.sns-icon
+
+    %footer.signup1-footer
+      = render partial: 'shared/bottombar'
     

@@ -41,18 +41,18 @@
             完了
             .signup1-container__header__progress__lists__dot.before
 
-    %main.signup1-container__main
+    %main.signup1-container__main.main-padding3
       %section.signup1-container__main__view
         %h2.signup1-container__main__view__info 発送元・お届け先住所入力
         .signup1-container__main__view__form__box
-          - if @user.user_address.errors.any?
-            - unless @user.user_address.valid?
-              - if errors = @user.user_address.errors.full_messages
-                %ul.signup-error-message
-                  -errors.each do |error|
-                    %li=error
+          -# - if @user.user_address.errors.any?
+          -#   - unless @user.user_address.valid?
+          -#     - if errors = @user.user_address.errors.full_messages
+          -#       %ul.signup-error-message
+          -#         -errors.each do |error|
+          -#           %li=error
 
-          = form_for @user.user_address, url: signup4_signup_index_path ,method: :get do |f|
+          = form_with url: signup4_signup_index_path , local:true, method: :get do |f|
             .signup1-container__main__view__form__box__input.form-group.form-nickname
               %label{for: "name"} お名前
               %span{class: "form-must"}必須
@@ -85,7 +85,6 @@
               -# %select{type: "text", placeholder: "選択してください", class: "select-default-long", name: "prefecture"}
                 -# %option
             .signup1-container__main__view__form__box__input.form-group.relative
-              = fa_icon "angle-down", class: "pull-down long"
               %label{for: "name"} 市区町村
               %span{class: "form-must"}必須
               = f.text_field :city, class: "select-default-long",placeholder: "入力してください"
