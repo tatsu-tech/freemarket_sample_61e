@@ -1,3 +1,4 @@
+$(document).on('turbolinks:load', function(){
 $(document).ready(function () {
   var mySwiper = new Swiper('.swiper-container', {
     autoHeight: true,
@@ -17,4 +18,5 @@ $(document).ready(function () {
       clickable: true
     }
   });
-})
+});
+});
