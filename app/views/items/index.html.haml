@@ -4,28 +4,32 @@
 
   = render "shared/header-sp"
 
-  .area
-    .area__carousel
-      .area__carousel__body
-        .area__carousel__body--left
-          .area__carousel__body--left--top
+  .swiper-container.top-carousel
+    .swiper-wrapper
+      .swiper-slide
+        .swiper-slide--left
+          .swiper-slide--left--top
             スマホでかんたん
             %br/
             フリマアプリ
-          .area__carousel__body--left--middle 
+          .swiper-slide--left--middle 
             メルカリはスマホカメラからすぐに出品できる
             %br/
             購入時も安全な独自システムのアプリです
-          .area__carousel__body--left--bottom
+          .swiper-slide--left--bottom
             = link_to "" do
-              .area__carousel__body--left--bottom--app-store
+              .swiper-slide--left--bottom--app-store
                 = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg", class: "app-store-l"
             = link_to "" do
-              .area__carousel__body--left--bottom--google-play
+              .swiper-slide--left--bottom--google-play
                 = image_tag "https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg", class: "google-play-l"
-        .area__carousel__body--right
-        .area__carousel__body--page-icon
-          
+        .swiper-slide--right
+      .swiper-slide.swiper-slide2
+        = image_tag 'top-banner-sale.png'
+      .swiper-slide.swiper-slide3
+        = image_tag 'top-banner-camp.jpg'
+
+  .area        
     .area__popular-category
       .area__popular-category__head
         .area__popular-category__head--title
@@ -87,3 +91,4 @@
             = render "item"
 
     = render "shared/footer"
+= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"
