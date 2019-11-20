@@ -289,6 +289,23 @@
         text-decoration: none;
         color: $black;
 
+        &--num {
+          background-color: $red;
+          color: $white;
+          height: 20px;
+          width: 20px;
+          font-size: 14px;
+          line-height: 20px;
+          text-align: center;
+          border-radius: 50%;
+          float: right;
+          margin-right: 20px;
+          transform: translateY(-3px);
+        }
+        &--num:after {
+          clear: both;
+        }
+
         .arrow-right {
           position: absolute;
           top: 10px;

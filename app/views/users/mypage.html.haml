@@ -97,11 +97,11 @@
 
           %ul
             %li.transaction-going
-              = link_to "" do
+              = link_to users_purchase_user_path(current_user) do
                 取引中
 
             %li.transaction-past
-              = link_to "" do
+              = link_to users_purchased_user_path(current_user) do
                 過去の取引
 
 
