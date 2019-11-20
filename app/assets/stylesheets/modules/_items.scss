@@ -603,16 +603,13 @@
       } 
     }
   }
-  .area {
-    width: 1020px;
-    margin: 0 auto;
 
-    &__carousel {
+  .swiper-container {
+
+    .swiper-wrapper {
       
-      &__body {
-        height: 390px;
-        margin: 0 calc(50% - 50vw);
-        padding: 0 calc(50vw - 50%);
+      .swiper-slide {
+        max-height: 390px;
         position: relative;
         background-image: url("https://web-jp-assets.mercdn.net/_next/static/images/top-banner-main-892151cc75b1f6a1285bf7943c9b933c.jpg");
         display: flex;
@@ -663,12 +660,19 @@
           background-size: 440px 390px;
           margin-left: -100px;
         }
-        &--page-icon {
-          text-align: center;
-        }
+      }
+      .swiper-slide2 {
+        width: 100vw;
+      }
+      .swiper-slide3 {
+        width: 100vw;
       }
     }
-      
+  }
+  .area {
+    width: 1020px;
+    margin: 0 auto; 
+
     &__popular-category {
       
       &__head {
