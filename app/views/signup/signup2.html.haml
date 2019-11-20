@@ -43,18 +43,18 @@
           .signup1-container__main__view__form__box
             .signup1-container__main__view__form__box__input.form-group.form-nickname
 
-    %main.signup1-container__main.vh
+    %main.signup1-container__main.main-padding2
       %section.signup1-container__main__view
         %h2.signup1-container__main__view__info 電話番号の確認
         .signup1-container__main__view__form__box
-          - if @user.errors.any?
-            - unless @user.valid?
-              - if errors = @user.errors.full_messages
-                %ul.signup-error-message
-                  -errors.each do |error|
-                    %li=error
+          -# - if @user.errors.any?
+          -#   - unless @user.valid?
+          -#     - if errors = @user.errors.full_messages
+          -#       %ul.signup-error-message
+          -#         -errors.each do |error|
+          -#           %li=error
 
-          = form_for @user, url: signup3_signup_index_path ,method: :get do |f|
+          = form_with url: signup3_signup_index_path , local:true ,method: :get do |f|
             .signup1-container__main__view__form__box__input.form-group.form-nickname
               %label{for: "phone_number"} 携帯電話の番号
               = f.text_field :mobile_phone_number, class: "input-default-1", placeholder: "携帯電話の番号を入力"

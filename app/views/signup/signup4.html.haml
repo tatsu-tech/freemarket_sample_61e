@@ -1,4 +1,4 @@
-.signup-wrapper
+.signup-wrapper.signup4main
   .signup1-container
     %header.signup1-container__header
       %h1
@@ -40,12 +40,12 @@
             完了
             .signup1-container__header__progress__lists__dot.before
 
-    %main.signup1-container__main
+    %main.signup1-container__main.main-padding
       %section.signup1-container__main__view
         %h2.signup1-container__main__view__info 支払い方法
         
         .signup1-container__main__view__form__box.form-padding
-          = form_with url: pay_cards_path ,id: :charge_form, method: :post do |f|
+          = form_with url: pay_cards_path ,id: :charge_form, local: true, method: :post do |f|
             .signup1-container__main__view__form__box__input.form-group.form-nickname
               = f.label :カード番号
               %span{class: "form-must"}必須
