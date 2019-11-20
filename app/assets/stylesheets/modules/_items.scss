@@ -662,10 +662,14 @@
         }
       }
       .swiper-slide2 {
-        width: 100vw;
+        height:390px;
+        background-image: image-url('top-banner-sale.png');
+        background-position: center;
       }
       .swiper-slide3 {
-        width: 100vw;
+        height:390px;
+        background-image: image-url('top-banner-camp.jpg');
+        background-position: center;
       }
     }
   }
