@@ -64,9 +64,9 @@ class ItemsController < ApplicationController
 
   def searched
     if user_signed_in?
-      @searched = Item.where.not(user_id: current_user.id).where(process: ["selling"]).where('name LIKE ?', "%#{params[:text]}%")
+      @searched = Item.where.not(user_id: current_user.id).where(process: ["selling"]).where('name LIKE ? OR explanation LIKE ?', "%#{params[:text]}%", "%#{params[:text]}%")
     else
-      @searched = Item.where(process: ["selling"]).where('name LIKE ?', "%#{params[:text]}%")
+      @searched = Item.where(process: ["selling"]).where('name LIKE ? OR explanation LIKE ?', "%#{params[:text]}%", "%#{params[:text]}%")
     end
   end
 
