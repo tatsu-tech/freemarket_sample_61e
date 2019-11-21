@@ -56,8 +56,8 @@
             .signup1-container__main__view__form__box__input.form-group.form-nickname
               %label{for: "name"} お名前
               %span{class: "form-must"}必須
-              = f.text_field :send_name_family_kanji, class: "input-default-1", placeholder:"例）山田"
-              = f.text_field :send_name_first_kanji, class: "input-default-1", placeholder:"例）彩"
+              = f.text_field :send_name_family_kanji, class: "input-default-1", placeholder:"例）山田", value: "#{current_user.name_family_kanji}"
+              = f.text_field :send_name_first_kanji, class: "input-default-1", placeholder:"例）彩", value: "#{current_user.name_first_kanji}"
               -# %input{type: "text", placeholder: "例）山田", class: "input-default-1", name: "family_name_kanji"}
             -# .signup1-container__main__view__form__box__input.form-group.form-nickname
             -#   %input{type: "text", placeholder: "例）彩", class: "input-default-1", name: "first_name__kanji"}
@@ -65,8 +65,8 @@
             .signup1-container__main__view__form__box__input.form-group
               %label{for: "name"} お名前カナ
               %span{class: "form-must"}必須
-              = f.text_field :send_name_family_kana, class: "input-default-1", placeholder:"例）ヤマダ"
-              = f.text_field :send_name_first_kana, class: "input-default-1", placeholder:"例）アヤ"
+              = f.text_field :send_name_family_kana, class: "input-default-1", placeholder:"例）ヤマダ", value: "#{current_user.name_family_kana}"
+              = f.text_field :send_name_first_kana, class: "input-default-1", placeholder:"例）アヤ", value: "#{current_user.name_first_kana}"
               -# %input{type: "text", placeholder: "例）ヤマダ", class: "input-default-1", name: "family_name_kana"}
             -# .signup1-container__main__view__form__box__input.form-group.form-nickname
             -#   %input{type: "text", placeholder: "例）アヤ", class: "input-default-1", name: "first_name__kana"}
