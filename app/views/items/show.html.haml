@@ -16,7 +16,7 @@
             - @item.images.each_with_index do |image, i|
               %li.top-box__top--detail--left--sub-photo--s
                 = image_tag @item.images[i].variant(resize:'500x500',auto_orient: true).processed
-          - if @item.process == "sellcomp"
+          - if @item.process == "selltradeing"
             .tag-sold
             .sold SOLD
         .top-box__top--detail--right
